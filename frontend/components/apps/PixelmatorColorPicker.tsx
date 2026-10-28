@@ -3,16 +3,15 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
 export default function PixelmatorColorPicker() {
-  // Angle in degrees. -90deg is 12 o'clock (top center), matching the screenshot
-  const [angle, setAngle] = useState(-90);
+  // Angle in degrees. -90deg is 12 o'clock. Initial angle is -105deg (11:30), matching reference image
+  const [angle, setAngle] = useState(-105);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
   const wheelRef = useRef<HTMLDivElement>(null);
 
-  // Compute hue rotation offset relative to -90deg (top = magenta = 0deg hue-shift)
-  const normalizedAngle = (angle + 360) % 360;
-  // Top (-90 or 270) corresponds to hue 0
-  const hueRotation = (normalizedAngle - 270 + 360) % 360;
+  // Normalized clock angle starting from 12 o'clock (0deg = Red at 12 o'clock)
+  const clockAngle = (angle + 90 + 360) % 360;
+  const hueRotation = clockAngle;
 
   // Auto-rotation animation loop
   useEffect(() => {
@@ -55,10 +54,8 @@ export default function PixelmatorColorPicker() {
     (e.target as HTMLElement).releasePointerCapture?.(e.pointerId);
   };
 
-  // Calculate pointer position on the center line of the color ring track
-  // Rainbow track is from r = 22% (inner aperture) to r = 37.5% (outer edge)
-  // Track centerline = (22 + 37.5) / 2 = 29.75%
-  const radiusPercent = 29.75;
+  // Calculate pointer position on the color ring track (radius = 29.5%)
+  const radiusPercent = 29.5;
   const rad = (angle * Math.PI) / 180;
   const pointerX = 50 + radiusPercent * Math.cos(rad);
   const pointerY = 50 + radiusPercent * Math.sin(rad);
@@ -95,32 +92,71 @@ export default function PixelmatorColorPicker() {
           className="relative z-30 w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[440px] md:h-[440px] lg:w-[490px] lg:h-[490px] rounded-full cursor-grab active:cursor-grabbing flex items-center justify-center touch-none group"
           title="Drag or click anywhere on the color wheel to change the background color"
         >
-          {/* Outer circular shadow and subtle glass backing */}
-          <div className="absolute inset-0 rounded-full bg-black/60 backdrop-blur-md shadow-2xl border border-white/10" />
+          {/* Outer circular translucent plate with subtle border */}
+          <div className="absolute inset-0 rounded-full bg-[#161617]/85 backdrop-blur-md shadow-2xl border border-white/10" />
 
-          {/* Rainbow Spectrum Ring (conic gradient) */}
+          {/* Left Pink Arc and Right White Arc matching Apple reference UI */}
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            viewBox="0 0 200 200"
+          >
+            {/* Left Pink/Magenta Arc */}
+            <path
+              d="M 49.5,27.9 A 88 88 0 0 0 49.5,172.1"
+              fill="none"
+              stroke="#ff2d55"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+              className="drop-shadow-[0_0_4px_rgba(255,45,85,0.4)]"
+            />
+            {/* Right White/Silver Arc */}
+            <path
+              d="M 150.5,27.9 A 88 88 0 0 1 150.5,172.1"
+              fill="none"
+              stroke="rgba(240,240,245,0.85)"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+          </svg>
+
+          {/* 3D Depth Colored Donut Wheel */}
           <div
-            className="absolute w-[75%] h-[75%] rounded-full shadow-inner"
+            className="absolute w-[74%] h-[74%] rounded-full shadow-[0_4px_24px_rgba(0,0,0,0.6)] overflow-hidden"
             style={{
-              background:
-                "conic-gradient(from 270deg, #ff0055 0%, #ff5500 15%, #ffbb00 30%, #00dd55 45%, #00bbff 65%, #7700ff 82%, #ff0055 100%)",
-              maskImage: "radial-gradient(transparent 58%, black 60%)",
-              WebkitMaskImage: "radial-gradient(transparent 58%, black 60%)",
+              maskImage: "radial-gradient(transparent 56%, black 58%)",
+              WebkitMaskImage: "radial-gradient(transparent 56%, black 58%)",
             }}
-          />
+          >
+            {/* Conic Gradient Base matching Apple Color Palette */}
+            <div
+              className="w-full h-full"
+              style={{
+                background:
+                  "conic-gradient(from 0deg, #ff0033 0%, #ff5500 12%, #ffcc00 25%, #28cd41 40%, #00e5ff 52%, #0066ff 66%, #5856d6 78%, #ff2d55 90%, #ff0033 100%)",
+              }}
+            />
+            {/* 3D Inward Depth / Funnel Cone Shadow Overlay */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(circle at center, rgba(0,0,0,0.7) 56%, rgba(0,0,0,0.3) 76%, transparent 92%, rgba(255,255,255,0.1) 100%)",
+              }}
+            />
+          </div>
 
           {/* Center Dark Aperture with Crosshair */}
-          <div className="relative w-[44%] h-[44%] rounded-full bg-[#161617]/95 border border-white/10 flex items-center justify-center shadow-inner">
+          <div className="relative w-[42%] h-[42%] rounded-full bg-[#161617] border border-white/[0.08] flex items-center justify-center shadow-[inset_0_2px_8px_rgba(0,0,0,0.9)]">
             {/* Crosshair indicator */}
-            <div className="relative w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-white/50">
-              <div className="absolute w-full h-[1.5px] bg-white/40" />
-              <div className="absolute h-full w-[1.5px] bg-white/40" />
+            <div className="relative w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center text-white/50 pointer-events-none">
+              <div className="absolute w-full h-[1px] bg-white/40" />
+              <div className="absolute h-full w-[1px] bg-white/40" />
             </div>
           </div>
 
           {/* The Interactive White Color Pointer Dot */}
           <div
-            className="absolute w-4 h-4 sm:w-[18px] sm:h-[18px] md:w-5 md:h-5 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.95),0_2px_5px_rgba(0,0,0,0.7)] border border-black/15 pointer-events-none transition-transform duration-75 group-hover:scale-110"
+            className="absolute w-5 h-5 sm:w-6 sm:h-6 md:w-[24px] md:h-[24px] rounded-full bg-white shadow-[0_2px_6px_rgba(0,0,0,0.7),0_0_10px_rgba(255,255,255,0.9)] border border-black/10 pointer-events-none transition-transform duration-75 group-hover:scale-110"
             style={{
               left: `${pointerX}%`,
               top: `${pointerY}%`,
