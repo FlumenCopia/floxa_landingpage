@@ -21,26 +21,118 @@ interface AppIconProps {
 
 export default function AppIcon({ name, size = 64, className = "" }: AppIconProps) {
   switch (name) {
+    case "numbers":
+      return (
+        <div
+          style={{ width: size, height: size }}
+          className={`relative rounded-[24%] bg-[#121316] p-[14%] shadow-2xl ring-1 ring-white/10 ring-inset flex items-center justify-center overflow-hidden transition-transform duration-300 ${className}`}
+        >
+          {/* Subtle green edge glow */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#30d158]/20 via-transparent to-white/5 pointer-events-none" />
+          <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
+            {/* 3 Neon green bars */}
+            <rect x="18" y="24" width="16" height="52" rx="4" fill="url(#num-green-bar)" />
+            <rect x="42" y="44" width="16" height="32" rx="4" fill="url(#num-green-bar)" />
+            <rect x="66" y="16" width="16" height="60" rx="4" fill="url(#num-green-bar)" />
+            {/* Bottom green bar */}
+            <rect x="14" y="82" width="72" height="6" rx="3" fill="#30d158" className="drop-shadow-[0_0_8px_rgba(48,209,88,0.8)]" />
+            <defs>
+              <linearGradient id="num-green-bar" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#34c759" />
+                <stop offset="100%" stopColor="#248a3d" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      );
+
+    case "motion":
+      return (
+        <div
+          style={{ width: size, height: size }}
+          className={`relative rounded-[24%] bg-[#141217] p-[12%] shadow-2xl ring-1 ring-white/10 ring-inset flex items-center justify-center overflow-hidden transition-transform duration-300 ${className}`}
+        >
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#bf5af2]/20 via-transparent to-white/5 pointer-events-none" />
+          <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
+            {/* Glowing magenta ribbon curve forming motion loop */}
+            <path
+              d="M22 76 C20 46, 32 24, 46 44 C56 60, 64 26, 78 40"
+              stroke="#bf5af2"
+              strokeWidth="9"
+              strokeLinecap="round"
+              className="drop-shadow-[0_0_10px_rgba(191,90,242,0.8)]"
+            />
+            {/* Orb on right */}
+            <circle cx="78" cy="40" r="8" fill="#d98ff7" className="drop-shadow-[0_0_12px_rgba(217,143,247,0.9)]" />
+          </svg>
+        </div>
+      );
+
+    case "freeform":
+      return (
+        <div
+          style={{ width: size, height: size }}
+          className={`relative rounded-[24%] bg-[#121618] p-[12%] shadow-2xl ring-1 ring-white/10 ring-inset flex items-center justify-center overflow-hidden transition-transform duration-300 ${className}`}
+        >
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#32ade6]/20 via-transparent to-white/5 pointer-events-none" />
+          <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
+            {/* Translucent cyan rounded glass background shape */}
+            <rect x="22" y="24" width="46" height="46" rx="14" fill="#1b4958" fillOpacity="0.7" stroke="#32ade6" strokeWidth="1.5" />
+            <circle cx="44" cy="54" r="26" fill="#143c4a" fillOpacity="0.5" />
+            {/* Bright glowing neon cyan squiggle ribbon */}
+            <path
+              d="M16 54 Q32 32 46 56 T76 44 T90 52"
+              stroke="#64d2ff"
+              strokeWidth="8"
+              strokeLinecap="round"
+              className="drop-shadow-[0_0_10px_rgba(100,210,255,0.9)]"
+            />
+          </svg>
+        </div>
+      );
+
+    case "keynote":
+      return (
+        <div
+          style={{ width: size, height: size }}
+          className={`relative rounded-[24%] bg-[#111419] p-[12%] shadow-2xl ring-1 ring-white/10 ring-inset flex items-center justify-center overflow-hidden transition-transform duration-300 ${className}`}
+        >
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#0a84ff]/25 via-transparent to-white/5 pointer-events-none" />
+          <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
+            {/* Glowing blue lectern presentation lamp */}
+            <rect x="24" y="24" width="52" height="32" rx="8" fill="url(#keynote-blue)" className="drop-shadow-[0_0_12px_rgba(10,132,255,0.7)]" />
+            <circle cx="50" cy="40" r="9" stroke="#64d2ff" strokeWidth="2.5" fill="none" opacity="0.6" />
+            <line x1="50" y1="40" x2="50" y2="34" stroke="#64d2ff" strokeWidth="2.5" strokeLinecap="round" />
+            {/* Stand */}
+            <path d="M50 56 L50 78" stroke="#64d2ff" strokeWidth="5" strokeLinecap="round" />
+            <path d="M34 78 L66 78" stroke="#64d2ff" strokeWidth="5.5" strokeLinecap="round" />
+            <defs>
+              <linearGradient id="keynote-blue" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#2997ff" />
+                <stop offset="100%" stopColor="#0062cc" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      );
+
     case "final-cut":
       return (
         <div
           style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-br from-[#1c1c1e] to-[#2c2c2e] p-[10%] shadow-2xl ring-1 ring-white/15 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
+          className={`relative rounded-[24%] bg-[#151219] p-[12%] shadow-2xl ring-1 ring-white/10 ring-inset flex items-center justify-center overflow-hidden transition-transform duration-300 ${className}`}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a84ff]/30 via-[#bf5af2]/20 to-transparent" />
-          {/* Clapperboard representation */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#bf5af2]/25 via-transparent to-white/5 pointer-events-none" />
           <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
-            <rect x="16" y="24" width="68" height="52" rx="8" fill="#1e1e24" stroke="#ffffff" strokeWidth="3" />
-            {/* Clapper top */}
-            <path d="M16 38 L84 38" stroke="#ffffff" strokeWidth="3" />
-            <path d="M26 24 L38 38 M44 24 L56 38 M62 24 L74 38" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
-            {/* Film stripes inside */}
-            <rect x="24" y="46" width="52" height="22" rx="4" fill="url(#fcp-stripes)" />
+            {/* Purple Clapperboard */}
+            <rect x="18" y="32" width="64" height="48" rx="8" fill="url(#fcp-purple)" className="drop-shadow-[0_0_12px_rgba(191,90,242,0.7)]" />
+            {/* Clapper top arm */}
+            <path d="M18 36 L82 24" stroke="#d98ff7" strokeWidth="6" strokeLinecap="round" />
+            <path d="M22 36 L78 36" stroke="#ffffff" strokeWidth="3" opacity="0.8" />
             <defs>
-              <linearGradient id="fcp-stripes" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#0071e3" />
-                <stop offset="50%" stopColor="#bf5af2" />
-                <stop offset="100%" stopColor="#ff375f" />
+              <linearGradient id="fcp-purple" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#bf5af2" />
+                <stop offset="100%" stopColor="#682594" />
               </linearGradient>
             </defs>
           </svg>
@@ -51,32 +143,100 @@ export default function AppIcon({ name, size = 64, className = "" }: AppIconProp
       return (
         <div
           style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-b from-[#2a2830] to-[#141318] p-[10%] shadow-lg ring-1 ring-white/15 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
+          className={`relative rounded-[24%] bg-[#121318] p-[12%] shadow-2xl ring-1 ring-white/10 ring-inset flex items-center justify-center overflow-hidden transition-transform duration-300 ${className}`}
         >
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#ff9f0a]/30 via-transparent to-white/10" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#2997ff]/20 via-transparent to-white/5 pointer-events-none" />
           <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
-            {/* Outer Knurled Ring */}
-            <circle cx="50" cy="50" r="38" fill="#18171d" stroke="#3a3842" strokeWidth="2.5" />
-            {/* Metallic Dial Face */}
-            <circle cx="50" cy="50" r="30" fill="url(#logic-dial-grad)" stroke="#ff9f0a" strokeWidth="2" />
-            {/* Center Cap */}
-            <circle cx="50" cy="50" r="16" fill="#1e1c24" />
-            {/* Amber Indicator Notch */}
-            <line
-              x1="50"
-              y1="20"
-              x2="50"
-              y2="34"
-              stroke="#ff9f0a"
-              strokeWidth="4.5"
+            {/* Outer dial ring */}
+            <circle cx="50" cy="50" r="34" fill="#1b1e28" stroke="#2997ff" strokeWidth="3.5" className="drop-shadow-[0_0_10px_rgba(41,151,255,0.7)]" />
+            <circle cx="50" cy="50" r="22" fill="#141720" />
+            <circle cx="50" cy="50" r="4" fill="#64d2ff" className="drop-shadow-[0_0_6px_rgba(100,210,255,0.9)]" />
+          </svg>
+        </div>
+      );
+
+    case "pages":
+      return (
+        <div
+          style={{ width: size, height: size }}
+          className={`relative rounded-[24%] bg-[#171311] p-[12%] shadow-2xl ring-1 ring-white/10 ring-inset flex items-center justify-center overflow-hidden transition-transform duration-300 ${className}`}
+        >
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#ff9f0a]/25 via-transparent to-white/5 pointer-events-none" />
+          <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
+            {/* Angled orange fountain pen */}
+            <path
+              d="M68 22 C68 22, 42 42, 34 68 L30 76 L40 72 C64 64, 78 32, 78 32 Z"
+              fill="url(#pages-orange)"
+              className="drop-shadow-[0_0_12px_rgba(255,159,10,0.8)]"
+            />
+            {/* Stroke line below */}
+            <path d="M34 82 L70 82" stroke="#ff9f0a" strokeWidth="5.5" strokeLinecap="round" className="drop-shadow-[0_0_8px_rgba(255,159,10,0.8)]" />
+            <defs>
+              <linearGradient id="pages-orange" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#ffb340" />
+                <stop offset="100%" stopColor="#d66b00" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      );
+
+    case "compressor":
+      return (
+        <div
+          style={{ width: size, height: size }}
+          className={`relative rounded-[24%] bg-[#171511] p-[12%] shadow-2xl ring-1 ring-white/10 ring-inset flex items-center justify-center overflow-hidden transition-transform duration-300 ${className}`}
+        >
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#ffd60a]/25 via-transparent to-white/5 pointer-events-none" />
+          <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
+            {/* Golden squeeze weights top and bottom */}
+            <ellipse cx="50" cy="28" rx="20" ry="10" fill="url(#comp-gold)" />
+            <ellipse cx="50" cy="72" rx="20" ry="10" fill="url(#comp-gold)" />
+            {/* Squeeze bracket */}
+            <path
+              d="M30 40 C36 40, 44 48, 44 50 C44 52, 36 60, 30 60 C24 60, 24 40, 30 40 Z"
+              fill="url(#comp-gold)"
+            />
+            <path
+              d="M70 40 C64 40, 56 48, 56 50 C56 52, 64 60, 70 60 C76 60, 76 40, 70 40 Z"
+              fill="url(#comp-gold)"
+            />
+            <path
+              d="M26 38 C38 42, 44 48, 44 50 C44 52, 38 58, 26 62 M74 38 C62 42, 56 48, 56 50 C56 52, 62 58, 74 62"
+              stroke="#ffd60a"
+              strokeWidth="5"
               strokeLinecap="round"
-              className="drop-shadow-[0_0_4px_rgba(255,159,10,0.8)]"
+              className="drop-shadow-[0_0_10px_rgba(255,214,10,0.8)]"
             />
             <defs>
-              <linearGradient id="logic-dial-grad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#484554" />
-                <stop offset="50%" stopColor="#2c2a35" />
-                <stop offset="100%" stopColor="#1a1920" />
+              <linearGradient id="comp-gold" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#ffe470" />
+                <stop offset="100%" stopColor="#bf9000" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      );
+
+    case "mainstage":
+      return (
+        <div
+          style={{ width: size, height: size }}
+          className={`relative rounded-[24%] bg-[#121617] p-[12%] shadow-2xl ring-1 ring-white/10 ring-inset flex items-center justify-center overflow-hidden transition-transform duration-300 ${className}`}
+        >
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#30d158]/20 via-transparent to-white/5 pointer-events-none" />
+          <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
+            {/* Vertical slider track */}
+            <rect x="47" y="22" width="6" height="56" rx="3" fill="#205048" />
+            {/* Teal rounded slider knob */}
+            <rect x="28" y="40" width="44" height="20" rx="9" fill="url(#main-teal)" className="drop-shadow-[0_0_10px_rgba(48,209,180,0.8)]" />
+            {/* Level indicator dots */}
+            <circle cx="68" cy="30" r="3" fill="#64d2ff" />
+            <circle cx="68" cy="70" r="3" fill="#64d2ff" />
+            <defs>
+              <linearGradient id="main-teal" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#66e0c6" />
+                <stop offset="100%" stopColor="#1e8a75" />
               </linearGradient>
             </defs>
           </svg>
@@ -87,142 +247,20 @@ export default function AppIcon({ name, size = 64, className = "" }: AppIconProp
       return (
         <div
           style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-b from-[#221c24] to-[#120e14] p-[12%] shadow-lg ring-1 ring-white/15 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
+          className={`relative rounded-[24%] bg-[#171215] p-[12%] shadow-2xl ring-1 ring-white/10 ring-inset flex items-center justify-center overflow-hidden transition-transform duration-300 ${className}`}
         >
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#ff375f]/30 via-transparent to-white/10" />
-          {/* Official Pixelmator Pro stacked gradient diamond layers */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#ff375f]/25 via-transparent to-white/5 pointer-events-none" />
           <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
-            {/* Bottom layer */}
-            <path
-              d="M50 78 L20 60 L50 42 L80 60 Z"
-              fill="#7a142c"
-              stroke="#ff375f"
-              strokeWidth="2"
-            />
-            {/* Middle layer */}
-            <path
-              d="M50 64 L20 46 L50 28 L80 46 Z"
-              fill="#b81d3f"
-              stroke="#ff453a"
-              strokeWidth="2"
-            />
-            {/* Top layer */}
+            {/* Stacked isometric red diamond layers */}
+            <path d="M50 78 L20 60 L50 42 L80 60 Z" fill="#7a142c" stroke="#ff375f" strokeWidth="2" />
+            <path d="M50 64 L20 46 L50 28 L80 46 Z" fill="#b81d3f" stroke="#ff453a" strokeWidth="2" />
             <path
               d="M50 50 L20 32 L50 14 L80 32 Z"
               fill="#ff375f"
               stroke="#ff6987"
-              strokeWidth="2"
-              className="drop-shadow-[0_0_6px_rgba(255,55,95,0.7)]"
+              strokeWidth="2.5"
+              className="drop-shadow-[0_0_10px_rgba(255,55,95,0.8)]"
             />
-          </svg>
-        </div>
-      );
-
-    case "keynote":
-      return (
-        <div
-          style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-br from-[#0a84ff] to-[#0055b3] p-[12%] shadow-2xl ring-1 ring-white/20 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
-        >
-          <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-            {/* Lectern / Presentation lamp */}
-            <path d="M50 20 L50 68" stroke="#ffffff" strokeWidth="5" strokeLinecap="round" />
-            <path d="M30 32 L70 32" stroke="#ffffff" strokeWidth="5" strokeLinecap="round" />
-            <path d="M34 68 L66 68" stroke="#ffffff" strokeWidth="6" strokeLinecap="round" />
-            <circle cx="50" cy="22" r="8" fill="#ffd60a" />
-          </svg>
-        </div>
-      );
-
-    case "pages":
-      return (
-        <div
-          style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-br from-[#ff9f0a] to-[#d66b00] p-[12%] shadow-2xl ring-1 ring-white/20 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
-        >
-          <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-            {/* Fountain pen feather */}
-            <path
-              d="M68 22 C68 22, 42 36, 36 60 L32 74 L46 70 C70 64, 84 38, 84 38 Z"
-              fill="#ffffff"
-            />
-            <path d="M36 60 L68 22" stroke="#d66b00" strokeWidth="3" />
-          </svg>
-        </div>
-      );
-
-    case "numbers":
-      return (
-        <div
-          style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-br from-[#30d158] to-[#1b8c35] p-[12%] shadow-2xl ring-1 ring-white/20 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
-        >
-          <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-            {/* Bar chart */}
-            <rect x="22" y="54" width="14" height="26" rx="4" fill="#ffffff" />
-            <rect x="43" y="38" width="14" height="42" rx="4" fill="#ffffff" />
-            <rect x="64" y="22" width="14" height="58" rx="4" fill="#ffffff" />
-          </svg>
-        </div>
-      );
-
-    case "freeform":
-      return (
-        <div
-          style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-br from-[#ff375f] via-[#bf5af2] to-[#5e5ce6] p-[12%] shadow-2xl ring-1 ring-white/20 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
-        >
-          <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-            {/* Freeform doodle ribbons */}
-            <path
-              d="M24 64 C20 40, 48 30, 48 50 C48 70, 76 60, 74 34"
-              stroke="#ffffff"
-              strokeWidth="7"
-              strokeLinecap="round"
-            />
-            <circle cx="30" cy="30" r="5" fill="#ffd60a" />
-            <rect x="65" y="65" width="10" height="10" rx="3" fill="#ffffff" transform="rotate(25 70 70)" />
-          </svg>
-        </div>
-      );
-
-    case "motion":
-      return (
-        <div
-          style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-br from-[#1f1e24] to-[#121117] p-[12%] shadow-2xl ring-1 ring-white/15 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
-        >
-          <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-            <circle cx="50" cy="50" r="30" stroke="#bf5af2" strokeWidth="4" strokeDasharray="6 4" />
-            <circle cx="50" cy="50" r="16" fill="#bf5af2" />
-          </svg>
-        </div>
-      );
-
-    case "compressor":
-      return (
-        <div
-          style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-br from-[#1f1e24] to-[#121117] p-[12%] shadow-2xl ring-1 ring-white/15 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
-        >
-          <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-            <rect x="24" y="24" width="52" height="52" rx="10" stroke="#0a84ff" strokeWidth="4" />
-            <path d="M38 42 L50 54 L62 42" stroke="#ffffff" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
-            <line x1="50" y1="28" x2="50" y2="52" stroke="#ffffff" strokeWidth="5" strokeLinecap="round" />
-          </svg>
-        </div>
-      );
-
-    case "mainstage":
-      return (
-        <div
-          style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-br from-[#1f1e24] to-[#121117] p-[12%] shadow-2xl ring-1 ring-white/15 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
-        >
-          <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-            {/* Stage spotlight rays */}
-            <path d="M50 20 L25 78 L75 78 Z" fill="#ff453a" fillOpacity="0.4" stroke="#ff453a" strokeWidth="2" />
-            <circle cx="50" cy="74" r="7" fill="#ffffff" />
           </svg>
         </div>
       );
