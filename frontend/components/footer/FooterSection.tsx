@@ -154,7 +154,7 @@ export default function FooterSection() {
         {/* Bottom Legal & Regional info */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[11px] text-[#86868b]">
           <div>
-            Copyright © {new Date().getFullYear()} Apple Inc. All rights reserved.
+            Copyright © 2026 Apple Inc. All rights reserved.
           </div>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">

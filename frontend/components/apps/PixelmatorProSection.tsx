@@ -53,9 +53,11 @@ export default function PixelmatorProSection() {
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         {/* 2. App Section Header */}
         <div className="mb-14 sm:mb-16 max-w-2xl">
+          {/* App Icon (Commented out)
           <div className="mb-4">
             <AppIcon name="pixelmator" size={40} />
           </div>
+          */}
 
           <div className="text-lg sm:text-xl font-semibold text-[#ff375f] tracking-tight mb-2">
             Pixelmator Pro

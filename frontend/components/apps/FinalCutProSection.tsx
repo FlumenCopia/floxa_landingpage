@@ -58,7 +58,8 @@ export default function FinalCutProSection() {
   return (
     <section id="final-cut-pro" className="py-20 md:py-28 bg-black text-white relative select-none">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
-        {/* Cinematic Hero Visual Banner */}
+        {/* Cinematic Hero Visual Banner (Commented out) */}
+        {/*
         <div className="relative w-full max-w-[1180px] mx-auto mb-16 sm:mb-20 overflow-hidden flex items-center justify-center">
           <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
           <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
@@ -74,13 +75,15 @@ export default function FinalCutProSection() {
             className="w-full h-auto max-h-[580px] object-contain select-none pointer-events-none filter drop-shadow-2xl"
           />
         </div>
+        */}
 
         {/* App Section Header matching Screenshot 1 */}
         <div className="mb-14 sm:mb-16 max-w-2xl">
-          {/* App Chiclet Icon */}
+          {/* App Chiclet Icon (Commented out)
           <div className="mb-4">
             <AppIcon name="final-cut" size={40} />
           </div>
+          */}
 
           {/* Eyebrow in vibrant purple */}
           <div className="text-lg sm:text-xl font-semibold text-[#bf5af2] tracking-tight mb-2">

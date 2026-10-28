@@ -64,14 +64,16 @@ export default function ProductivitySection() {
           />
         </div>
 
-        {/* Header with 4 productivity app icons */}
+        {/* Header with productivity apps */}
         <div className="mb-14 sm:mb-16 max-w-2xl">
+          {/* App Icons (Commented out)
           <div className="flex items-center gap-3 mb-4">
             <AppIcon name="keynote" size={48} />
             <AppIcon name="pages" size={48} />
             <AppIcon name="numbers" size={48} />
             <AppIcon name="freeform" size={48} />
           </div>
+          */}
 
           <div className="text-lg sm:text-xl font-semibold tracking-tight mb-2">
             <span className="keynote-gradient">Keynote, </span>
