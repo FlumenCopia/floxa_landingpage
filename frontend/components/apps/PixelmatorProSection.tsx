@@ -38,7 +38,7 @@ export default function PixelmatorProSection() {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
-      const offset = direction === "left" ? -580 : 580;
+      const offset = direction === "left" ? -400 : 400;
       scrollContainerRef.current.scrollBy({ left: offset, behavior: "smooth" });
     }
   };
@@ -83,15 +83,15 @@ export default function PixelmatorProSection() {
         <div className="relative">
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 pt-2 -mx-6 px-6"
+            className="flex gap-5 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 pt-2 -mx-6 px-6 sm:-mx-8 sm:px-8"
           >
             {pixelmatorCards.map((card, idx) => (
               <div
                 key={idx}
-                className="w-[84vw] sm:w-[580px] md:w-[640px] shrink-0 flex flex-col group"
+                className="w-[280px] sm:w-[330px] md:w-[360px] lg:w-[380px] shrink-0 flex flex-col group"
               >
-                {/* Big Rounded Media Tile Card */}
-                <div className="relative w-full h-[320px] sm:h-[400px] md:h-[420px] rounded-[24px] sm:rounded-[28px] bg-[#161617] border border-white/[0.08] overflow-hidden flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:border-white/15">
+                {/* Rounded Media Tile Card */}
+                <div className="relative w-full h-[320px] sm:h-[370px] md:h-[400px] lg:h-[420px] rounded-[24px] sm:rounded-[28px] bg-[#161617] border border-white/[0.08] overflow-hidden flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:border-white/15">
                   <img
                     src={card.image}
                     alt={card.title}
@@ -103,8 +103,8 @@ export default function PixelmatorProSection() {
                 </div>
 
                 {/* Caption Text Below Card */}
-                <div className="mt-5 px-1 max-w-[620px]">
-                  <p className="text-sm sm:text-[15px] md:text-base text-[#a1a1a6] leading-relaxed font-normal">
+                <div className="mt-4 px-0.5">
+                  <p className="text-sm sm:text-[15px] text-[#a1a1a6] leading-[1.38] font-normal">
                     <strong className="text-white font-semibold">
                       {card.title}{" "}
                     </strong>
