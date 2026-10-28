@@ -55,8 +55,10 @@ export default function PixelmatorColorPicker() {
     (e.target as HTMLElement).releasePointerCapture?.(e.pointerId);
   };
 
-  // Calculate pointer position on the color ring circle (radius = 38%)
-  const radiusPercent = 37.5;
+  // Calculate pointer position on the center line of the color ring track
+  // Rainbow track is from r = 22% (inner aperture) to r = 37.5% (outer edge)
+  // Track centerline = (22 + 37.5) / 2 = 29.75%
+  const radiusPercent = 29.75;
   const rad = (angle * Math.PI) / 180;
   const pointerX = 50 + radiusPercent * Math.cos(rad);
   const pointerY = 50 + radiusPercent * Math.sin(rad);
@@ -118,7 +120,7 @@ export default function PixelmatorColorPicker() {
 
           {/* The Interactive White Color Pointer Dot */}
           <div
-            className="absolute w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,1),0_2px_8px_rgba(0,0,0,0.8)] border border-black/20 pointer-events-none transition-transform duration-75 group-hover:scale-110"
+            className="absolute w-4 h-4 sm:w-[18px] sm:h-[18px] md:w-5 md:h-5 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.95),0_2px_5px_rgba(0,0,0,0.7)] border border-black/15 pointer-events-none transition-transform duration-75 group-hover:scale-110"
             style={{
               left: `${pointerX}%`,
               top: `${pointerY}%`,
