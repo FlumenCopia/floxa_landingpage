@@ -51,19 +51,16 @@ export default function ProductivitySection() {
     <section id="visual-productivity" className="py-20 md:py-28 bg-black text-white relative select-none">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         {/* Cinematic Hero Visual Banner */}
-        <div className="relative w-full max-w-[1180px] mx-auto mb-16 sm:mb-20 overflow-hidden flex items-center justify-center">
-          <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
-
+        <div className="relative w-full max-w-[1268px] mx-auto mb-16 sm:mb-20 flex items-center justify-center">
           <img
             src="https://www.apple.com/in/apple-creator-studio/images/overview/productivity/hero__d78ra8ka1sa6_large.jpg"
             srcSet="
               https://www.apple.com/in/apple-creator-studio/images/overview/productivity/hero__d78ra8ka1sa6_medium_2x.jpg 1068w,
               https://www.apple.com/in/apple-creator-studio/images/overview/productivity/hero__d78ra8ka1sa6_large_2x.jpg 1440w
             "
-            sizes="(max-width: 1068px) 100vw, 1200px"
+            sizes="(max-width: 1068px) 100vw, 1268px"
             alt="iPad Pro 13, iPhone 16, and MacBook Pro showcasing Keynote, Pages, Numbers, and Freeform"
-            className="w-full h-auto max-h-[580px] object-contain select-none pointer-events-none filter drop-shadow-2xl"
+            className="w-full h-auto object-contain select-none pointer-events-none"
           />
         </div>
 
