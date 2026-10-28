@@ -36,7 +36,8 @@ const appList: AppItem[] = [
 
 export default function HeroSection() {
   const [isPaused, setIsPaused] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0); // Starts on Freeform matching Screenshot 1
+  const [activeIndex, setActiveIndex] = useState(0); // Starts on Freeform matching Apple's showcase
+  const [hasOpened, setHasOpened] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Drag interaction refs
@@ -45,6 +46,14 @@ export default function HeroSection() {
   const startX = useRef(0);
   const currentDragOffset = useRef(0);
   const [dragOffset, setDragOffset] = useState(0);
+
+  // Trigger opening animation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHasOpened(true);
+    }, 120);
+    return () => clearTimeout(timer);
+  }, []);
 
   const nextSlide = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % appList.length);
@@ -58,9 +67,9 @@ export default function HeroSection() {
     setActiveIndex(idx);
   };
 
-  // Autoplay interval tied to isPaused state
+  // Autoplay interval tied to isPaused state and only after opening animation finishes
   useEffect(() => {
-    if (isPaused) {
+    if (isPaused || !hasOpened) {
       if (timerRef.current) clearInterval(timerRef.current);
       return;
     }
@@ -72,7 +81,7 @@ export default function HeroSection() {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isPaused, nextSlide]);
+  }, [isPaused, hasOpened, nextSlide]);
 
   // Touch and Mouse Drag Handlers
   const handleTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
@@ -109,14 +118,23 @@ export default function HeroSection() {
       className="relative pt-12 pb-20 sm:pt-16 sm:pb-28 overflow-hidden bg-black text-center select-none"
     >
       <div className="max-w-[1280px] mx-auto px-4 relative z-10 flex flex-col items-center">
-        {/* Top Header Row with Wordmark and Floating Pause Button */}
-        <div className="w-full flex items-center justify-between mb-3 px-2 sm:px-6 relative">
+        {/* Top Header Row with Animated Wordmark and Floating Pause Button */}
+        <div className="w-full flex items-center justify-between mb-4 px-2 sm:px-6 relative">
           <div className="w-10 h-10 hidden sm:block" />
 
-          {/* Centered Wordmark */}
-          <div className="flex items-center justify-center gap-2 text-white mx-auto">
-            <AppIcon name="apple" size={24} className="text-white" />
-            <span className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+          {/* Centered Wordmark with Opening Scale, Glow, and Shimmer Animation */}
+          <div
+            className={`flex items-center justify-center gap-2 mx-auto cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              hasOpened
+                ? "opacity-100 translate-y-0 scale-100"
+                : "opacity-0 -translate-y-5 scale-90"
+            }`}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 blur-md bg-white/20 rounded-full scale-125" />
+              <AppIcon name="apple" size={24} className="text-white relative z-10" />
+            </div>
+            <span className="text-2xl sm:text-3xl font-semibold tracking-tight apple-wordmark-shimmer">
               Creator Studio
             </span>
           </div>
@@ -124,7 +142,9 @@ export default function HeroSection() {
           {/* Right Floating Play/Pause Button */}
           <button
             onClick={() => setIsPaused(!isPaused)}
-            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1d1d1f] hover:bg-[#2d2d30] border border-white/10 text-white/80 hover:text-white flex items-center justify-center transition-all duration-200 active:scale-95 shadow-lg"
+            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1d1d1f] hover:bg-[#2d2d30] border border-white/10 text-white/80 hover:text-white flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95 shadow-lg ${
+              hasOpened ? "opacity-100 scale-100" : "opacity-0 scale-75"
+            }`}
             aria-label={isPaused ? "Play hero swiper" : "Pause hero swiper"}
           >
             {isPaused ? (
@@ -140,12 +160,18 @@ export default function HeroSection() {
           </button>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-semibold tracking-tight text-white mb-8 sm:mb-12 leading-[1.06]">
+        {/* Main Headline with Opening Staggered Reveal and Soft Blur */}
+        <h1
+          className={`text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-semibold tracking-tight text-white mb-8 sm:mb-12 leading-[1.06] transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            hasOpened
+              ? "opacity-100 translate-y-0 filter-none"
+              : "opacity-0 translate-y-8 blur-sm"
+          }`}
+        >
           All yours for the making.
         </h1>
 
-        {/* Official Apple Curved App Icons Swiper / Carousel */}
+        {/* Official Apple Curved App Icons Swiper / Carousel with Opening Fan-Out Animation */}
         <div
           ref={trackRef}
           onTouchStart={handleTouchStart}
@@ -155,7 +181,9 @@ export default function HeroSection() {
           onMouseMove={handleTouchMove}
           onMouseUp={handleTouchEnd}
           onMouseLeave={handleTouchEnd}
-          className="relative w-full max-w-[1100px] h-[210px] sm:h-[240px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-2 sm:my-4"
+          className={`relative w-full max-w-[1100px] h-[210px] sm:h-[240px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-2 sm:my-4 transition-opacity duration-1000 delay-300 ${
+            hasOpened ? "opacity-100" : "opacity-0"
+          }`}
         >
           {/* Subtle side vignettes to merge seamlessly into black background */}
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-black via-black/85 to-transparent z-30 pointer-events-none" />
@@ -177,30 +205,36 @@ export default function HeroSection() {
 
               // Spacing per icon slot
               const baseSpacing = 145; // desktop pixel spacing
-              const translateX = offset * baseSpacing + dragOffset;
+              const targetTranslateX = offset * baseSpacing + dragOffset;
+              
+              // On initial opening, elements fan out smoothly from center
+              const translateX = hasOpened ? targetTranslateX : 0;
 
               // Dynamic scale and opacity matching Apple's depth curve
-              const scale = isCenter ? 1.08 : Math.max(0.78, 1 - Math.abs(offset) * 0.12);
-              const opacity = isCenter
-                ? 1
-                : Math.abs(offset) === 1
-                ? 0.75
-                : Math.abs(offset) === 2
-                ? 0.35
-                : 0.15;
+              const targetScale = isCenter ? 1.08 : Math.max(0.78, 1 - Math.abs(offset) * 0.12);
+              const scale = hasOpened ? targetScale : 0.6;
+              const opacity = hasOpened
+                ? isCenter
+                  ? 1
+                  : Math.abs(offset) === 1
+                  ? 0.75
+                  : Math.abs(offset) === 2
+                  ? 0.35
+                  : 0.15
+                : 0;
 
               return (
                 <div
                   key={app.id}
                   onClick={() => goToSlide(idx)}
-                  className="absolute flex flex-col items-center justify-center transition-all duration-700 ease-out cursor-pointer"
+                  className="absolute flex flex-col items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer"
                   style={{
                     transform: `translateX(${translateX}px) scale(${scale})`,
                     opacity: opacity,
                     zIndex: isCenter ? 20 : 10 - Math.abs(offset),
                   }}
                 >
-                  {/* The Squircle Icon */}
+                  {/* The Squircle Icon with Neon Edge Glow */}
                   <div className="transition-transform duration-300 hover:scale-105 active:scale-95">
                     <AppIcon
                       name={app.icon}
@@ -213,16 +247,24 @@ export default function HeroSection() {
             })}
           </div>
 
-          {/* Active App Text Label - Placed directly below the center icon */}
-          <div className="absolute bottom-1 z-40 flex items-center justify-center pointer-events-none">
+          {/* Active App Text Label - Centered directly below the middle icon */}
+          <div
+            className={`absolute bottom-1 z-40 flex items-center justify-center pointer-events-none transition-all duration-700 delay-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+            }`}
+          >
             <span className="text-xs sm:text-[13px] font-normal tracking-wide text-white/90 capitalize transition-opacity duration-300">
               {appList[activeIndex].name}
             </span>
           </div>
         </div>
 
-        {/* Narrative Copy */}
-        <div className="max-w-[760px] mx-auto px-4 mt-6 sm:mt-8 mb-8 text-center">
+        {/* Narrative Copy with Opening Slide Up */}
+        <div
+          className={`max-w-[760px] mx-auto px-4 mt-6 sm:mt-8 mb-8 text-center transition-all duration-1000 delay-600 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
           <p className="text-base sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed font-normal">
             <strong className="text-white font-semibold">
               The apps you need for everything you want to create.
@@ -231,8 +273,12 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* "Try it free" White Pill Button */}
-        <div>
+        {/* "Try it free" White Pill Button with Opening Slide Up */}
+        <div
+          className={`transition-all duration-1000 delay-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            hasOpened ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
+          }`}
+        >
           <a
             href="https://apps.apple.com/in/app-bundle/id1868448255"
             className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-sm sm:text-base font-normal px-5 py-2 sm:px-6 sm:py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-md"
