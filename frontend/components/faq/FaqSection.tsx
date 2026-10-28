@@ -45,41 +45,49 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-black text-white border-t border-white/[0.08]">
-      <div className="max-w-[800px] mx-auto px-4">
-        <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white mb-12">
+    <section id="faq" className="py-20 sm:py-28 bg-black text-white border-t border-white/[0.08]">
+      <div className="max-w-[840px] mx-auto px-6 sm:px-8">
+        <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold tracking-tight text-white mb-10 sm:mb-14">
           Questions? Answers.
         </h2>
 
-        <div className="divide-y divide-white/10">
+        <div className="w-full">
           {faqData.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div key={idx} className="py-6 transition-colors">
+              <div key={idx} className="border-b border-[#333336]">
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full flex items-center justify-between text-left group"
+                  className="w-full py-5 sm:py-6 flex items-center justify-between text-left group cursor-pointer focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-lg sm:text-xl font-medium text-white group-hover:text-neutral-300 transition-colors pr-6">
+                  <span className="text-[17px] sm:text-[19px] font-semibold text-white tracking-tight pr-6 sm:pr-8 leading-snug group-hover:text-neutral-200 transition-colors">
                     {item.q}
                   </span>
-                  <span
-                    className={`shrink-0 w-8 h-8 rounded-full bg-white/[0.06] flex items-center justify-center text-white/80 transition-transform duration-300 ${
-                      isOpen ? "rotate-45 bg-white/20 text-white" : ""
+                  <svg
+                    className={`w-4 h-4 sm:w-[18px] sm:h-[18px] text-[#86868b] shrink-0 transition-transform duration-300 ease-out group-hover:text-white ${
+                      isOpen ? "rotate-180 text-white" : ""
                     }`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
-                    <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
-                    </svg>
-                  </span>
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
                 </button>
 
-                {isOpen && (
-                  <div className="mt-4 pr-10 text-sm sm:text-base text-[#86868b] leading-relaxed animate-fade-in">
-                    <p>{item.a}</p>
-                  </div>
-                )}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-out ${
+                    isOpen ? "max-h-[500px] opacity-100 pb-6" : "max-h-0 opacity-0 pb-0"
+                  }`}
+                >
+                  <p className="text-[15px] sm:text-[16px] text-[#86868b] leading-relaxed pr-6 sm:pr-12">
+                    {item.a}
+                  </p>
+                </div>
               </div>
             );
           })}
@@ -88,3 +96,4 @@ export default function FaqSection() {
     </section>
   );
 }
+
