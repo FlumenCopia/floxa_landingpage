@@ -79,7 +79,7 @@ export default function FinalCutProSection() {
         <div className="mb-14 sm:mb-16 max-w-2xl">
           {/* App Chiclet Icon */}
           <div className="mb-4">
-            <AppIcon name="final-cut" size={56} />
+            <AppIcon name="final-cut" size={40} />
           </div>
 
           {/* Eyebrow in vibrant purple */}

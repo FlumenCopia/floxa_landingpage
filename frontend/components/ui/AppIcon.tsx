@@ -51,20 +51,34 @@ export default function AppIcon({ name, size = 64, className = "" }: AppIconProp
       return (
         <div
           style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-br from-[#1f1a28] to-[#14121a] p-[10%] shadow-2xl ring-1 ring-white/15 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
+          className={`relative rounded-[22%] bg-gradient-to-b from-[#2a2830] to-[#141318] p-[10%] shadow-lg ring-1 ring-white/15 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#ff9f0a]/25 via-[#ff453a]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#ff9f0a]/30 via-transparent to-white/10" />
           <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
-            {/* Knob dial */}
-            <circle cx="50" cy="50" r="32" fill="#24212b" stroke="#ff9f0a" strokeWidth="4" />
-            <circle cx="50" cy="50" r="22" fill="#181520" />
-            <line x1="50" y1="26" x2="50" y2="38" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" />
-            {/* Frequency bars */}
-            <rect x="22" y="66" width="6" height="12" rx="3" fill="#30d158" />
-            <rect x="33" y="58" width="6" height="20" rx="3" fill="#ffd60a" />
-            <rect x="44" y="50" width="6" height="28" rx="3" fill="#ff9f0a" />
-            <rect x="55" y="54" width="6" height="24" rx="3" fill="#ff453a" />
-            <rect x="66" y="62" width="6" height="16" rx="3" fill="#bf5af2" />
+            {/* Outer Knurled Ring */}
+            <circle cx="50" cy="50" r="38" fill="#18171d" stroke="#3a3842" strokeWidth="2.5" />
+            {/* Metallic Dial Face */}
+            <circle cx="50" cy="50" r="30" fill="url(#logic-dial-grad)" stroke="#ff9f0a" strokeWidth="2" />
+            {/* Center Cap */}
+            <circle cx="50" cy="50" r="16" fill="#1e1c24" />
+            {/* Amber Indicator Notch */}
+            <line
+              x1="50"
+              y1="20"
+              x2="50"
+              y2="34"
+              stroke="#ff9f0a"
+              strokeWidth="4.5"
+              strokeLinecap="round"
+              className="drop-shadow-[0_0_4px_rgba(255,159,10,0.8)]"
+            />
+            <defs>
+              <linearGradient id="logic-dial-grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#484554" />
+                <stop offset="50%" stopColor="#2c2a35" />
+                <stop offset="100%" stopColor="#1a1920" />
+              </linearGradient>
+            </defs>
           </svg>
         </div>
       );
@@ -73,22 +87,33 @@ export default function AppIcon({ name, size = 64, className = "" }: AppIconProp
       return (
         <div
           style={{ width: size, height: size }}
-          className={`relative rounded-[22%] bg-gradient-to-br from-[#2a1728] to-[#181120] p-[10%] shadow-2xl ring-1 ring-white/15 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
+          className={`relative rounded-[22%] bg-gradient-to-b from-[#221c24] to-[#120e14] p-[12%] shadow-lg ring-1 ring-white/15 flex items-center justify-center overflow-hidden transition-transform hover:scale-105 ${className}`}
         >
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#ff375f]/30 via-[#ffd60a]/20 to-[#30d158]/20" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#ff375f]/30 via-transparent to-white/10" />
+          {/* Official Pixelmator Pro stacked gradient diamond layers */}
           <svg viewBox="0 0 100 100" className="w-full h-full relative z-10" fill="none">
-            {/* Artist palette with radiant colors */}
+            {/* Bottom layer */}
             <path
-              d="M50 18 C30 18, 16 32, 16 52 C16 68, 28 80, 44 80 C50 80, 52 74, 52 70 C52 66, 54 62, 60 62 C74 62, 84 56, 84 42 C84 28, 68 18, 50 18 Z"
-              fill="#251a2a"
-              stroke="#ffffff"
-              strokeWidth="2.5"
+              d="M50 78 L20 60 L50 42 L80 60 Z"
+              fill="#7a142c"
+              stroke="#ff375f"
+              strokeWidth="2"
             />
-            <circle cx="34" cy="36" r="6" fill="#ff375f" />
-            <circle cx="52" cy="30" r="6" fill="#ff9f0a" />
-            <circle cx="68" cy="40" r="6" fill="#ffd60a" />
-            <circle cx="34" cy="54" r="6" fill="#30d158" />
-            <circle cx="70" cy="72" r="5" fill="#0a84ff" />
+            {/* Middle layer */}
+            <path
+              d="M50 64 L20 46 L50 28 L80 46 Z"
+              fill="#b81d3f"
+              stroke="#ff453a"
+              strokeWidth="2"
+            />
+            {/* Top layer */}
+            <path
+              d="M50 50 L20 32 L50 14 L80 32 Z"
+              fill="#ff375f"
+              stroke="#ff6987"
+              strokeWidth="2"
+              className="drop-shadow-[0_0_6px_rgba(255,55,95,0.7)]"
+            />
           </svg>
         </div>
       );

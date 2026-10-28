@@ -70,7 +70,7 @@ export default function LogicProSection() {
         {/* App Section Header */}
         <div className="mb-14 sm:mb-16 max-w-2xl">
           <div className="mb-4">
-            <AppIcon name="logic-pro" size={56} />
+            <AppIcon name="logic-pro" size={40} />
           </div>
 
           <div className="text-lg sm:text-xl font-semibold text-[#ff9f0a] tracking-tight mb-2">
