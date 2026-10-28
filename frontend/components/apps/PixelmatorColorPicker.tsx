@@ -96,40 +96,6 @@ export default function PixelmatorColorPicker() {
           {/* Outer circular shadow and subtle glass backing */}
           <div className="absolute inset-0 rounded-full bg-black/60 backdrop-blur-md shadow-2xl border border-white/10" />
 
-          {/* Left and Right concentric bracket arcs matching Apple screenshot */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
-            {/* Left bracket arc */}
-            <path
-              d="M 12,50 A 38,38 0 0,1 24,20"
-              fill="none"
-              stroke="rgba(255,255,255,0.4)"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-            />
-            <path
-              d="M 12,50 A 38,38 0 0,0 24,80"
-              fill="none"
-              stroke="rgba(255,255,255,0.4)"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-            />
-            {/* Right bracket arc */}
-            <path
-              d="M 88,50 A 38,38 0 0,0 76,20"
-              fill="none"
-              stroke="rgba(255,255,255,0.4)"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-            />
-            <path
-              d="M 88,50 A 38,38 0 0,1 76,80"
-              fill="none"
-              stroke="rgba(255,255,255,0.4)"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-            />
-          </svg>
-
           {/* Rainbow Spectrum Ring (conic gradient) */}
           <div
             className="absolute w-[75%] h-[75%] rounded-full shadow-inner"
