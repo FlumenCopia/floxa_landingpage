@@ -45,9 +45,9 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-black text-white border-t border-white/[0.08]">
-      <div className="max-w-[840px] mx-auto px-6 sm:px-8">
-        <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold tracking-tight text-white mb-10 sm:mb-14">
+    <section id="faq" className="py-24 sm:py-32 bg-black text-white border-t border-white/[0.08]">
+      <div className="max-w-[980px] mx-auto px-6 sm:px-8">
+        <h2 className="text-4xl sm:text-5xl md:text-[56px] lg:text-[64px] font-bold tracking-tight text-white mb-12 sm:mb-16">
           Questions? Answers.
         </h2>
 
@@ -58,14 +58,14 @@ export default function FaqSection() {
               <div key={idx} className="border-b border-[#333336]">
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full py-5 sm:py-6 flex items-center justify-between text-left group cursor-pointer focus:outline-none"
+                  className="w-full py-6 sm:py-8 flex items-center justify-between text-left group cursor-pointer focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-[17px] sm:text-[19px] font-semibold text-white tracking-tight pr-6 sm:pr-8 leading-snug group-hover:text-neutral-200 transition-colors">
+                  <span className="text-[19px] sm:text-[22px] md:text-[25px] font-semibold text-white tracking-tight pr-6 sm:pr-8 leading-snug group-hover:text-neutral-200 transition-colors">
                     {item.q}
                   </span>
                   <svg
-                    className={`w-4 h-4 sm:w-[18px] sm:h-[18px] text-[#86868b] shrink-0 transition-transform duration-300 ease-out group-hover:text-white ${
+                    className={`w-5 h-5 sm:w-6 sm:h-6 text-[#86868b] shrink-0 transition-transform duration-300 ease-out group-hover:text-white ${
                       isOpen ? "rotate-180 text-white" : ""
                     }`}
                     viewBox="0 0 24 24"
@@ -81,10 +81,10 @@ export default function FaqSection() {
 
                 <div
                   className={`overflow-hidden transition-all duration-300 ease-out ${
-                    isOpen ? "max-h-[500px] opacity-100 pb-6" : "max-h-0 opacity-0 pb-0"
+                    isOpen ? "max-h-[600px] opacity-100 pb-7" : "max-h-0 opacity-0 pb-0"
                   }`}
                 >
-                  <p className="text-[15px] sm:text-[16px] text-[#86868b] leading-relaxed pr-6 sm:pr-12">
+                  <p className="text-[16px] sm:text-[18px] md:text-[19px] text-[#a1a1a6] leading-relaxed pr-6 sm:pr-14">
                     {item.a}
                   </p>
                 </div>
