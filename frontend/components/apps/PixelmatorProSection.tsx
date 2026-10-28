@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import AppIcon from "../ui/AppIcon";
+import PixelmatorColorPicker from "./PixelmatorColorPicker";
 
 const pixelmatorCards = [
   {
@@ -45,7 +46,10 @@ export default function PixelmatorProSection() {
   return (
     <section id="pixelmator-pro" className="py-20 md:py-28 bg-black text-white relative select-none">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
-        {/* App Section Header */}
+        {/* 1. Dynamic Interactive Color Picker Hero matching user request */}
+        <PixelmatorColorPicker />
+
+        {/* 2. App Section Header */}
         <div className="mb-14 sm:mb-16 max-w-2xl">
           <div className="mb-4">
             <AppIcon name="pixelmator" size={56} />
@@ -73,7 +77,7 @@ export default function PixelmatorProSection() {
           </a>
         </div>
 
-        {/* Feature Cards Horizontal Scroll Slider */}
+        {/* 3. Feature Cards Horizontal Scroll Slider */}
         <div className="relative">
           <div
             ref={scrollContainerRef}

@@ -58,6 +58,23 @@ export default function FinalCutProSection() {
   return (
     <section id="final-cut-pro" className="py-20 md:py-28 bg-black text-white relative select-none">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
+        {/* Cinematic Hero Visual Banner */}
+        <div className="relative w-full max-w-[1180px] mx-auto mb-16 sm:mb-20 overflow-hidden flex items-center justify-center">
+          <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
+
+          <img
+            src="https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/hero_statics_endframe__d5km437k2zqu_xlarge.jpg"
+            srcSet="
+              https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/hero_statics_endframe__d5km437k2zqu_large.jpg 1068w,
+              https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/hero_statics_endframe__d5km437k2zqu_xlarge.jpg 1440w
+            "
+            sizes="(max-width: 1068px) 100vw, 1200px"
+            alt="Video timeline of a person in a silver outfit in front of a blue and magenta background, Final Cut Pro trim controls"
+            className="w-full h-auto max-h-[580px] object-contain select-none pointer-events-none filter drop-shadow-2xl"
+          />
+        </div>
+
         {/* App Section Header matching Screenshot 1 */}
         <div className="mb-14 sm:mb-16 max-w-2xl">
           {/* App Chiclet Icon */}

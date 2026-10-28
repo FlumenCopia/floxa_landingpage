@@ -50,6 +50,23 @@ export default function LogicProSection() {
   return (
     <section id="logic-pro" className="py-20 md:py-28 bg-black text-white relative select-none">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
+        {/* Cinematic Hero Visual Banner */}
+        <div className="relative w-full max-w-[1180px] mx-auto mb-16 sm:mb-20 overflow-hidden flex items-center justify-center">
+          <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
+
+          <img
+            src="https://www.apple.com/v/apple-creator-studio/a/images/overview/logic_pro/hero_endframe__chfdpsnstqeu_xlarge.jpg"
+            srcSet="
+              https://www.apple.com/v/apple-creator-studio/a/images/overview/logic_pro/hero_endframe__chfdpsnstqeu_large.jpg 1068w,
+              https://www.apple.com/v/apple-creator-studio/a/images/overview/logic_pro/hero_endframe__chfdpsnstqeu_xlarge.jpg 1440w
+            "
+            sizes="(max-width: 1068px) 100vw, 1200px"
+            alt="Logic Pro screen, interface for sequencing beats with turquoise, navy, and purple buttons"
+            className="w-full h-auto max-h-[580px] object-contain select-none pointer-events-none filter drop-shadow-2xl"
+          />
+        </div>
+
         {/* App Section Header */}
         <div className="mb-14 sm:mb-16 max-w-2xl">
           <div className="mb-4">
