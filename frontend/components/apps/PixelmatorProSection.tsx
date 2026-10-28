@@ -45,10 +45,12 @@ export default function PixelmatorProSection() {
 
   return (
     <section id="pixelmator-pro" className="py-20 md:py-28 bg-black text-white relative select-none">
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
-        {/* 1. Dynamic Interactive Color Picker Hero matching user request */}
+      {/* 1. Dynamic Interactive Color Picker Hero matching user request */}
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
         <PixelmatorColorPicker />
+      </div>
 
+      <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         {/* 2. App Section Header */}
         <div className="mb-14 sm:mb-16 max-w-2xl">
           <div className="mb-4">

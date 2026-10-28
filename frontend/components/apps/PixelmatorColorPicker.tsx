@@ -62,13 +62,13 @@ export default function PixelmatorColorPicker() {
   const pointerY = 50 + radiusPercent * Math.sin(rad);
 
   return (
-    <div className="relative w-full max-w-[1180px] mx-auto mb-16 sm:mb-20 overflow-hidden flex flex-col items-center justify-center select-none">
+    <div className="relative w-full mx-auto overflow-hidden flex flex-col items-center justify-center select-none">
       {/* Top and Bottom Vignettes for smooth blending into black */}
-      <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black to-transparent z-20 pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-20 sm:h-32 bg-gradient-to-b from-black to-transparent z-20 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-28 sm:h-40 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
 
       {/* Main Visual Stage */}
-      <div className="relative w-full h-[400px] sm:h-[520px] md:h-[580px] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[480px] sm:h-[620px] md:h-[720px] lg:h-[820px] xl:h-[900px] flex items-center justify-center overflow-hidden">
         {/* Background Flower Image with Dynamic Live Hue Rotation */}
         <img
           src="https://www.apple.com/v/apple-creator-studio/a/images/overview/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.jpg"
@@ -76,9 +76,9 @@ export default function PixelmatorColorPicker() {
             https://www.apple.com/v/apple-creator-studio/a/images/overview/pixelmator/hero_endframe__chfdpsnstqeu_large.jpg 1068w,
             https://www.apple.com/v/apple-creator-studio/a/images/overview/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.jpg 1440w
           "
-          sizes="(max-width: 1068px) 100vw, 1200px"
+          sizes="(max-width: 1068px) 100vw, 1500px"
           alt="Textured floral object dynamically changing colors in Pixelmator Pro"
-          className="absolute inset-0 w-full h-full object-contain filter transition-[filter] duration-75 pointer-events-none"
+          className="absolute inset-0 w-full h-full object-contain scale-110 sm:scale-120 md:scale-130 lg:scale-135 filter transition-[filter] duration-75 pointer-events-none"
           style={{
             filter: `hue-rotate(${hueRotation}deg) saturate(1.15)`,
           }}
@@ -90,7 +90,7 @@ export default function PixelmatorColorPicker() {
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
-          className="relative z-30 w-56 h-56 sm:w-68 sm:h-68 md:w-76 md:h-76 rounded-full cursor-grab active:cursor-grabbing flex items-center justify-center touch-none group"
+          className="relative z-30 w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[440px] md:h-[440px] lg:w-[490px] lg:h-[490px] rounded-full cursor-grab active:cursor-grabbing flex items-center justify-center touch-none group"
           title="Drag or click anywhere on the color wheel to change the background color"
         >
           {/* Outer circular shadow and subtle glass backing */}
@@ -144,15 +144,15 @@ export default function PixelmatorColorPicker() {
           {/* Center Dark Aperture with Crosshair */}
           <div className="relative w-[44%] h-[44%] rounded-full bg-[#161617]/95 border border-white/10 flex items-center justify-center shadow-inner">
             {/* Crosshair indicator */}
-            <div className="relative w-5 h-5 flex items-center justify-center text-white/50">
-              <div className="absolute w-full h-[1px] bg-white/40" />
-              <div className="absolute h-full w-[1px] bg-white/40" />
+            <div className="relative w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-white/50">
+              <div className="absolute w-full h-[1.5px] bg-white/40" />
+              <div className="absolute h-full w-[1.5px] bg-white/40" />
             </div>
           </div>
 
           {/* The Interactive White Color Pointer Dot */}
           <div
-            className="absolute w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,0.9),0_2px_6px_rgba(0,0,0,0.8)] border border-black/20 pointer-events-none transition-transform duration-75 group-hover:scale-110"
+            className="absolute w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,1),0_2px_8px_rgba(0,0,0,0.8)] border border-black/20 pointer-events-none transition-transform duration-75 group-hover:scale-110"
             style={{
               left: `${pointerX}%`,
               top: `${pointerY}%`,
