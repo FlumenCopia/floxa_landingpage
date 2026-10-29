@@ -8,28 +8,28 @@ const pixelmatorCards = [
   {
     title: "Speed up your workflow.",
     desc: "Intelligent features automate image edits like background removal, image repair, detail enhancement, colour adjustment and more.",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/pixelmator/workflow__dq3l5g6b3i2q_large.jpg",
+    image: "/images/pixelmator/workflow__dq3l5g6b3i2q_large.jpg",
   },
   {
     title: "Layering without limits.",
     desc: "Use simple building blocks — shape, text, video and image layers — to create virtually anything you can imagine. Add effects, adjust composition and experiment freely with non-destructive editing, knowing every change is reversible.",
-    image: "https://www.apple.com/in/apple-creator-studio/images/overview/pixelmator/editing__cbb1s547a8qa_large.jpg",
+    image: "/images/pixelmator/editing__cbb1s547a8qa_large.jpg",
   },
   {
     title: "Stunning templates and mock-ups.",
     desc: "Start working from professionally crafted templates and beautiful mock-ups for social media and print.",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/pixelmator/templates__dtsfh52oryye_large.jpg",
+    image: "/images/pixelmator/templates__dtsfh52oryye_large.jpg",
   },
   {
     title: "Typographic control.",
     desc: "Use any font and customise your text with everything from sophisticated styles to curved paths. Preview it live and save your favourite styles as presets.",
-    image: "https://www.apple.com/in/apple-creator-studio/images/overview/pixelmator/typography__brgultxp6xua_large.jpg",
+    image: "/images/pixelmator/typography__brgultxp6xua_large.jpg",
   },
   {
     title: "Fully optimised for touch on iPad.",
     desc: "Use natural gestures for fast, fluid onscreen interactions. And with Apple Pencil, you can edit with even more precision, so your creative work is smooth and intuitive.",
     footnote: "9",
-    image: "https://www.apple.com/in/apple-creator-studio/images/overview/pixelmator/ipad__bj8z0llszo1y_large.jpg",
+    image: "/images/pixelmator/ipad__bj8z0llszo1y_large.jpg",
   },
 ];
 

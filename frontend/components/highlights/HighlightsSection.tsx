@@ -20,8 +20,8 @@ const highlightItems: HighlightItem[] = [
     accentText: "",
     accentColor: "#ffffff",
     headline: "Endless creativity. Unlimited possibilities. One suite deal.",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/highlights/creative_apps__bzylnonwi81y_large.jpg",
-    image2x: "https://www.apple.com/v/apple-creator-studio/a/images/overview/highlights/creative_apps__bzylnonwi81y_large_2x.jpg",
+    image: "/images/highlights/creative_apps__bzylnonwi81y_large.jpg",
+    image2x: "/images/highlights/creative_apps__bzylnonwi81y_large_2x.jpg",
   },
   {
     id: "final-cut",
@@ -29,8 +29,8 @@ const highlightItems: HighlightItem[] = [
     accentText: "Final Cut Pro",
     accentColor: "#2997ff",
     headline: "gives you smarter, faster ways to craft and cut captivating videos.",
-    image: "https://www.apple.com/in/apple-creator-studio/images/overview/highlights/final_cut__fe9c0hwz9ca6_large.jpg",
-    image2x: "https://www.apple.com/in/apple-creator-studio/images/overview/highlights/final_cut__fe9c0hwz9ca6_large_2x.jpg",
+    image: "/images/highlights/final_cut__fe9c0hwz9ca6_large.jpg",
+    image2x: "/images/highlights/final_cut__fe9c0hwz9ca6_large_2x.jpg",
   },
   {
     id: "pixelmator",
@@ -38,8 +38,8 @@ const highlightItems: HighlightItem[] = [
     accentText: "Pixelmator Pro",
     accentColor: "#ff375f",
     headline: "lets everyone edit images and create striking graphics using powerful intelligence.",
-    image: "https://www.apple.com/in/apple-creator-studio/images/overview/highlights/pixelmator__ec2adx2gleky_large.jpg",
-    image2x: "https://www.apple.com/in/apple-creator-studio/images/overview/highlights/pixelmator__ec2adx2gleky_large_2x.jpg",
+    image: "/images/highlights/pixelmator__ec2adx2gleky_large.jpg",
+    image2x: "/images/highlights/pixelmator__ec2adx2gleky_large_2x.jpg",
   },
   {
     id: "logic-pro",
@@ -47,8 +47,8 @@ const highlightItems: HighlightItem[] = [
     accentText: "Logic Pro",
     accentColor: "#ff9f0a",
     headline: "helps you produce music and perfect audio — bringing brilliance to every beat.",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/highlights/logic_pro__djsdokna5umq_large.jpg",
-    image2x: "https://www.apple.com/v/apple-creator-studio/a/images/overview/highlights/logic_pro__djsdokna5umq_large_2x.jpg",
+    image: "/images/highlights/logic_pro__djsdokna5umq_large.jpg",
+    image2x: "/images/highlights/logic_pro__djsdokna5umq_large_2x.jpg",
   },
   {
     id: "productivity",
@@ -56,8 +56,8 @@ const highlightItems: HighlightItem[] = [
     accentText: "",
     accentColor: "#30d158",
     headline: "Intelligent features and premium content amp up productivity in Keynote, Pages, Numbers and Freeform.",
-    image: "https://www.apple.com/in/apple-creator-studio/images/overview/highlights/apps__caiq4numczxy_large.jpg",
-    image2x: "https://www.apple.com/in/apple-creator-studio/images/overview/highlights/apps__caiq4numczxy_large_2x.jpg",
+    image: "/images/highlights/apps__caiq4numczxy_large.jpg",
+    image2x: "/images/highlights/apps__caiq4numczxy_large_2x.jpg",
   },
 ];
 

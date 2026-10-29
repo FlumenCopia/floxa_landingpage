@@ -8,39 +8,39 @@ const fcpCards = [
     title: "Start-to-finish performance.",
     desc: "Shoot pro-level footage with complete control in Final Cut Camera on iPhone. Then edit on iPad or Mac with powerful and approachable tools and effects, fine-tune the audio and share your finished story — all in one seamless flow.",
     footnote: "5",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/performance__bl64dj5mbevm_large.jpg",
+    image: "/images/final_cut/performance__bl64dj5mbevm_large.jpg",
     imageWide: true,
   },
   {
     title: "Instantly find the moment you’re looking for.",
     desc: "Track down a shot without scrubbing through footage using Visual Search and locate the perfect sound bite with only a few keywords using Transcript Search.",
     footnote: "6, 7",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/instant__e39ichvbco02_large.jpg",
+    image: "/images/final_cut/instant__e39ichvbco02_large.jpg",
     imageWide: true,
   },
   {
     title: "Video editing with speed and flexibility.",
     desc: "The Magnetic Timeline lets you move and trim freely while maintaining synchronisation so you can explore endless creative possibilities. Connected Clips and storylines hold your edit together. Multicam helps you cut the perfect interview. And Auditions let you find the best take.",
-    image: "https://www.apple.com/in/apple-creator-studio/images/overview/final_cut/devices__frevx0bf0eqa_large.jpg",
+    image: "/images/final_cut/devices__frevx0bf0eqa_large.jpg",
     imageWide: true,
   },
   {
     title: "Perfect timing, every time.",
     desc: "Beat Detection matches your music’s rhythm so you can align clips effortlessly and keep your edits in sync with the beat.",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/edit__cw1sr34faok2_large.jpg",
+    image: "/images/final_cut/edit__cw1sr34faok2_large.jpg",
     imageWide: true,
   },
   {
     title: "Beautiful, customisable graphics.",
     desc: "Add professionally designed motion graphics to your project with Motion in Apple Creator Studio, or select graphics from third-party providers like MotionVFX, FxFactory and more.",
     footnote: "8",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/graphics__ggu9cihv99u2_large.jpg",
+    image: "/images/final_cut/graphics__ggu9cihv99u2_large.jpg",
     imageWide: true,
   },
   {
     title: "Fast delivery.",
     desc: "Quickly batch export files that are optimised for any size — from your iPhone screen to the big screen. You can even use Compressor to customise export settings using a variety of pro formats.",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/delivery__f66kogmgc3yy_large.jpg",
+    image: "/images/final_cut/delivery__f66kogmgc3yy_large.jpg",
     imageWide: false,
   },
 ];
@@ -65,10 +65,10 @@ export default function FinalCutProSection() {
           <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
 
           <img
-            src="https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/hero_statics_endframe__d5km437k2zqu_xlarge.jpg"
+            src="/images/final_cut/hero_statics_endframe__d5km437k2zqu_xlarge.jpg"
             srcSet="
-              https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/hero_statics_endframe__d5km437k2zqu_large.jpg 1068w,
-              https://www.apple.com/v/apple-creator-studio/a/images/overview/final_cut/hero_statics_endframe__d5km437k2zqu_xlarge.jpg 1440w
+              /images/final_cut/hero_statics_endframe__d5km437k2zqu_large.jpg 1068w,
+              /images/final_cut/hero_statics_endframe__d5km437k2zqu_xlarge.jpg 1440w
             "
             sizes="(max-width: 1068px) 100vw, 1200px"
             alt="Video timeline of a person in a silver outfit in front of a blue and magenta background, Final Cut Pro trim controls"

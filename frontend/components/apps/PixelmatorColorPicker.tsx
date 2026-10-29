@@ -70,10 +70,10 @@ export default function PixelmatorColorPicker() {
       <div className="relative w-full h-[480px] sm:h-[620px] md:h-[720px] lg:h-[820px] xl:h-[900px] flex items-center justify-center overflow-hidden">
         {/* Background Flower Image with Dynamic Live Hue Rotation */}
         <img
-          src="https://www.apple.com/v/apple-creator-studio/a/images/overview/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.jpg"
+          src="/images/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.jpg"
           srcSet="
-            https://www.apple.com/v/apple-creator-studio/a/images/overview/pixelmator/hero_endframe__chfdpsnstqeu_large.jpg 1068w,
-            https://www.apple.com/v/apple-creator-studio/a/images/overview/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.jpg 1440w
+            /images/pixelmator/hero_endframe__chfdpsnstqeu_large.jpg 1068w,
+            /images/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.jpg 1440w
           "
           sizes="(max-width: 1068px) 100vw, 1500px"
           alt="Textured floral object dynamically changing colors in Pixelmator Pro"

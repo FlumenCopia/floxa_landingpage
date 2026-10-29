@@ -54,7 +54,7 @@ export default function VideoModal({ isOpen, onClose, title = "Apple Creator Stu
           <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/30 via-blue-900/20 to-red-900/30 animate-pulse" />
           
           <img
-            src="https://www.apple.com/v/apple-creator-studio/a/images/overview/meta/apple_creator_studio__8fowap956lem_og.png?202607030118"
+            src="/images/meta/apple_creator_studio__8fowap956lem_og.png"
             alt="Apple Creator Studio Film Preview"
             className="w-full h-full object-cover opacity-80"
           />

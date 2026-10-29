@@ -8,32 +8,32 @@ const productivityCards = [
     title: "Quickly put together presenter notes.",
     desc: "Generate notes for any slide using insights from your entire presentation. They’re added to your existing notes and can be easily fine-tuned with Writing Tools.",
     appAvailability: "Available in Keynote, Pages, Numbers and Freeform",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/productivity/slides__fqpujht4t4mm_large.jpg",
+    image: "/images/productivity/slides__fqpujht4t4mm_large.jpg",
   },
   {
     title: "Advanced image creation and editing.",
     desc: "Make and remix images, illustrations and graphic elements right in your documents. Super Resolution lets you upscale images while preserving details and Auto Crop gives you suggestions for the best look.",
     footnote: "1",
     appAvailability: "Available in Keynote, Pages, Numbers and Freeform",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/productivity/imagery__fomaia2g1yye_large.jpg",
+    image: "/images/productivity/imagery__fomaia2g1yye_large.jpg",
   },
   {
     title: "Get a head start with beautiful templates and themes.",
     desc: "All you need to create everything from event posters to storyboard decks, with multiple layouts and full customisation.",
     appAvailability: "Available in Keynote, Pages and Numbers",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/productivity/templates__dtsfh52oryye_large.jpg",
+    image: "/images/productivity/templates__dtsfh52oryye_large.jpg",
   },
   {
     title: "Clean up your slides.",
     desc: "Refine and deliver presentation-ready designs with ease. Keynote can automatically correct layout, typography and alignment issues with a single tap or click.",
     appAvailability: "Available in Keynote in beta",
-    image: "https://www.apple.com/in/apple-creator-studio/images/overview/productivity/clean_up__bqwo4cyihtea_large.jpg",
+    image: "/images/productivity/clean_up__bqwo4cyihtea_large.jpg",
   },
   {
     title: "Complete your sheet with Magic Fill.",
     desc: "Get suggested contents or generate formulas for empty cells based on recognised patterns in nearby data.",
     appAvailability: "Available in Numbers",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/productivity/magic_fill__eipdlug12o02_large.jpg",
+    image: "/images/productivity/magic_fill__eipdlug12o02_large.jpg",
   },
 ];
 
@@ -53,10 +53,10 @@ export default function ProductivitySection() {
         {/* Cinematic Hero Visual Banner */}
         <div className="relative w-full max-w-[1268px] mx-auto mb-16 sm:mb-20 flex items-center justify-center">
           <img
-            src="https://www.apple.com/in/apple-creator-studio/images/overview/productivity/hero__d78ra8ka1sa6_large.jpg"
+            src="/images/productivity/hero__d78ra8ka1sa6_large.jpg"
             srcSet="
-              https://www.apple.com/in/apple-creator-studio/images/overview/productivity/hero__d78ra8ka1sa6_medium_2x.jpg 1068w,
-              https://www.apple.com/in/apple-creator-studio/images/overview/productivity/hero__d78ra8ka1sa6_large_2x.jpg 1440w
+              /images/productivity/hero__d78ra8ka1sa6_medium_2x.jpg 1068w,
+              /images/productivity/hero__d78ra8ka1sa6_large_2x.jpg 1440w
             "
             sizes="(max-width: 1068px) 100vw, 1268px"
             alt="iPad Pro 13, iPhone 16, and MacBook Pro showcasing Keynote, Pages, Numbers, and Freeform"

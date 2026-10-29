@@ -8,32 +8,32 @@ const logicCards = [
     title: "Music production with AI Session Players.",
     desc: "Produce with a full band of musicians that can lay down polished synth, bass, keyboard and drums that adapt in real time to your musical style.",
     footnote: "11",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/logic_pro/riff__b0nup5be041y_large.jpg",
+    image: "/images/logic_pro/riff__b0nup5be041y_large.jpg",
   },
   {
     title: "From idea to final master, fast.",
     desc: "Supercharge your workflow with intelligent tools, like Stem Splitter and Mastering Assistant, to help you fine-tune your creative process so you can produce, refine and finish in no time.",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/logic_pro/automate__dc7dllcycve6_large.jpg",
+    image: "/images/logic_pro/automate__dc7dllcycve6_large.jpg",
   },
   {
     title: "Record drafts on the go.",
     desc: "Voice Memos lets you record anywhere using your iPhone, iPad, Mac or Apple Watch. Then bring your recording straight into Logic Pro to take your music to the next level.",
-    image: "https://www.apple.com/in/apple-creator-studio/images/overview/logic_pro/voice_memos__qlpfg2k6e9m6_large.jpg",
+    image: "/images/logic_pro/voice_memos__qlpfg2k6e9m6_large.jpg",
   },
   {
     title: "Beat-making tools.",
     desc: "Build custom drum kits with any samples or instruments, then easily reshape melodies and rhythms with Step Sequencer and craft the perfect beat.",
-    image: "https://www.apple.com/in/apple-creator-studio/images/overview/logic_pro/beat_making__mpza109xwp2m_large.jpg",
+    image: "/images/logic_pro/beat_making__mpza109xwp2m_large.jpg",
   },
   {
     title: "Massive Sound Library.",
     desc: "From loops to samples to patches, get thousands of royalty-free sounds in an ever-growing collection, so you can build tracks without boundaries.",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/logic_pro/library__blk2gs8ihb6q_large.jpg",
+    image: "/images/logic_pro/library__blk2gs8ihb6q_large.jpg",
   },
   {
     title: "Instruments and effects.",
     desc: "Dial up authentic vintage keyboards or powerful modern synths to give your tracks a distinctive vibe. And explore a complete suite of effect plug-ins for detailed sound shaping and mixing.",
-    image: "https://www.apple.com/v/apple-creator-studio/a/images/overview/logic_pro/effects__f26m02zok0ey_large.jpg",
+    image: "/images/logic_pro/effects__f26m02zok0ey_large.jpg",
   },
 ];
 
@@ -57,10 +57,10 @@ export default function LogicProSection() {
           <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
 
           <img
-            src="https://www.apple.com/v/apple-creator-studio/a/images/overview/logic_pro/hero_endframe__chfdpsnstqeu_xlarge.jpg"
+            src="/images/logic_pro/hero_endframe__chfdpsnstqeu_xlarge.jpg"
             srcSet="
-              https://www.apple.com/v/apple-creator-studio/a/images/overview/logic_pro/hero_endframe__chfdpsnstqeu_large.jpg 1068w,
-              https://www.apple.com/v/apple-creator-studio/a/images/overview/logic_pro/hero_endframe__chfdpsnstqeu_xlarge.jpg 1440w
+              /images/logic_pro/hero_endframe__chfdpsnstqeu_large.jpg 1068w,
+              /images/logic_pro/hero_endframe__chfdpsnstqeu_xlarge.jpg 1440w
             "
             sizes="(max-width: 1068px) 100vw, 1200px"
             alt="Logic Pro screen, interface for sequencing beats with turquoise, navy, and purple buttons"
