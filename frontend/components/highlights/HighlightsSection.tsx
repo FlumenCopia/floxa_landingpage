@@ -20,7 +20,7 @@ const highlightItems: HighlightItem[] = [
     accentText: "",
     accentColor: "#ffffff",
     headline: "Endless creativity. Unlimited possibilities. One suite deal.",
-    image: "/images/highlights/creative_apps__bzylnonwi81y_large.jpg",
+    image: "/images/highlights/creative_apps__bzylnonwi81y_large_2x.jpg",
     image2x: "/images/highlights/creative_apps__bzylnonwi81y_large_2x.jpg",
   },
   {
@@ -29,7 +29,7 @@ const highlightItems: HighlightItem[] = [
     accentText: "Final Cut Pro",
     accentColor: "#2997ff",
     headline: "gives you smarter, faster ways to craft and cut captivating videos.",
-    image: "/images/highlights/final_cut__fe9c0hwz9ca6_large.jpg",
+    image: "/images/highlights/final_cut__fe9c0hwz9ca6_large_2x.png",
     image2x: "/images/highlights/final_cut__fe9c0hwz9ca6_large_2x.png",
   },
   {
@@ -38,7 +38,7 @@ const highlightItems: HighlightItem[] = [
     accentText: "Pixelmator Pro",
     accentColor: "#ff375f",
     headline: "lets everyone edit images and create striking graphics using powerful intelligence.",
-    image: "/images/highlights/pixelmator__ec2adx2gleky_large.jpg",
+    image: "/images/highlights/pixelmator__ec2adx2gleky_large_2x.png",
     image2x: "/images/highlights/pixelmator__ec2adx2gleky_large_2x.png",
   },
   {
@@ -47,7 +47,7 @@ const highlightItems: HighlightItem[] = [
     accentText: "Logic Pro",
     accentColor: "#ff9f0a",
     headline: "helps you produce music and perfect audio — bringing brilliance to every beat.",
-    image: "/images/highlights/logic_pro__djsdokna5umq_large.jpg",
+    image: "/images/highlights/logic_pro__djsdokna5umq_large_2x.png",
     image2x: "/images/highlights/logic_pro__djsdokna5umq_large_2x.png",
   },
   {
@@ -56,7 +56,7 @@ const highlightItems: HighlightItem[] = [
     accentText: "",
     accentColor: "#30d158",
     headline: "Intelligent features and premium content amp up productivity in Keynote, Pages, Numbers and Freeform.",
-    image: "/images/highlights/apps__caiq4numczxy_large.jpg",
+    image: "/images/highlights/apps__caiq4numczxy_large_2x.png",
     image2x: "/images/highlights/apps__caiq4numczxy_large_2x.png",
   },
 ];
@@ -125,13 +125,13 @@ export default function HighlightsSection() {
                   style={{
                     width: "min(82vw, 980px)",
                   }}
-                  className={`shrink-0 mr-6 rounded-[28px] sm:rounded-[36px] bg-[#161617] border border-white/[0.08] overflow-hidden transition-all duration-700 flex flex-col justify-between shadow-2xl h-[520px] sm:h-[600px] md:h-[640px] relative ${isActive
+                  className={`shrink-0 mr-6 rounded-[28px] sm:rounded-[36px] bg-[#161617] border border-white/[0.08] overflow-hidden transition-all duration-700 flex flex-col justify-between shadow-2xl h-[560px] sm:h-[640px] md:h-[700px] relative ${isActive
                     ? "opacity-100 scale-100 z-20 cursor-default"
                     : "opacity-40 hover:opacity-60 scale-[0.96] z-10 cursor-pointer"
                     }`}
                 >
                   {/* Card Caption / Heading */}
-                  <div className="p-7 sm:p-11 md:p-12 z-20 max-w-xl">
+                  <div className="p-6 sm:p-8 md:p-10 pb-2 sm:pb-3 md:pb-4 z-20 max-w-2xl">
                     <p className="text-xl sm:text-2xl md:text-[32px] font-semibold leading-snug text-white tracking-tight">
                       {item.id === "creative-apps" ? (
                         <>
@@ -157,13 +157,13 @@ export default function HighlightsSection() {
                     </p>
                   </div>
 
-                  {/* Device / Artwork Area */}
-                  <div className="relative w-full flex-1 flex items-end justify-center px-4 pb-2 sm:pb-6 overflow-hidden">
+                  {/* Device / Artwork Area - Full image visible without clipping */}
+                  <div className="relative w-full flex-1 min-h-0 flex items-center justify-center px-4 sm:px-8 pb-4 sm:pb-8 pt-2 overflow-hidden">
                     <img
                       src={item.image}
                       srcSet={item.image2x ? `${item.image} 1x, ${item.image2x} 2x` : undefined}
                       alt={item.tabTitle}
-                      className="max-h-[340px] sm:max-h-[430px] md:max-h-[460px] w-auto max-w-full object-contain object-bottom filter drop-shadow-2xl select-none pointer-events-none transition-transform duration-700 ease-out"
+                      className="w-full h-full max-h-full max-w-full object-contain filter drop-shadow-2xl select-none pointer-events-none transition-transform duration-700 ease-out"
                     />
                   </div>
                 </div>
