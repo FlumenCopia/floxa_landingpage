@@ -30,7 +30,7 @@ const highlightItems: HighlightItem[] = [
     accentColor: "#2997ff",
     headline: "gives you smarter, faster ways to craft and cut captivating videos.",
     image: "/images/highlights/final_cut__fe9c0hwz9ca6_large.jpg",
-    image2x: "/images/highlights/final_cut__fe9c0hwz9ca6_large_2x.jpg",
+    image2x: "/images/highlights/final_cut__fe9c0hwz9ca6_large_2x.png",
   },
   {
     id: "pixelmator",
@@ -39,7 +39,7 @@ const highlightItems: HighlightItem[] = [
     accentColor: "#ff375f",
     headline: "lets everyone edit images and create striking graphics using powerful intelligence.",
     image: "/images/highlights/pixelmator__ec2adx2gleky_large.jpg",
-    image2x: "/images/highlights/pixelmator__ec2adx2gleky_large_2x.jpg",
+    image2x: "/images/highlights/pixelmator__ec2adx2gleky_large_2x.png",
   },
   {
     id: "logic-pro",
@@ -48,7 +48,7 @@ const highlightItems: HighlightItem[] = [
     accentColor: "#ff9f0a",
     headline: "helps you produce music and perfect audio — bringing brilliance to every beat.",
     image: "/images/highlights/logic_pro__djsdokna5umq_large.jpg",
-    image2x: "/images/highlights/logic_pro__djsdokna5umq_large_2x.jpg",
+    image2x: "/images/highlights/logic_pro__djsdokna5umq_large_2x.png",
   },
   {
     id: "productivity",
@@ -57,7 +57,7 @@ const highlightItems: HighlightItem[] = [
     accentColor: "#30d158",
     headline: "Intelligent features and premium content amp up productivity in Keynote, Pages, Numbers and Freeform.",
     image: "/images/highlights/apps__caiq4numczxy_large.jpg",
-    image2x: "/images/highlights/apps__caiq4numczxy_large_2x.jpg",
+    image2x: "/images/highlights/apps__caiq4numczxy_large_2x.png",
   },
 ];
 
@@ -126,8 +126,8 @@ export default function HighlightsSection() {
                     width: "min(82vw, 980px)",
                   }}
                   className={`shrink-0 mr-6 rounded-[28px] sm:rounded-[36px] bg-[#161617] border border-white/[0.08] overflow-hidden transition-all duration-700 flex flex-col justify-between shadow-2xl h-[520px] sm:h-[600px] md:h-[640px] relative ${isActive
-                      ? "opacity-100 scale-100 z-20 cursor-default"
-                      : "opacity-40 hover:opacity-60 scale-[0.96] z-10 cursor-pointer"
+                    ? "opacity-100 scale-100 z-20 cursor-default"
+                    : "opacity-40 hover:opacity-60 scale-[0.96] z-10 cursor-pointer"
                     }`}
                 >
                   {/* Card Caption / Heading */}
@@ -187,8 +187,8 @@ export default function HighlightsSection() {
                       setIsPlaying(false);
                     }}
                     className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${isActive
-                        ? "w-7 sm:w-8 bg-white"
-                        : "w-2 sm:w-2.5 bg-white/40 hover:bg-white/70"
+                      ? "w-7 sm:w-8 bg-white"
+                      : "w-2 sm:w-2.5 bg-white/40 hover:bg-white/70"
                       }`}
                     aria-label={`Slide ${idx + 1}: ${item.tabTitle}`}
                   />
