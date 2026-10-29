@@ -125,11 +125,10 @@ export default function HighlightsSection() {
                   style={{
                     width: "min(82vw, 980px)",
                   }}
-                  className={`shrink-0 mr-6 rounded-[28px] sm:rounded-[36px] bg-[#161617] border border-white/[0.08] overflow-hidden transition-all duration-700 flex flex-col justify-between shadow-2xl h-[520px] sm:h-[600px] md:h-[640px] relative ${
-                    isActive
+                  className={`shrink-0 mr-6 rounded-[28px] sm:rounded-[36px] bg-[#161617] border border-white/[0.08] overflow-hidden transition-all duration-700 flex flex-col justify-between shadow-2xl h-[520px] sm:h-[600px] md:h-[640px] relative ${isActive
                       ? "opacity-100 scale-100 z-20 cursor-default"
                       : "opacity-40 hover:opacity-60 scale-[0.96] z-10 cursor-pointer"
-                  }`}
+                    }`}
                 >
                   {/* Card Caption / Heading */}
                   <div className="p-7 sm:p-11 md:p-12 z-20 max-w-xl">
@@ -187,11 +186,10 @@ export default function HighlightsSection() {
                       setCurrentIndex(idx);
                       setIsPlaying(false);
                     }}
-                    className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${
-                      isActive
+                    className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${isActive
                         ? "w-7 sm:w-8 bg-white"
                         : "w-2 sm:w-2.5 bg-white/40 hover:bg-white/70"
-                    }`}
+                      }`}
                     aria-label={`Slide ${idx + 1}: ${item.tabTitle}`}
                   />
                 );
