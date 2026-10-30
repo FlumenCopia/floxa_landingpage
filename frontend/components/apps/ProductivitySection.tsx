@@ -75,7 +75,7 @@ export default function ProductivitySection() {
           </div>
           */}
 
-          <div className="text-lg sm:text-xl font-semibold tracking-tight mb-2">
+
             <span className="keynote-gradient">Keynote, </span>
             <span className="pages-gradient">Pages, </span>
             <span className="numbers-gradient">Numbers, </span>
