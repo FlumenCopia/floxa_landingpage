@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import VideoModal from "../ui/VideoModal";
 
 interface HighlightItem {
   id: string;
@@ -65,7 +64,6 @@ export default function HighlightsSection() {
   // Start on Pixelmator Pro (index 2) exactly matching user's screenshot
   const [currentIndex, setCurrentIndex] = useState(2);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   useEffect(() => {
     if (!isPlaying) return;
@@ -85,19 +83,7 @@ export default function HighlightsSection() {
             of creative apps.
           </h2>
 
-          {/* "Watch the film" Trigger */}
-          <button
-            onClick={() => setVideoModalOpen(true)}
-            className="inline-flex items-center gap-2 text-[#2997ff] hover:text-[#52aaff] text-base sm:text-lg font-normal transition-colors group self-start md:self-auto"
-          >
-            <span>Watch the film</span>
-            <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center transition-transform group-hover:scale-110">
-              <svg className="w-2.5 h-2.5 fill-current ml-0.5" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </span>
-          </button>
-        </div>
+                  </div>
       </div>
 
       {/* Peek Carousel / Slider Container with centered active card */}
@@ -219,12 +205,6 @@ export default function HighlightsSection() {
           </div>
         </div>
       </div>
-
-      <VideoModal
-        isOpen={videoModalOpen}
-        onClose={() => setVideoModalOpen(false)}
-        title="Floxa Launch Film"
-      />
     </section>
   );
 }

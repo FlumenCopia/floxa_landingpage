@@ -71,14 +71,6 @@ export default function PixelmatorProSection() {
           <p className="text-sm sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed mb-6 font-normal">
             Edit and design using intelligent tools that <strong className="text-white font-semibold">bring your vision to life.</strong> From social posts to billboards, Pixelmator&nbsp;Pro simplifies every step of your projects. Effortlessly customise vector designs or typography, then let powerful features help your imagination take shape.
           </p>
-
-          <a
-            href="https://www.apple.com/in/pixelmator-pro/"
-            className="inline-flex items-center gap-1.5 text-[#2997ff] hover:text-[#52aaff] text-sm sm:text-base font-normal group transition-colors"
-          >
-            <span>Learn more about Pixelmator&nbsp;Pro</span>
-            <span className="group-hover:translate-x-1 transition-transform">›</span>
-          </a>
         </div>
 
         {/* 3. Feature Cards Horizontal Scroll Slider */}
