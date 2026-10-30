@@ -8,7 +8,7 @@ const logicCards = [
     title: "Music production with AI Session Players.",
     desc: "Produce with a full band of musicians that can lay down polished synth, bass, keyboard and drums that adapt in real time to your musical style.",
     footnote: "11",
-    image: "/images/logic_pro/riff__b0nup5be041y_large.jpg",
+    image: "/images/logic_pro/riff__b0nup5be041y_large.png",
   },
   {
     title: "From idea to final master, fast.",
@@ -18,12 +18,12 @@ const logicCards = [
   {
     title: "Record drafts on the go.",
     desc: "Voice Memos lets you record anywhere using your iPhone, iPad, Mac or Apple Watch. Then bring your recording straight into Logic Pro to take your music to the next level.",
-    image: "/images/logic_pro/voice_memos__qlpfg2k6e9m6_large.jpg",
+    image: "/images/logic_pro/voice_memos__qlpfg2k6e9m6_large.png",
   },
   {
     title: "Beat-making tools.",
     desc: "Build custom drum kits with any samples or instruments, then easily reshape melodies and rhythms with Step Sequencer and craft the perfect beat.",
-    image: "/images/logic_pro/beat_making__mpza109xwp2m_large.jpg",
+    image: "/images/logic_pro/beat_making__mpza109xwp2m_large.png",
   },
   {
     title: "Massive Sound Library.",
@@ -33,7 +33,7 @@ const logicCards = [
   {
     title: "Instruments and effects.",
     desc: "Dial up authentic vintage keyboards or powerful modern synths to give your tracks a distinctive vibe. And explore a complete suite of effect plug-ins for detailed sound shaping and mixing.",
-    image: "/images/logic_pro/effects__f26m02zok0ey_large.jpg",
+    image: "/images/logic_pro/effects__f26m02zok0ey_large.png",
   },
 ];
 
