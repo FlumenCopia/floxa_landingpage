@@ -8,7 +8,7 @@ const productivityCards = [
     title: "Quickly put together presenter notes.",
     desc: "Generate notes for any slide using insights from your entire presentation. They’re added to your existing notes and can be easily fine-tuned with Writing Tools.",
     appAvailability: "Available in Keynote, Pages, Numbers and Freeform",
-    image: "/images/productivity/slides__fqpujht4t4mm_large.jpg",
+    image: "/images/productivity/slides__fqpujht4t4mm_large.png",
   },
   {
     title: "Advanced image creation and editing.",
@@ -27,13 +27,13 @@ const productivityCards = [
     title: "Clean up your slides.",
     desc: "Refine and deliver presentation-ready designs with ease. Keynote can automatically correct layout, typography and alignment issues with a single tap or click.",
     appAvailability: "Available in Keynote in beta",
-    image: "/images/productivity/clean_up__bqwo4cyihtea_large.jpg",
+    image: "/images/productivity/clean_up__bqwo4cyihtea_large.png",
   },
   {
     title: "Complete your sheet with Magic Fill.",
     desc: "Get suggested contents or generate formulas for empty cells based on recognised patterns in nearby data.",
     appAvailability: "Available in Numbers",
-    image: "/images/productivity/magic_fill__eipdlug12o02_large.jpg",
+    image: "/images/productivity/magic_fill__eipdlug12o02_large.png",
   },
 ];
 
@@ -55,8 +55,8 @@ export default function ProductivitySection() {
           <img
             src="/images/productivity/hero__d78ra8ka1sa6_large.jpg"
             srcSet="
-              /images/productivity/hero__d78ra8ka1sa6_medium_2x.jpg 1068w,
-              /images/productivity/hero__d78ra8ka1sa6_large_2x.jpg 1440w
+              /images/productivity/hero__d78ra8ka1sa6_medium_2x.png 1068w,
+              /images/productivity/hero__d78ra8ka1sa6_large_2x.png 1440w
             "
             sizes="(max-width: 1068px) 100vw, 1268px"
             alt="iPad Pro 13, iPhone 16, and MacBook Pro showcasing Keynote, Pages, Numbers, and Freeform"
