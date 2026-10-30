@@ -115,7 +115,7 @@ export default function HeroSection() {
   return (
     <section
       id="overview"
-      className="relative pt-12 pb-20 sm:pt-16 sm:pb-28 overflow-hidden bg-black text-center select-none"
+      className="relative pt-16 pb-20 sm:pt-20 sm:pb-28 overflow-hidden bg-black text-center select-none"
     >
       <div className="max-w-[1280px] mx-auto px-4 relative z-10 flex flex-col items-center">
         {/* Top Header Row with Animated Wordmark and Floating Pause Button */}
@@ -280,7 +280,7 @@ export default function HeroSection() {
           }`}
         >
           <a
-            href="https://apps.apple.com/in/app-bundle/id1868448255"
+            href="https://floxa.flumenx.in/"
             className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-sm sm:text-base font-normal px-5 py-2 sm:px-6 sm:py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-md"
           >
             <span>Try it free</span>

@@ -94,7 +94,7 @@ export default function PricingSection() {
               {/* Left-aligned White Pill Button matching screenshot */}
               <div className="mt-8 pt-2">
                 <a
-                  href="https://apps.apple.com/in/app-bundle/id1868448255"
+                  href="https://floxa.flumenx.in/"
                   className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-sm font-normal px-5 py-2 sm:px-6 sm:py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-sm"
                 >
                   Try it free
