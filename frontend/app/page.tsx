@@ -1,4 +1,3 @@
-import GlobalNav from "../components/navbar/GlobalNav";
 import LocalNav from "../components/navbar/LocalNav";
 import HeroSection from "../components/hero/HeroSection";
 import HighlightsSection from "../components/highlights/HighlightsSection";
@@ -13,10 +12,7 @@ import FooterSection from "../components/footer/FooterSection";
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-[#f5f5f7] flex flex-col font-sans selection:bg-[#0071e3]/30">
-      {/* 1. Apple Global Navigation Bar */}
-      <GlobalNav />
-
-      {/* 2. Apple Creator Studio Sticky Local Nav */}
+      {/* Sticky Local Nav */}
       <LocalNav />
 
       {/* Main Page Content */}
