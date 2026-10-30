@@ -8,7 +8,7 @@ const pixelmatorCards = [
   {
     title: "Speed up your workflow.",
     desc: "Intelligent features automate image edits like background removal, image repair, detail enhancement, colour adjustment and more.",
-    image: "/images/pixelmator/workflow__dq3l5g6b3i2q_large.png",
+    image: "/images/pixelmator/workflow__dq3l5g6b3i2q_large.jpg",
   },
   {
     title: "Layering without limits.",
