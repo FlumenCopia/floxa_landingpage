@@ -130,10 +130,6 @@ export default function HeroSection() {
                 : "opacity-0 -translate-y-5 scale-90"
             }`}
           >
-            <div className="relative">
-              <div className="absolute inset-0 blur-md bg-white/20 rounded-full scale-125" />
-              <AppIcon name="apple" size={24} className="text-white relative z-10" />
-            </div>
             <span className="text-2xl sm:text-3xl font-semibold tracking-tight apple-wordmark-shimmer">
               Floxa
             </span>

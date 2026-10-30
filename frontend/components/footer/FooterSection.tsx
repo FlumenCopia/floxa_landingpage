@@ -44,11 +44,7 @@ export default function FooterSection() {
 
         {/* Breadcrumb Path */}
         <nav aria-label="Breadcrumbs" className="flex items-center gap-2 mb-8 text-[12px] text-white/70">
-          <a href="https://www.apple.com/in/" className="hover:text-white transition-colors">
-            <AppIcon name="apple" size={14} />
-          </a>
-          <span>›</span>
-          <span className="text-white">Floxa</span>
+          <span className="text-white font-medium">Floxa</span>
         </nav>
 
         {/* 5-Column Directory */}
