@@ -27,7 +27,7 @@ export default function LocalNav() {
           href="#overview"
           className="text-base sm:text-lg font-semibold tracking-tight text-white hover:text-white/80 transition-colors flex items-center gap-2"
         >
-          <span>Apple Creator Studio</span>
+          <span>Floxa</span>
         </a>
 
         {/* Local Links & White Pill CTA */}

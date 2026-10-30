@@ -35,7 +35,7 @@ const pricingCards = [
     id: "new-devices",
     title: "New devices",
     trial: "3 months free",
-    description: "Try Apple Creator Studio with an iPad or Mac purchase.",
+    description: "Try Floxa with an iPad or Mac purchase.",
     footnote: "4",
     icon: (
       <svg className="w-7 h-7 text-white fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="1.8">

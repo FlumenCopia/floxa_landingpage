@@ -32,7 +32,7 @@ const fcpCards = [
   },
   {
     title: "Beautiful, customisable graphics.",
-    desc: "Add professionally designed motion graphics to your project with Motion in Apple Creator Studio, or select graphics from third-party providers like MotionVFX, FxFactory and more.",
+    desc: "Add professionally designed motion graphics to your project with Motion in Floxa, or select graphics from third-party providers like MotionVFX, FxFactory and more.",
     footnote: "8",
     image: "/images/final_cut/graphics__ggu9cihv99u2_large.png",
     imageWide: true,

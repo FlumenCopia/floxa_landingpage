@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import AppIcon from "../ui/AppIcon";
 
 const footnotes = [
-  "Some features of Apple Creator Studio require an Apple Intelligence–capable device. For a list of Apple Intelligence availability and technical requirements, see support.apple.com.",
+  "Some features of Floxa require an Apple Intelligence–capable device. For a list of Apple Intelligence availability and technical requirements, see support.apple.com.",
   "New subscribers only. Plan renews at ₹399/month or ₹3999/year based on plan selected. Plan automatically renews until cancelled. Terms apply.",
   "New subscribers only. Plan automatically renews at ₹199/month or ₹1999/year based on plan selected until cancelled. College students and educators only. Verification is required. Terms apply. Limited-time offer; offer may end at any time.",
   "New and qualified returning subscribers only. Plan renews at ₹399/month or ₹3999/year based on plan selected. Only one offer per Apple Account and only one offer per family if you’re part of a Family Sharing group.",
@@ -48,7 +48,7 @@ export default function FooterSection() {
             <AppIcon name="apple" size={14} />
           </a>
           <span>›</span>
-          <span className="text-white">Apple Creator Studio</span>
+          <span className="text-white">Floxa</span>
         </nav>
 
         {/* 5-Column Directory */}

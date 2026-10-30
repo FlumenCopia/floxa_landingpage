@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Apple Creator Studio - Apple (IN)",
+  title: "Floxa - Apple (IN)",
   description:
-    "With an Apple Creator Studio subscription, get intelligent tools in Final Cut Pro, Logic Pro, and Pixelmator Pro, plus premium productivity content.",
+    "With a Floxa subscription, get intelligent tools in Final Cut Pro, Logic Pro, and Pixelmator Pro, plus premium productivity content.",
   icons: {
     icon: "/favicon.ico",
   },

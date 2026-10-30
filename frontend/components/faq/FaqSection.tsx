@@ -4,12 +4,12 @@ import React, { useState } from "react";
 
 const faqData = [
   {
-    q: "How do I download Apple Creator Studio?",
-    a: "You can download all the apps included in Apple Creator Studio from the App Store. It comes with Final Cut Pro, Logic Pro and Pixelmator Pro as well as Motion, Compressor, MainStage and other tools. You also get premium content with powerful intelligence in Keynote, Pages, Numbers and Freeform.",
+    q: "How do I download Floxa?",
+    a: "You can download all the apps included in Floxa from the App Store. It comes with Final Cut Pro, Logic Pro and Pixelmator Pro as well as Motion, Compressor, MainStage and other tools. You also get premium content with powerful intelligence in Keynote, Pages, Numbers and Freeform.",
   },
   {
-    q: "Which apps are included in Apple Creator Studio?",
-    a: "Apple Creator Studio gives subscribers access to a suite of creative apps designed for video, music, and image editing and creation. You can make videos in Final Cut Pro, Motion and Compressor; produce music in Logic Pro and MainStage; and edit photos or graphics in Pixelmator Pro. And while Keynote, Pages, Numbers and Freeform remain free for everyone, an Apple Creator Studio subscription offers premium templates, a library of high-quality, royalty-free photos and graphics, and powerful intelligence features.",
+    q: "Which apps are included in Floxa?",
+    a: "Floxa gives subscribers access to a suite of creative apps designed for video, music, and image editing and creation. You can make videos in Final Cut Pro, Motion and Compressor; produce music in Logic Pro and MainStage; and edit photos or graphics in Pixelmator Pro. And while Keynote, Pages, Numbers and Freeform remain free for everyone, a Floxa subscription offers premium templates, a library of high-quality, royalty-free photos and graphics, and powerful intelligence features.",
   },
   {
     q: "Can I still use my existing versions of Final Cut Pro, Logic Pro, Pixelmator Pro, MainStage, Motion and Compressor?",
@@ -17,23 +17,23 @@ const faqData = [
   },
   {
     q: "Will I still be able to use Keynote, Pages, Numbers and Freeform for free?",
-    a: "Yes. You can continue using Keynote, Pages, Numbers and Freeform for free. And while these apps remain free for everyone, an Apple Creator Studio subscription offers premium templates, a library of high-quality, royalty-free photos and graphics, and powerful intelligence features.",
+    a: "Yes. You can continue using Keynote, Pages, Numbers and Freeform for free. And while these apps remain free for everyone, a Floxa subscription offers premium templates, a library of high-quality, royalty-free photos and graphics, and powerful intelligence features.",
   },
   {
     q: "What happens to projects and content I created if my subscription ends?",
-    a: "All the projects and content you create with an active subscription to Apple Creator Studio — including any images you generate or add from the Content Hub — remain licensed in the context of your original creation. Projects in Final Cut Pro, Logic Pro and Pixelmator Pro remain on all your devices, and you can copy or share them to any other device. To open or edit a project, you need to be an active subscriber. Keynote, Pages, Numbers and Freeform documents remain unchanged and can be edited; however, no new edits using paid features will be possible.",
+    a: "All the projects and content you create with an active subscription to Floxa — including any images you generate or add from the Content Hub — remain licensed in the context of your original creation. Projects in Final Cut Pro, Logic Pro and Pixelmator Pro remain on all your devices, and you can copy or share them to any other device. To open or edit a project, you need to be an active subscriber. Keynote, Pages, Numbers and Freeform documents remain unchanged and can be edited; however, no new edits using paid features will be possible.",
   },
   {
-    q: "Which hardware and OS version do I need to use Apple Creator Studio?",
-    a: "For the optimal experience, full functionality is available with macOS, iPadOS and iOS and later. Apple Creator Studio requires an Apple Account and internet connection to subscribe. Final Cut Pro requires a Mac with macOS 15.6 or later or an iPad with Apple M1 chip or later. Logic Pro requires macOS 15.6 or later, a Mac with Apple silicon, and an iPad with Apple A12 Bionic chip or later. Pixelmator Pro requires a Mac or an iPad with Apple M1 chip or later. Keynote, Pages and Numbers require macOS 15.6 or later, iPadOS 18 or later, iOS 18 or later.",
+    q: "Which hardware and OS version do I need to use Floxa?",
+    a: "For the optimal experience, full functionality is available with macOS, iPadOS and iOS and later. Floxa requires an Apple Account and internet connection to subscribe. Final Cut Pro requires a Mac with macOS 15.6 or later or an iPad with Apple M1 chip or later. Logic Pro requires macOS 15.6 or later, a Mac with Apple silicon, and an iPad with Apple A12 Bionic chip or later. Pixelmator Pro requires a Mac or an iPad with Apple M1 chip or later. Keynote, Pages and Numbers require macOS 15.6 or later, iPadOS 18 or later, iOS 18 or later.",
   },
   {
-    q: "Can I share Apple Creator Studio with my family?",
-    a: "Yes, a standard Apple Creator Studio subscription can be shared with up to five other family members using Family Sharing. Educator and student subscriptions are for individual use and cannot be shared through Family Sharing.",
+    q: "Can I share Floxa with my family?",
+    a: "Yes, a standard Floxa subscription can be shared with up to five other family members using Family Sharing. Educator and student subscriptions are for individual use and cannot be shared through Family Sharing.",
   },
   {
-    q: "What are the requirements for using the intelligence features in Apple Creator Studio?",
-    a: "Apple Creator Studio includes intelligence features that are exclusive to subscribers. For system requirements and usage limits for Apple Creator Studio intelligence features, see support.apple.com. For additional Apple Intelligence features that may be available, see support.apple.com for geographic and language availability and system requirements.",
+    q: "What are the requirements for using the intelligence features in Floxa?",
+    a: "Floxa includes intelligence features that are exclusive to subscribers. For system requirements and usage limits for Floxa intelligence features, see support.apple.com. For additional Apple Intelligence features that may be available, see support.apple.com for geographic and language availability and system requirements.",
   },
 ];
 

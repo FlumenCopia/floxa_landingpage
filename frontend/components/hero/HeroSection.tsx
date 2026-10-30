@@ -20,7 +20,7 @@ interface AppItem {
   anchor: string;
 }
 
-// Exactly matching Apple Creator Studio's app suite carousel order
+// Exactly matching Floxa's app suite carousel order
 const appList: AppItem[] = [
   { id: "freeform", name: "Freeform", icon: "freeform", anchor: "#visual-productivity" },
   { id: "keynote", name: "Keynote", icon: "keynote", anchor: "#visual-productivity" },
@@ -135,7 +135,7 @@ export default function HeroSection() {
               <AppIcon name="apple" size={24} className="text-white relative z-10" />
             </div>
             <span className="text-2xl sm:text-3xl font-semibold tracking-tight apple-wordmark-shimmer">
-              Creator Studio
+              Floxa
             </span>
           </div>
 

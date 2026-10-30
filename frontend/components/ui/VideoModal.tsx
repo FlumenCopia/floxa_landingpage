@@ -8,7 +8,7 @@ interface VideoModalProps {
   title?: string;
 }
 
-export default function VideoModal({ isOpen, onClose, title = "Apple Creator Studio — Launch Film" }: VideoModalProps) {
+export default function VideoModal({ isOpen, onClose, title = "Floxa — Launch Film" }: VideoModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -55,7 +55,7 @@ export default function VideoModal({ isOpen, onClose, title = "Apple Creator Stu
           
           <img
             src="/images/meta/apple_creator_studio__8fowap956lem_og.png"
-            alt="Apple Creator Studio Film Preview"
+            alt="Floxa Film Preview"
             className="w-full h-full object-cover opacity-80"
           />
 
@@ -65,7 +65,7 @@ export default function VideoModal({ isOpen, onClose, title = "Apple Creator Stu
                 <path d="M8 5v14l11-7z" />
               </svg>
             </div>
-            <h4 className="text-2xl font-semibold text-white">Apple Creator Studio</h4>
+            <h4 className="text-2xl font-semibold text-white">Floxa</h4>
             <p className="text-white/70 max-w-md text-sm">
               Watch how creators transform video, audio, and visual ideas with Final Cut Pro, Logic Pro, and Pixelmator Pro.
             </p>

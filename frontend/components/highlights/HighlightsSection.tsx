@@ -16,7 +16,7 @@ interface HighlightItem {
 const highlightItems: HighlightItem[] = [
   {
     id: "creative-apps",
-    tabTitle: "Apple Creator Studio",
+    tabTitle: "Floxa",
     accentText: "",
     accentColor: "#ffffff",
     headline: "Endless creativity. Unlimited possibilities. One suite deal.",
@@ -223,7 +223,7 @@ export default function HighlightsSection() {
       <VideoModal
         isOpen={videoModalOpen}
         onClose={() => setVideoModalOpen(false)}
-        title="Apple Creator Studio Launch Film"
+        title="Floxa Launch Film"
       />
     </section>
   );

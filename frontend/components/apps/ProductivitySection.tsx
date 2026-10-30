@@ -85,7 +85,7 @@ export default function ProductivitySection() {
             <strong className="text-white font-semibold">
               get more done in Keynote, Pages, Numbers and Freeform.<sup>1</sup>
             </strong>{" "}
-            As an Apple Creator Studio subscriber, you get access to a wide range of high-quality content and new AI capabilities to help with your projects.
+            As a Floxa subscriber, you get access to a wide range of high-quality content and new AI capabilities to help with your projects.
           </p>
         </div>
 
