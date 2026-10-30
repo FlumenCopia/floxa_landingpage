@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import AppIcon from "../ui/AppIcon";
 
 const logicCards = [
@@ -39,6 +39,23 @@ const logicCards = [
 
 export default function LogicProSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedImage]);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -111,15 +128,25 @@ export default function LogicProSection() {
                 className="w-[84vw] sm:w-[580px] md:w-[640px] shrink-0 flex flex-col group"
               >
                 {/* Big Rounded Media Tile Card */}
-                <div className="relative w-full h-[320px] sm:h-[400px] md:h-[420px] rounded-[24px] sm:rounded-[28px] bg-[#161617] border border-white/[0.08] overflow-hidden flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:border-white/15">
+                <div
+                  onClick={() => setSelectedImage({ src: card.image, title: card.title })}
+                  className="relative w-full h-[320px] sm:h-[400px] md:h-[440px] rounded-[24px] sm:rounded-[28px] bg-[#121316] border border-white/[0.08] overflow-hidden flex items-center justify-center p-3 sm:p-5 shadow-2xl transition-all duration-300 group-hover:border-white/25 cursor-pointer"
+                  title="Click to view full image"
+                >
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-full object-cover object-center filter drop-shadow-md select-none pointer-events-none transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                    className="w-full h-full object-contain object-center filter drop-shadow-2xl select-none pointer-events-none transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                     onError={(e) => {
                       (e.target as HTMLElement).style.display = "none";
                     }}
                   />
+                  {/* Subtle expand indicator icon */}
+                  <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white/70 opacity-0 group-hover:opacity-100 transition-opacity shadow-md pointer-events-none">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                    </svg>
+                  </div>
                 </div>
 
                 {/* Caption Text Below Card */}
