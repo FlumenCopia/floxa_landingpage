@@ -75,7 +75,7 @@ export default function ProductivitySection() {
           </div>
           */}
 
-          <h2 className="text-4xl sm:text-6xl md:text-[68px] font-semibold tracking-tight text-white mb-6 leading-[1.06]">
+          <h2 className="text-2xl sm:text-4xl md:text-[48px] font-semibold tracking-tight text-white mb-6 leading-[1.1]">
             Go from idea to done.<br />
             In a snap.
           </h2>

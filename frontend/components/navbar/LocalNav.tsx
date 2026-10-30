@@ -27,7 +27,7 @@ export default function LocalNav() {
           href="#overview"
           className="text-white hover:text-white/80 transition-colors flex items-center gap-2"
         >
-          <span className="text-xl sm:text-2xl font-pavelt tracking-normal">Floxa</span>
+          <span className="text-lg sm:text-xl font-pavelt tracking-normal">Floxa</span>
         </a>
 
         {/* Local Links & White Pill CTA */}

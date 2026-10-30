@@ -55,7 +55,7 @@ export default function PricingSection() {
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         {/* Left-aligned Section Headline matching screenshot */}
         <div className="mb-12 sm:mb-14 max-w-3xl">
-          <h2 className="text-4xl sm:text-5xl md:text-[56px] font-semibold tracking-tight text-white leading-[1.08]">
+          <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-white leading-[1.12]">
             One powerful collection.<br />
             One smart subscription.
           </h2>

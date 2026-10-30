@@ -63,7 +63,7 @@ export default function PixelmatorProSection() {
             Pixelmator Pro
           </div>
 
-          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-semibold tracking-tight text-white mb-4 sm:mb-6 leading-[1.08] sm:leading-[1.06]">
+          <h2 className="text-2xl sm:text-4xl md:text-[48px] font-semibold tracking-tight text-white mb-4 sm:mb-6 leading-[1.1]">
             Creative imaging and design.<br className="hidden sm:inline" />{" "}
             Made for everyone.
           </h2>

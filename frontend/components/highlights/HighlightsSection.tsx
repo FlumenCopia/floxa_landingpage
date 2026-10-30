@@ -78,7 +78,7 @@ export default function HighlightsSection() {
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8 mb-10 sm:mb-14">
         {/* Section Header Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <h2 className="text-4xl sm:text-6xl md:text-[64px] font-semibold tracking-tight text-white leading-[1.08] max-w-2xl">
+          <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-white leading-[1.12] max-w-2xl">
             Meet your all-star team<br />
             of creative apps.
           </h2>
