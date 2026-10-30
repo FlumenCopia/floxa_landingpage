@@ -89,7 +89,7 @@ export default function PixelmatorColorPicker() {
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
-          className="relative z-30 w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[440px] md:h-[440px] lg:w-[490px] lg:h-[490px] rounded-full cursor-grab active:cursor-grabbing flex items-center justify-center touch-none group"
+          className="relative z-30 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[350px] lg:h-[350px] rounded-full cursor-grab active:cursor-grabbing flex items-center justify-center touch-none group"
           title="Drag or click anywhere on the color wheel to change the background color"
         >
           {/* Outer circular translucent plate with subtle border */}
@@ -156,7 +156,7 @@ export default function PixelmatorColorPicker() {
 
           {/* The Interactive White Color Pointer Dot */}
           <div
-            className="absolute w-5 h-5 sm:w-6 sm:h-6 md:w-[24px] md:h-[24px] rounded-full bg-white shadow-[0_2px_6px_rgba(0,0,0,0.7),0_0_10px_rgba(255,255,255,0.9)] border border-black/10 pointer-events-none transition-transform duration-75 group-hover:scale-110"
+            className="absolute w-4 h-4 sm:w-5 sm:h-5 md:w-[20px] md:h-[20px] rounded-full bg-white shadow-[0_2px_6px_rgba(0,0,0,0.7),0_0_10px_rgba(255,255,255,0.9)] border border-black/10 pointer-events-none transition-transform duration-75 group-hover:scale-110"
             style={{
               left: `${pointerX}%`,
               top: `${pointerY}%`,
