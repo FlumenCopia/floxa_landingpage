@@ -76,9 +76,9 @@ export default function ProductivitySection() {
           */}
 
 
-            <span className="keynote-gradient">Keynote, </span>
-            <span className="pages-gradient">Pages, </span>
-            <span className="numbers-gradient">Numbers, </span>
+
+
+
             <span className="freeform-gradient">Freeform</span>
           </div>
 
