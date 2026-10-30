@@ -75,13 +75,6 @@ export default function ProductivitySection() {
           </div>
           */}
 
-
-
-
-
-            <span className="freeform-gradient">Freeform</span>
-          </div>
-
           <h2 className="text-4xl sm:text-6xl md:text-[68px] font-semibold tracking-tight text-white mb-6 leading-[1.06]">
             Go from idea to done.<br />
             In a snap.
