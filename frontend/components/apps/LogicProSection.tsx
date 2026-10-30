@@ -106,14 +106,6 @@ export default function LogicProSection() {
           <p className="text-base sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed mb-6 font-normal">
             Create with intelligent Session Players, cutting-edge beat-making tools and a massive Sound Library — seamlessly across Mac and iPad.<sup>10</sup> Logic Pro <strong className="text-white font-semibold">makes music production easier than ever.</strong>
           </p>
-
-          <a
-            href="https://www.apple.com/in/logic-pro/"
-            className="inline-flex items-center gap-1.5 text-[#2997ff] hover:text-[#52aaff] text-base font-normal group transition-colors"
-          >
-            <span>Learn more about Logic&nbsp;Pro</span>
-            <span className="group-hover:translate-x-1 transition-transform">›</span>
-          </a>
         </div>
 
         {/* Feature Cards Horizontal Scroll Slider */}

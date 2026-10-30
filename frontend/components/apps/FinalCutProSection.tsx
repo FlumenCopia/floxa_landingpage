@@ -100,15 +100,6 @@ export default function FinalCutProSection() {
           <p className="text-base sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed mb-6 font-normal">
             <strong className="text-white font-semibold">Craft with power and precision</strong> using Final&nbsp;Cut&nbsp;Pro on Mac and iPad. With intuitive tools designed to elevate every frame, your vision moves from concept to cinematic story at the speed of thought.
           </p>
-
-          {/* Action Link */}
-          <a
-            href="https://www.apple.com/in/final-cut-pro/"
-            className="inline-flex items-center gap-1.5 text-[#2997ff] hover:text-[#52aaff] text-base font-normal group transition-colors"
-          >
-            <span>Learn more about Final&nbsp;Cut&nbsp;Pro</span>
-            <span className="group-hover:translate-x-1 transition-transform">›</span>
-          </a>
         </div>
 
         {/* Caption Tile Gallery Slider matching Screenshot 2 */}
