@@ -130,7 +130,7 @@ export default function HeroSection() {
                 : "opacity-0 -translate-y-5 scale-90"
             }`}
           >
-            <span className="text-2xl sm:text-3xl font-semibold tracking-tight apple-wordmark-shimmer">
+            <span className="text-3xl sm:text-5xl font-pavelt tracking-normal apple-wordmark-shimmer">
               Floxa
             </span>
           </div>

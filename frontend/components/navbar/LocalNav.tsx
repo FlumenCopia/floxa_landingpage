@@ -25,9 +25,9 @@ export default function LocalNav() {
         {/* Product Brand */}
         <a
           href="#overview"
-          className="text-base sm:text-lg font-semibold tracking-tight text-white hover:text-white/80 transition-colors flex items-center gap-2"
+          className="text-white hover:text-white/80 transition-colors flex items-center gap-2"
         >
-          <span>Floxa</span>
+          <span className="text-xl sm:text-2xl font-pavelt tracking-normal">Floxa</span>
         </a>
 
         {/* Local Links & White Pill CTA */}

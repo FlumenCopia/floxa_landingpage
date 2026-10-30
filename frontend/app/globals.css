@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Pavelt';
+  src: url('/pavelt/Pavelt.otf') format('opentype'),
+       url('/pavelt/Pavelt.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-pavelt,
+.floxa-brand-font {
+  font-family: 'Pavelt', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0.02em;
+}
+
 :root {
   --background: #000000;
   --foreground: #f5f5f7;
