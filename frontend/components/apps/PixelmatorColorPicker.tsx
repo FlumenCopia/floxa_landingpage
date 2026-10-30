@@ -72,8 +72,8 @@ export default function PixelmatorColorPicker() {
         <img
           src="/images/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.jpg"
           srcSet="
-            /images/pixelmator/hero_endframe__chfdpsnstqeu_large.jpg 1068w,
-            /images/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.jpg 1440w
+            /images/pixelmator/hero_endframe__chfdpsnstqeu_large.png 1068w,
+            /images/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.png 1440w
           "
           sizes="(max-width: 1068px) 100vw, 1500px"
           alt="Textured floral object dynamically changing colors in Pixelmator Pro"
