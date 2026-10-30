@@ -44,7 +44,7 @@ export default function FooterSection() {
 
         {/* Breadcrumb Path */}
         <nav aria-label="Breadcrumbs" className="flex items-center gap-2 mb-8 text-[12px] text-white/70">
-          <span className="text-white font-medium">Floxa</span>
+          <span className="text-white font-pavelt text-sm sm:text-base tracking-normal">Floxa</span>
         </nav>
 
         {/* 5-Column Directory */}
