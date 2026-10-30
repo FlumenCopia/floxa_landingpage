@@ -21,13 +21,13 @@ export default function LocalNav() {
           : "bg-black/60 backdrop-blur-md border-white/[0.05]"
       }`}
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 h-12 sm:h-13 flex items-center justify-between">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 h-14 sm:h-15 flex items-center justify-between">
         {/* Product Brand */}
         <a
           href="#overview"
           className="text-white hover:text-white/80 transition-colors flex items-center gap-2"
         >
-          <span className="text-lg sm:text-xl font-pavelt tracking-normal">Floxa</span>
+          <span className="text-2xl sm:text-3xl font-pavelt tracking-normal">Floxa</span>
         </a>
 
         {/* Local Links & White Pill CTA */}

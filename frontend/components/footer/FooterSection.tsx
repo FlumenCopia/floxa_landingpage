@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import AppIcon from "../ui/AppIcon";
 
 const footnotes = [
   "Some features of Floxa require an Apple Intelligence–capable device. For a list of Apple Intelligence availability and technical requirements, see support.apple.com.",
@@ -42,115 +41,15 @@ export default function FooterSection() {
           )}
         </div>
 
-        {/* Breadcrumb Path */}
-        <nav aria-label="Breadcrumbs" className="flex items-center gap-2 mb-8 text-[12px] text-white/70">
+        {/* Brand Header */}
+        <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/[0.08]">
           <span className="text-white font-pavelt text-2xl sm:text-3xl tracking-normal">Floxa</span>
-        </nav>
-
-        {/* 5-Column Directory */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 border-b border-white/[0.08] pb-12 mb-8">
-          {/* Col 1 */}
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-white font-medium mb-3 text-[12px]">Shop and Learn</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors">Store</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Mac</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">iPad</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">iPhone</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Watch</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">AirPods</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Accessories</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-medium mb-3 text-[12px]">Apple Wallet</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors">Wallet</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Col 2 */}
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-white font-medium mb-3 text-[12px]">Account</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors">Manage Your Apple Account</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Apple Store Account</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">iCloud.com</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-medium mb-3 text-[12px]">Entertainment</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors">Apple TV+</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Apple Music</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Apple Arcade</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Apple Podcasts</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Col 3 */}
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-white font-medium mb-3 text-[12px]">Apple Store</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors">Find a Store</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Genius Bar</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Today at Apple</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Apple Camp</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Apple Trade In</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Order Status</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Col 4 */}
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-white font-medium mb-3 text-[12px]">For Business</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors">Apple and Business</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Shop for Business</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-medium mb-3 text-[12px]">For Education</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors">Apple and Education</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Shop for Education</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Col 5 */}
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-white font-medium mb-3 text-[12px]">Apple Values</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors">Accessibility</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Environment</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-medium mb-3 text-[12px]">About Apple</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors">Newsroom</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Apple Leadership</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Career Opportunities</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Investors</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Legal & Regional info */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[11px] text-[#86868b]">
           <div>
-            Copyright © 2026 Apple Inc. All rights reserved.
+            Copyright © 2026 Floxa. All rights reserved.
           </div>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
