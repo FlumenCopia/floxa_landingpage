@@ -44,37 +44,37 @@ export default function PixelmatorProSection() {
   };
 
   return (
-    <section id="pixelmator-pro" className="py-20 md:py-28 bg-black text-white relative select-none">
+    <section id="pixelmator-pro" className="py-12 sm:py-20 md:py-28 bg-black text-white relative select-none">
       {/* 1. Dynamic Interactive Color Picker Hero matching user request */}
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
+      <div className="w-full max-w-[1536px] mx-auto px-2 sm:px-6 lg:px-8 mb-10 sm:mb-16 md:mb-20">
         <PixelmatorColorPicker />
       </div>
 
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-8">
         {/* 2. App Section Header */}
-        <div className="mb-14 sm:mb-16 max-w-2xl">
+        <div className="mb-10 sm:mb-16 max-w-2xl">
           {/* App Icon (Commented out)
           <div className="mb-4">
             <AppIcon name="pixelmator" size={40} />
           </div>
           */}
 
-          <div className="text-lg sm:text-xl font-semibold text-[#ff375f] tracking-tight mb-2">
+          <div className="text-base sm:text-xl font-semibold text-[#ff375f] tracking-tight mb-2">
             Pixelmator Pro
           </div>
 
-          <h2 className="text-4xl sm:text-6xl md:text-[68px] font-semibold tracking-tight text-white mb-6 leading-[1.06]">
-            Creative imaging and design.<br />
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-semibold tracking-tight text-white mb-4 sm:mb-6 leading-[1.08] sm:leading-[1.06]">
+            Creative imaging and design.<br className="hidden sm:inline" />{" "}
             Made for everyone.
           </h2>
 
-          <p className="text-base sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed mb-6 font-normal">
+          <p className="text-sm sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed mb-6 font-normal">
             Edit and design using intelligent tools that <strong className="text-white font-semibold">bring your vision to life.</strong> From social posts to billboards, Pixelmator&nbsp;Pro simplifies every step of your projects. Effortlessly customise vector designs or typography, then let powerful features help your imagination take shape.
           </p>
 
           <a
             href="https://www.apple.com/in/pixelmator-pro/"
-            className="inline-flex items-center gap-1.5 text-[#2997ff] hover:text-[#52aaff] text-base font-normal group transition-colors"
+            className="inline-flex items-center gap-1.5 text-[#2997ff] hover:text-[#52aaff] text-sm sm:text-base font-normal group transition-colors"
           >
             <span>Learn more about Pixelmator&nbsp;Pro</span>
             <span className="group-hover:translate-x-1 transition-transform">›</span>
@@ -85,15 +85,15 @@ export default function PixelmatorProSection() {
         <div className="relative">
           <div
             ref={scrollContainerRef}
-            className="flex gap-5 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 pt-2 -mx-6 px-6 sm:-mx-8 sm:px-8"
+            className="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 pt-2 -mx-4 px-4 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8"
           >
             {pixelmatorCards.map((card, idx) => (
               <div
                 key={idx}
-                className="w-[280px] sm:w-[330px] md:w-[360px] lg:w-[380px] shrink-0 flex flex-col group"
+                className="w-[78vw] max-w-[300px] sm:w-[330px] md:w-[360px] lg:w-[380px] shrink-0 flex flex-col group"
               >
                 {/* Rounded Media Tile Card */}
-                <div className="relative w-full h-[320px] sm:h-[370px] md:h-[400px] lg:h-[420px] rounded-[24px] sm:rounded-[28px] bg-[#161617] border border-white/[0.08] overflow-hidden flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:border-white/15">
+                <div className="relative w-full h-[260px] sm:h-[350px] md:h-[400px] lg:h-[420px] rounded-[20px] sm:rounded-[28px] bg-[#161617] border border-white/[0.08] overflow-hidden flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:border-white/15">
                   <img
                     src={card.image}
                     alt={card.title}

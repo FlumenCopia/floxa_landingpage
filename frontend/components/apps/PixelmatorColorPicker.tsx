@@ -40,7 +40,7 @@ export default function PixelmatorColorPicker() {
     setIsDragging(true);
     setIsAutoPlaying(false);
     updateAngleFromPointer(e.clientX, e.clientY);
-    (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
+    try { wheelRef.current?.setPointerCapture(e.pointerId); } catch {}
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
@@ -51,7 +51,7 @@ export default function PixelmatorColorPicker() {
 
   const handlePointerUp = (e: React.PointerEvent) => {
     setIsDragging(false);
-    (e.target as HTMLElement).releasePointerCapture?.(e.pointerId);
+    try { wheelRef.current?.releasePointerCapture(e.pointerId); } catch {}
   };
 
   // Calculate pointer position on the color ring track (radius = 29.5%)
@@ -67,17 +67,17 @@ export default function PixelmatorColorPicker() {
       <div className="absolute bottom-0 inset-x-0 h-28 sm:h-40 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
 
       {/* Main Visual Stage */}
-      <div className="relative w-full h-[480px] sm:h-[620px] md:h-[720px] lg:h-[820px] xl:h-[900px] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[320px] sm:h-[480px] md:h-[620px] lg:h-[740px] xl:h-[820px] flex items-center justify-center overflow-hidden rounded-2xl sm:rounded-none">
         {/* Background Flower Image with Dynamic Live Hue Rotation */}
         <img
-          src="/images/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.jpg"
+          src="/images/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.png"
           srcSet="
             /images/pixelmator/hero_endframe__chfdpsnstqeu_large.png 1068w,
             /images/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.png 1440w
           "
           sizes="(max-width: 1068px) 100vw, 1500px"
           alt="Textured floral object dynamically changing colors in Pixelmator Pro"
-          className="absolute inset-0 w-full h-full object-contain scale-110 sm:scale-120 md:scale-130 lg:scale-135 filter transition-[filter] duration-75 pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover sm:object-contain scale-100 sm:scale-110 md:scale-120 lg:scale-125 filter transition-[filter] duration-75 pointer-events-none"
           style={{
             filter: `hue-rotate(${hueRotation}deg) saturate(1.15)`,
           }}
@@ -89,7 +89,7 @@ export default function PixelmatorColorPicker() {
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
-          className="relative z-30 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[350px] lg:h-[350px] rounded-full cursor-grab active:cursor-grabbing flex items-center justify-center touch-none group"
+          className="relative z-30 w-[190px] h-[190px] xs:w-[220px] xs:h-[220px] sm:w-[260px] sm:h-[260px] md:w-[300px] md:h-[300px] lg:w-[340px] lg:h-[340px] rounded-full cursor-grab active:cursor-grabbing flex items-center justify-center touch-none group shadow-2xl"
           title="Drag or click anywhere on the color wheel to change the background color"
         >
           {/* Outer circular translucent plate with subtle border */}
