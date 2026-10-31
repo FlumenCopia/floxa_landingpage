@@ -89,7 +89,7 @@ export default function PixelmatorColorPicker() {
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
-          className="relative z-30 w-[190px] h-[190px] xs:w-[220px] xs:h-[220px] sm:w-[260px] sm:h-[260px] md:w-[300px] md:h-[300px] lg:w-[340px] lg:h-[340px] rounded-full cursor-grab active:cursor-grabbing flex items-center justify-center touch-none group shadow-2xl"
+          className="relative z-30 w-[160px] h-[160px] xs:w-[190px] xs:h-[190px] sm:w-[230px] sm:h-[230px] md:w-[270px] md:h-[270px] lg:w-[310px] lg:h-[310px] rounded-full cursor-grab active:cursor-grabbing flex items-center justify-center touch-none group shadow-2xl"
           title="Drag or click anywhere on the color wheel to change the background color"
         >
           {/* Outer circular translucent plate with subtle border */}

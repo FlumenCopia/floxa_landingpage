@@ -36,6 +36,25 @@ const appList: AppItem[] = [
 
 export default function HeroSection() {
   const [isPaused, setIsPaused] = useState(false);
+  const [baseSpacing, setBaseSpacing] = useState(145);
+
+  useEffect(() => {
+    const updateSpacing = () => {
+      const width = window.innerWidth;
+      if (width < 440) {
+        setBaseSpacing(88);
+      } else if (width < 640) {
+        setBaseSpacing(104);
+      } else if (width < 1024) {
+        setBaseSpacing(124);
+      } else {
+        setBaseSpacing(145);
+      }
+    };
+    updateSpacing();
+    window.addEventListener("resize", updateSpacing);
+    return () => window.removeEventListener("resize", updateSpacing);
+  }, []);
   const [activeIndex, setActiveIndex] = useState(0); // Starts on Freeform matching Apple's showcase
   const [hasOpened, setHasOpened] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -156,7 +175,7 @@ export default function HeroSection() {
 
         {/* Main Headline with Opening Staggered Reveal and Soft Blur */}
         <h1
-          className={`text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-semibold tracking-tight text-white mb-8 sm:mb-12 leading-[1.06] transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened
+          className={`text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-semibold tracking-tight text-white mb-8 sm:mb-12 leading-[1.06] transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened
               ? "opacity-100 translate-y-0 filter-none"
               : "opacity-0 translate-y-8 blur-sm"
             }`}
@@ -174,7 +193,7 @@ export default function HeroSection() {
           onMouseMove={handleTouchMove}
           onMouseUp={handleTouchEnd}
           onMouseLeave={handleTouchEnd}
-          className={`relative w-full max-w-[1100px] h-[210px] sm:h-[240px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-2 sm:my-4 transition-opacity duration-1000 delay-300 ${hasOpened ? "opacity-100" : "opacity-0"
+          className={`relative w-full max-w-[1100px] h-[180px] xs:h-[200px] sm:h-[230px] md:h-[240px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-2 sm:my-4 transition-opacity duration-1000 delay-300 ${hasOpened ? "opacity-100" : "opacity-0"
             }`}
         >
           {/* Subtle side vignettes to merge seamlessly into black background */}
@@ -196,7 +215,6 @@ export default function HeroSection() {
               const isCenter = offset === 0;
 
               // Spacing per icon slot
-              const baseSpacing = 145; // desktop pixel spacing
               const targetTranslateX = offset * baseSpacing + dragOffset;
 
               // On initial opening, elements fan out smoothly from center
@@ -231,7 +249,7 @@ export default function HeroSection() {
                     <AppIcon
                       name={app.icon}
                       size={120}
-                      className="w-[96px] h-[96px] sm:w-[124px] sm:h-[124px] select-none pointer-events-none filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)]"
+                      className="w-[76px] h-[76px] xs:w-[90px] xs:h-[90px] sm:w-[110px] sm:h-[110px] md:w-[124px] md:h-[124px] select-none pointer-events-none filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)]"
                     />
                   </div>
                 </div>

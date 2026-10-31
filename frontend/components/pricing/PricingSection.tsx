@@ -62,11 +62,11 @@ export default function PricingSection() {
         </div>
 
         {/* 3 Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {pricingCards.map((card) => (
             <div
               key={card.id}
-              className="rounded-[28px] sm:rounded-[32px] bg-[#161617] border border-white/[0.08] p-8 sm:p-10 flex flex-col justify-between min-h-[360px] sm:min-h-[380px] shadow-2xl transition-all duration-300 hover:border-white/15"
+              className="rounded-[24px] sm:rounded-[32px] bg-[#161617] border border-white/[0.08] p-6 sm:p-8 md:p-7 lg:p-9 flex flex-col justify-between min-h-[320px] sm:min-h-[360px] shadow-2xl transition-all duration-300 hover:border-white/15"
             >
               <div>
                 {/* Clean Top Icon */}

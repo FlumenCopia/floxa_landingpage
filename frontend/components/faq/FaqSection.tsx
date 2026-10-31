@@ -45,9 +45,9 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-24 sm:py-32 bg-black text-white border-t border-white/[0.08]">
+    <section id="faq" className="pt-10 pb-14 sm:pt-14 sm:pb-18 bg-black text-white border-t border-white/[0.08]">
       <div className="max-w-[980px] mx-auto px-6 sm:px-8">
-        <h2 className="text-4xl sm:text-5xl md:text-[56px] lg:text-[64px] font-bold tracking-tight text-white mb-12 sm:mb-16">
+        <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-white mb-8 sm:mb-10">
           Questions? Answers.
         </h2>
 
@@ -61,7 +61,7 @@ export default function FaqSection() {
                   className="w-full py-6 sm:py-8 flex items-center justify-between text-left group cursor-pointer focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-[19px] sm:text-[22px] md:text-[25px] font-semibold text-white tracking-tight pr-6 sm:pr-8 leading-snug group-hover:text-neutral-200 transition-colors">
+                  <span className="text-base sm:text-lg md:text-[22px] font-semibold text-white tracking-tight pr-4 sm:pr-8 leading-snug group-hover:text-neutral-200 transition-colors">
                     {item.q}
                   </span>
                   <svg
@@ -84,7 +84,7 @@ export default function FaqSection() {
                     isOpen ? "max-h-[600px] opacity-100 pb-7" : "max-h-0 opacity-0 pb-0"
                   }`}
                 >
-                  <p className="text-[16px] sm:text-[18px] md:text-[19px] text-[#a1a1a6] leading-relaxed pr-6 sm:pr-14">
+                  <p className="text-[15px] sm:text-[17px] md:text-[18px] text-[#a1a1a6] leading-relaxed pr-2 sm:pr-10">
                     {item.a}
                   </p>
                 </div>

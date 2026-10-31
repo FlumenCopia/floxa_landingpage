@@ -77,15 +77,15 @@ export default function PixelmatorProSection() {
         <div className="relative">
           <div
             ref={scrollContainerRef}
-            className="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 pt-2 -mx-4 px-4 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8"
+            className="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-2 -mx-4 px-4 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8"
           >
             {pixelmatorCards.map((card, idx) => (
               <div
                 key={idx}
-                className="w-[78vw] max-w-[300px] sm:w-[330px] md:w-[360px] lg:w-[380px] shrink-0 flex flex-col group"
+                className="w-[78vw] max-w-[280px] xs:w-[78vw] xs:max-w-[310px] sm:w-[330px] md:w-[360px] lg:w-[380px] shrink-0 flex flex-col group snap-start"
               >
                 {/* Rounded Media Tile Card */}
-                <div className="relative w-full h-[260px] sm:h-[350px] md:h-[400px] lg:h-[420px] rounded-[20px] sm:rounded-[28px] bg-[#161617] border border-white/[0.08] overflow-hidden flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:border-white/15">
+                <div className="relative w-full h-[230px] xs:h-[270px] sm:h-[350px] md:h-[400px] lg:h-[420px] rounded-[20px] sm:rounded-[28px] bg-[#161617] border border-white/[0.08] overflow-hidden flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:border-white/15">
                   <img
                     src={card.image}
                     alt={card.title}

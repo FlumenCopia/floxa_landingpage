@@ -112,17 +112,17 @@ export default function LogicProSection() {
         <div className="relative">
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 pt-2 -mx-6 px-6"
+            className="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-2 -mx-4 px-4 sm:-mx-6 sm:px-6"
           >
             {logicCards.map((card, idx) => (
               <div
                 key={idx}
-                className="w-[84vw] sm:w-[580px] md:w-[640px] shrink-0 flex flex-col group"
+                className="w-[85vw] max-w-[340px] xs:w-[82vw] xs:max-w-[420px] sm:w-[520px] md:w-[600px] shrink-0 flex flex-col group snap-start"
               >
                 {/* Big Rounded Media Tile Card */}
                 <div
                   onClick={() => setSelectedImage({ src: card.image, title: card.title })}
-                  className="relative w-full h-[320px] sm:h-[400px] md:h-[440px] rounded-[24px] sm:rounded-[28px] bg-[#121316] border border-white/[0.08] overflow-hidden flex items-center justify-center p-3 sm:p-5 shadow-2xl transition-all duration-300 group-hover:border-white/25 cursor-pointer"
+                  className="relative w-full h-[210px] xs:h-[250px] sm:h-[340px] md:h-[420px] rounded-[20px] sm:rounded-[28px] bg-[#121316] border border-white/[0.08] overflow-hidden flex items-center justify-center p-3 sm:p-5 shadow-2xl transition-all duration-300 group-hover:border-white/25 cursor-pointer"
                   title="Click to view full image"
                 >
                   <img
@@ -142,7 +142,7 @@ export default function LogicProSection() {
                 </div>
 
                 {/* Caption Text Below Card */}
-                <div className="mt-5 px-1 max-w-[620px]">
+                <div className="mt-4 sm:mt-5 px-1 max-w-[620px]">
                   <p className="text-sm sm:text-[15px] md:text-base text-[#a1a1a6] leading-relaxed font-normal">
                     <strong className="text-white font-semibold">
                       {card.title}{" "}
@@ -182,6 +182,36 @@ export default function LogicProSection() {
           </div>
         </div>
       </div>
+      {/* Full-view Lightbox Modal */}
+      {selectedImage && (
+        <div
+          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 animate-fadeIn"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-5xl max-h-[90vh] bg-[#161617] rounded-2xl border border-white/10 p-3 sm:p-6 overflow-hidden flex flex-col items-center shadow-2xl"
+          >
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              aria-label="Close full view"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.title}
+              className="max-w-full max-h-[75vh] object-contain rounded-lg"
+            />
+            <p className="mt-3 text-sm sm:text-base font-medium text-white/90 text-center">
+              {selectedImage.title}
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

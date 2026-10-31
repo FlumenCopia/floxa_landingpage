@@ -106,15 +106,15 @@ export default function FinalCutProSection() {
         <div className="relative">
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 pt-2 -mx-6 px-6"
+            className="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-2 -mx-4 px-4 sm:-mx-6 sm:px-6"
           >
             {fcpCards.map((card, idx) => (
               <div
                 key={idx}
-                className="w-[84vw] sm:w-[580px] md:w-[640px] shrink-0 flex flex-col group"
+                className="w-[85vw] max-w-[340px] xs:w-[82vw] xs:max-w-[420px] sm:w-[520px] md:w-[600px] shrink-0 flex flex-col group snap-start"
               >
                 {/* 1. Big Rounded Media Tile Card */}
-                <div className="relative w-full h-[320px] sm:h-[400px] md:h-[420px] rounded-[24px] sm:rounded-[28px] bg-[#161617] border border-white/[0.08] overflow-hidden flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:border-white/15">
+                <div className="relative w-full h-[210px] xs:h-[250px] sm:h-[340px] md:h-[400px] rounded-[20px] sm:rounded-[28px] bg-[#161617] border border-white/[0.08] overflow-hidden flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:border-white/15">
                   <img
                     src={card.image}
                     alt={card.title}
@@ -126,7 +126,7 @@ export default function FinalCutProSection() {
                 </div>
 
                 {/* 2. Caption Text placed BELOW the card matching user screenshot */}
-                <div className="mt-5 px-1 max-w-[620px]">
+                <div className="mt-4 sm:mt-5 px-1 max-w-[620px]">
                   <p className="text-sm sm:text-[15px] md:text-base text-[#a1a1a6] leading-relaxed font-normal">
                     <strong className="text-white font-semibold">
                       {card.title}{" "}
