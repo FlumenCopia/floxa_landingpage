@@ -45,9 +45,9 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="pt-10 pb-14 sm:pt-14 sm:pb-18 bg-black text-white border-t border-white/[0.08]">
+    <section id="faq" className="pt-5 pb-8 sm:pt-8 sm:pb-10 md:pt-10 md:pb-12 bg-black text-white border-t border-white/[0.08]">
       <div className="max-w-[980px] mx-auto px-6 sm:px-8">
-        <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-white mb-8 sm:mb-10">
+        <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-white mb-4 sm:mb-6">
           Questions? Answers.
         </h2>
 

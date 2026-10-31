@@ -56,7 +56,7 @@ export default function FinalCutProSection() {
   };
 
   return (
-    <section id="final-cut-pro" className="pt-8 pb-12 sm:pt-12 sm:pb-16 md:pt-14 md:pb-18 bg-black text-white relative select-none">
+    <section id="final-cut-pro" className="pt-4 pb-6 sm:pt-6 sm:pb-8 md:pt-10 md:pb-12 bg-black text-white relative select-none">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         {/* Cinematic Hero Visual Banner (Commented out) */}
         {/*
@@ -78,7 +78,7 @@ export default function FinalCutProSection() {
         */}
 
         {/* App Section Header matching Screenshot 1 */}
-        <div className="mb-8 sm:mb-10 max-w-2xl">
+        <div className="mb-3 sm:mb-5 max-w-2xl">
           {/* App Chiclet Icon (Commented out)
           <div className="mb-4">
             <AppIcon name="final-cut" size={40} />

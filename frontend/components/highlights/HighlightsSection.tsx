@@ -63,10 +63,14 @@ const highlightItems: HighlightItem[] = [
 export default function HighlightsSection() {
   const [currentIndex, setCurrentIndex] = useState(2);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
+  const isDraggingRef = useRef(false);
+  const startXRef = useRef(0);
+  const currentDragRef = useRef(0);
 
+  // Auto-play interval
   useEffect(() => {
     if (!isPlaying) return;
     const interval = setInterval(() => {
@@ -75,32 +79,47 @@ export default function HighlightsSection() {
     return () => clearInterval(interval);
   }, [isPlaying]);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.targetTouches[0].clientX;
-    touchEndX.current = null;
+  // Touch and Mouse Drag Handlers with 1:1 real-time drag feedback
+  const handleDragStart = (e: React.TouchEvent | React.MouseEvent) => {
+    isDraggingRef.current = true;
+    setIsDragging(true);
+    setIsPlaying(false);
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+    startXRef.current = clientX;
+    currentDragRef.current = 0;
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.targetTouches[0].clientX;
+  const handleDragMove = (e: React.TouchEvent | React.MouseEvent) => {
+    if (!isDraggingRef.current) return;
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+    const diff = clientX - startXRef.current;
+    currentDragRef.current = diff;
+    setDragOffset(diff);
   };
 
-  const handleTouchEnd = () => {
-    if (touchStartX.current === null || touchEndX.current === null) return;
-    const diff = touchStartX.current - touchEndX.current;
-    if (diff > 40) {
+  const handleDragEnd = () => {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    setIsDragging(false);
+
+    const diff = currentDragRef.current;
+    const threshold = 40; // minimum drag distance in pixels to trigger slide change
+
+    if (diff < -threshold) {
+      // Swiped left -> Next slide
       setCurrentIndex((prev) => (prev + 1) % highlightItems.length);
-      setIsPlaying(false);
-    } else if (diff < -40) {
+    } else if (diff > threshold) {
+      // Swiped right -> Previous slide
       setCurrentIndex((prev) => (prev - 1 + highlightItems.length) % highlightItems.length);
-      setIsPlaying(false);
     }
-    touchStartX.current = null;
-    touchEndX.current = null;
+
+    setDragOffset(0);
+    currentDragRef.current = 0;
   };
 
   return (
-    <section className="pt-10 pb-12 sm:pt-14 sm:pb-16 md:pt-16 md:pb-18 bg-black text-white overflow-hidden relative select-none">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-8 mb-6 sm:mb-8">
+    <section className="pt-3 pb-3 sm:pt-6 sm:pb-6 md:pt-10 md:pb-10 bg-black text-white overflow-hidden relative select-none">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-8 mb-2 sm:mb-4">
         {/* Section Header Row */}
         <div>
           <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-white leading-[1.12] max-w-2xl">
@@ -112,17 +131,22 @@ export default function HighlightsSection() {
 
       {/* Peek Carousel / Slider Container with centered active card */}
       <div
-        className="relative w-full overflow-hidden flex flex-col items-center"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
+        className="relative w-full overflow-hidden flex flex-col items-center cursor-grab active:cursor-grabbing touch-pan-y"
+        onTouchStart={handleDragStart}
+        onTouchMove={handleDragMove}
+        onTouchEnd={handleDragEnd}
+        onMouseDown={handleDragStart}
+        onMouseMove={handleDragMove}
+        onMouseUp={handleDragEnd}
+        onMouseLeave={handleDragEnd}
       >
-        {/* Track containing all cards with responsive translation */}
-        <div className="w-full flex items-center overflow-x-hidden py-3 sm:py-4">
+        {/* Track containing all cards with 1:1 real-time drag feedback */}
+        <div className="w-full flex items-center overflow-x-hidden py-1 sm:py-2">
           <div
-            className="flex items-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+            className="flex items-center transition-transform ease-[cubic-bezier(0.25,1,0.5,1)]"
             style={{
-              transform: `translateX(calc(50vw - (min(86vw, 980px) / 2) - ${currentIndex} * (min(86vw, 980px) + 20px)))`,
+              transform: `translateX(calc(50vw - (min(86vw, 980px) / 2) - ${currentIndex} * (min(86vw, 980px) + 20px) + ${dragOffset}px))`,
+              transitionDuration: isDragging ? "0ms" : "700ms",
             }}
           >
             {highlightItems.map((item, idx) => {
@@ -132,17 +156,19 @@ export default function HighlightsSection() {
                 <div
                   key={item.id}
                   onClick={() => {
-                    if (!isActive) {
-                      setCurrentIndex(idx);
-                      setIsPlaying(false);
+                    if (Math.abs(currentDragRef.current) < 5) {
+                      if (!isActive) {
+                        setCurrentIndex(idx);
+                        setIsPlaying(false);
+                      }
                     }
                   }}
                   style={{
                     width: "min(86vw, 980px)",
                   }}
-                  className={`shrink-0 mr-5 rounded-[24px] sm:rounded-[36px] bg-[#161617] border border-white/[0.08] overflow-hidden transition-all duration-700 flex flex-col justify-between shadow-2xl h-[440px] xs:h-[490px] sm:h-[580px] md:h-[640px] relative ${
+                  className={`shrink-0 mr-5 rounded-[24px] sm:rounded-[36px] bg-[#161617] border border-white/[0.08] overflow-hidden transition-all duration-700 flex flex-col justify-between shadow-2xl h-[360px] xs:h-[390px] sm:h-[480px] md:h-[580px] relative pointer-events-auto ${
                     isActive
-                      ? "opacity-100 scale-100 z-20 cursor-default"
+                      ? "opacity-100 scale-100 z-20"
                       : "opacity-40 hover:opacity-60 scale-[0.96] z-10 cursor-pointer"
                   }`}
                 >
@@ -174,12 +200,12 @@ export default function HighlightsSection() {
                   </div>
 
                   {/* Device / Artwork Area - Full image visible without clipping */}
-                  <div className="relative w-full flex-1 min-h-0 flex items-center justify-center px-3 sm:px-6 pb-3 sm:pb-6 pt-1 overflow-hidden">
+                  <div className="relative w-full flex-1 min-h-0 flex items-center justify-center px-3 sm:px-6 pb-3 sm:pb-6 pt-1 overflow-hidden pointer-events-none">
                     <img
                       src={item.image}
                       srcSet={item.image2x ? `${item.image} 1x, ${item.image2x} 2x` : undefined}
                       alt={item.tabTitle}
-                      className="w-full h-full max-h-full max-w-full object-contain filter drop-shadow-2xl select-none pointer-events-none transition-transform duration-700 ease-out"
+                      className="w-full h-full max-h-full max-w-full object-contain filter drop-shadow-2xl select-none transition-transform duration-700 ease-out"
                     />
                   </div>
                 </div>
@@ -189,7 +215,11 @@ export default function HighlightsSection() {
         </div>
 
         {/* Floating Capsule Controller (Dots Navigation + Pause/Play) */}
-        <div className="relative mt-3 sm:mt-5 z-30 flex items-center justify-center">
+        <div
+          className="relative mt-1.5 sm:mt-3 z-30 flex items-center justify-center pointer-events-auto"
+          onMouseDown={(e) => e.stopPropagation()}
+          onTouchStart={(e) => e.stopPropagation()}
+        >
           <div className="bg-[#1d1d1f]/90 backdrop-blur-xl border border-white/10 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full flex items-center gap-3 sm:gap-4 shadow-2xl">
             {/* Timed Dots Navigation */}
             <div className="flex items-center gap-1.5 sm:gap-2">
@@ -219,7 +249,7 @@ export default function HighlightsSection() {
             {/* Play/Pause Button */}
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#2c2c2e] hover:bg-[#3a3a3c] text-white flex items-center justify-center transition-colors shadow-sm"
+              className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#2c2c2e] hover:bg-[#3a3a3c] text-white flex items-center justify-center transition-colors shadow-sm cursor-pointer"
               aria-label={isPlaying ? "Pause highlights gallery" : "Play highlights gallery"}
             >
               {isPlaying ? (

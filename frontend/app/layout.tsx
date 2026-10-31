@@ -16,11 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-IN" className="dark scroll-smooth">
+    <html lang="en-IN" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
-      <body className="bg-black text-[#f5f5f7] antialiased selection:bg-[#0071e3]/30 selection:text-white min-h-screen flex flex-col">
+      <body
+        className="bg-black text-[#f5f5f7] antialiased selection:bg-[#0071e3]/30 selection:text-white min-h-screen flex flex-col"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
