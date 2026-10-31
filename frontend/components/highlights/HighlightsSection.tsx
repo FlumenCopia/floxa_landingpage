@@ -37,8 +37,8 @@ const highlightItems: HighlightItem[] = [
     accentText: "Pixelmator Pro",
     accentColor: "#ff375f",
     headline: "brings intelligent photo editing and graphic design tools to all your projects.",
-    image: "/images/highlights/pixelmator_pro__fwhiit2m7kea_large_2x.png",
-    image2x: "/images/highlights/pixelmator_pro__fwhiit2m7kea_large_2x.png",
+    image: "/images/highlights/pixelmator__ec2adx2gleky_large_2x.png",
+    image2x: "/images/highlights/pixelmator__ec2adx2gleky_large_2x.png",
   },
   {
     id: "logic-pro",
@@ -46,8 +46,8 @@ const highlightItems: HighlightItem[] = [
     accentText: "Logic Pro",
     accentColor: "#ff9f0a",
     headline: "puts a complete professional recording studio at your fingertips.",
-    image: "/images/highlights/logic_pro__d6r8d5d4756u_large_2x.png",
-    image2x: "/images/highlights/logic_pro__d6r8d5d4756u_large_2x.png",
+    image: "/images/highlights/logic_pro__djsdokna5umq_large_2x.png",
+    image2x: "/images/highlights/logic_pro__djsdokna5umq_large_2x.png",
   },
   {
     id: "productivity",

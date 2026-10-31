@@ -35,6 +35,7 @@ export default function Home() {
         {/* 8. Logic Pro: "The fast track to the final mix. Wherever you go" */}
         <LogicProSection />
 
+
         {/* 9. Keynote, Pages, Numbers, Freeform: "Go from idea to done. In a snap" */}
         <ProductivitySection />
 
