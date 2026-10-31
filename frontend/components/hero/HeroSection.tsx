@@ -6,32 +6,22 @@ import AppIcon from "../ui/AppIcon";
 interface AppItem {
   id: string;
   name: string;
-  icon:
-  | "numbers"
-  | "motion"
-  | "freeform"
-  | "keynote"
-  | "final-cut"
-  | "pixelmator"
-  | "logic-pro"
-  | "pages"
-  | "compressor"
-  | "mainstage";
+  image: string;
   anchor: string;
 }
 
 // Exactly matching Floxa's app suite carousel order
 const appList: AppItem[] = [
-  { id: "freeform", name: "Freeform", icon: "freeform", anchor: "#visual-productivity" },
-  { id: "keynote", name: "Keynote", icon: "keynote", anchor: "#visual-productivity" },
-  { id: "final-cut", name: "Final Cut Pro", icon: "final-cut", anchor: "#final-cut-pro" },
-  { id: "pixelmator", name: "Pixelmator Pro", icon: "pixelmator", anchor: "#pixelmator-pro" },
-  { id: "logic-pro", name: "Logic Pro", icon: "logic-pro", anchor: "#logic-pro" },
-  { id: "pages", name: "Pages", icon: "pages", anchor: "#visual-productivity" },
-  { id: "compressor", name: "Compressor", icon: "compressor", anchor: "#final-cut-pro" },
-  { id: "mainstage", name: "MainStage", icon: "mainstage", anchor: "#logic-pro" },
-  { id: "numbers", name: "Numbers", icon: "numbers", anchor: "#visual-productivity" },
-  { id: "motion", name: "Motion", icon: "motion", anchor: "#final-cut-pro" },
+  { id: "freeform", name: "Freeform", image: "/images/herosectionicons/Freeform.png", anchor: "#visual-productivity" },
+  { id: "keynote", name: "Keynote", image: "/images/herosectionicons/keynote.png", anchor: "#visual-productivity" },
+  { id: "final-cut", name: "Final Cut Pro", image: "/images/herosectionicons/final cut pro.png", anchor: "#final-cut-pro" },
+  { id: "pixelmator", name: "Pixelmator Pro", image: "/images/herosectionicons/pixelmator pro.png", anchor: "#pixelmator-pro" },
+  { id: "logic-pro", name: "Logic Pro", image: "/images/herosectionicons/logical pro.png", anchor: "#logic-pro" },
+  { id: "pages", name: "Pages", image: "/images/herosectionicons/pages.png", anchor: "#visual-productivity" },
+  { id: "compressor", name: "Compressor", image: "/images/herosectionicons/compossor.png", anchor: "#final-cut-pro" },
+  { id: "mainstage", name: "MainStage", image: "/images/herosectionicons/mainstage.png", anchor: "#logic-pro" },
+  { id: "numbers", name: "Numbers", image: "/images/herosectionicons/numbers.png", anchor: "#visual-productivity" },
+  { id: "motion", name: "Motion", image: "/images/herosectionicons/Motion.png", anchor: "#final-cut-pro" },
 ];
 
 export default function HeroSection() {
@@ -246,10 +236,10 @@ export default function HeroSection() {
                 >
                   {/* The Squircle Icon with Neon Edge Glow */}
                   <div className="transition-transform duration-300 hover:scale-105 active:scale-95">
-                    <AppIcon
-                      name={app.icon}
-                      size={120}
-                      className="w-[76px] h-[76px] xs:w-[90px] xs:h-[90px] sm:w-[110px] sm:h-[110px] md:w-[124px] md:h-[124px] select-none pointer-events-none filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)]"
+                    <img
+                      src={app.image}
+                      alt={app.name}
+                      className="w-[76px] h-[76px] xs:w-[90px] xs:h-[90px] sm:w-[110px] sm:h-[110px] md:w-[124px] md:h-[124px] object-contain select-none pointer-events-none filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)]"
                     />
                   </div>
                 </div>
