@@ -74,8 +74,8 @@ export default function HighlightsSection() {
   }, [isPlaying]);
 
   return (
-    <section className="py-20 md:py-28 bg-black text-white overflow-hidden relative select-none">
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-8 mb-10 sm:mb-14">
+    <section className="pt-10 pb-12 sm:pt-14 sm:pb-16 md:pt-16 md:pb-18 bg-black text-white overflow-hidden relative select-none">
+      <div className="max-w-[1240px] mx-auto px-6 sm:px-8 mb-6 sm:mb-8">
         {/* Section Header Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-white leading-[1.12] max-w-2xl">

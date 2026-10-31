@@ -44,15 +44,15 @@ export default function PixelmatorProSection() {
   };
 
   return (
-    <section id="pixelmator-pro" className="py-12 sm:py-20 md:py-28 bg-black text-white relative select-none">
+    <section id="pixelmator-pro" className="pt-4 pb-12 sm:pt-6 sm:pb-16 md:pt-8 md:pb-18 bg-black text-white relative select-none">
       {/* 1. Dynamic Interactive Color Picker Hero matching user request */}
-      <div className="w-full max-w-[1536px] mx-auto px-2 sm:px-6 lg:px-8 mb-10 sm:mb-16 md:mb-20">
+      <div className="w-full max-w-[1536px] mx-auto px-2 sm:px-6 lg:px-8 mb-6 sm:mb-8">
         <PixelmatorColorPicker />
       </div>
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-8">
         {/* 2. App Section Header */}
-        <div className="mb-10 sm:mb-16 max-w-2xl">
+        <div className="mb-8 sm:mb-10 max-w-2xl">
           {/* App Icon (Commented out)
           <div className="mb-4">
             <AppIcon name="pixelmator" size={40} />

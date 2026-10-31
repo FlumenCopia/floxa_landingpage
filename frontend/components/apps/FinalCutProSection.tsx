@@ -56,7 +56,7 @@ export default function FinalCutProSection() {
   };
 
   return (
-    <section id="final-cut-pro" className="py-20 md:py-28 bg-black text-white relative select-none">
+    <section id="final-cut-pro" className="pt-8 pb-12 sm:pt-12 sm:pb-16 md:pt-14 md:pb-18 bg-black text-white relative select-none">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         {/* Cinematic Hero Visual Banner (Commented out) */}
         {/*
@@ -78,7 +78,7 @@ export default function FinalCutProSection() {
         */}
 
         {/* App Section Header matching Screenshot 1 */}
-        <div className="mb-14 sm:mb-16 max-w-2xl">
+        <div className="mb-8 sm:mb-10 max-w-2xl">
           {/* App Chiclet Icon (Commented out)
           <div className="mb-4">
             <AppIcon name="final-cut" size={40} />
@@ -144,7 +144,7 @@ export default function FinalCutProSection() {
           </div>
 
           {/* Paddle Navigation Buttons */}
-          <div className="flex items-center justify-end gap-3 mt-6">
+          <div className="flex items-center justify-end gap-3 mt-4">
             <button
               onClick={() => scroll("left")}
               className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shadow-sm"

@@ -51,10 +51,10 @@ const pricingCards = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-20 md:py-28 bg-black text-white relative">
+    <section id="pricing" className="pt-10 pb-12 sm:pt-14 sm:pb-16 md:pt-16 md:pb-18 bg-black text-white relative">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         {/* Left-aligned Section Headline matching screenshot */}
-        <div className="mb-12 sm:mb-14 max-w-3xl">
+        <div className="mb-8 sm:mb-10 max-w-3xl">
           <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-white leading-[1.12]">
             One powerful collection.<br />
             One smart subscription.

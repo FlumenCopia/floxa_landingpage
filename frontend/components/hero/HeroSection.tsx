@@ -7,16 +7,16 @@ interface AppItem {
   id: string;
   name: string;
   icon:
-    | "numbers"
-    | "motion"
-    | "freeform"
-    | "keynote"
-    | "final-cut"
-    | "pixelmator"
-    | "logic-pro"
-    | "pages"
-    | "compressor"
-    | "mainstage";
+  | "numbers"
+  | "motion"
+  | "freeform"
+  | "keynote"
+  | "final-cut"
+  | "pixelmator"
+  | "logic-pro"
+  | "pages"
+  | "compressor"
+  | "mainstage";
   anchor: string;
 }
 
@@ -115,7 +115,7 @@ export default function HeroSection() {
   return (
     <section
       id="overview"
-      className="relative pt-16 pb-20 sm:pt-20 sm:pb-28 overflow-hidden bg-black text-center select-none"
+      className="relative pt-16 pb-20 sm:pt-26 sm:pb-18 overflow-hidden bg-black text-center select-none"
     >
       <div className="max-w-[1280px] mx-auto px-4 relative z-10 flex flex-col items-center">
         {/* Top Header Row with Animated Wordmark and Floating Pause Button */}
@@ -124,11 +124,10 @@ export default function HeroSection() {
 
           {/* Centered Wordmark with Opening Scale, Glow, and Shimmer Animation */}
           <div
-            className={`flex items-center justify-center gap-2 mx-auto cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              hasOpened
+            className={`flex items-center justify-center gap-2 mx-auto cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened
                 ? "opacity-100 translate-y-0 scale-100"
                 : "opacity-0 -translate-y-5 scale-90"
-            }`}
+              }`}
           >
             <span className="text-3xl sm:text-5xl font-pavelt tracking-normal apple-wordmark-shimmer">
               Floxa
@@ -138,9 +137,8 @@ export default function HeroSection() {
           {/* Right Floating Play/Pause Button */}
           <button
             onClick={() => setIsPaused(!isPaused)}
-            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1d1d1f] hover:bg-[#2d2d30] border border-white/10 text-white/80 hover:text-white flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95 shadow-lg ${
-              hasOpened ? "opacity-100 scale-100" : "opacity-0 scale-75"
-            }`}
+            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1d1d1f] hover:bg-[#2d2d30] border border-white/10 text-white/80 hover:text-white flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95 shadow-lg ${hasOpened ? "opacity-100 scale-100" : "opacity-0 scale-75"
+              }`}
             aria-label={isPaused ? "Play hero swiper" : "Pause hero swiper"}
           >
             {isPaused ? (
@@ -158,11 +156,10 @@ export default function HeroSection() {
 
         {/* Main Headline with Opening Staggered Reveal and Soft Blur */}
         <h1
-          className={`text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-semibold tracking-tight text-white mb-8 sm:mb-12 leading-[1.06] transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            hasOpened
+          className={`text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-semibold tracking-tight text-white mb-8 sm:mb-12 leading-[1.06] transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened
               ? "opacity-100 translate-y-0 filter-none"
               : "opacity-0 translate-y-8 blur-sm"
-          }`}
+            }`}
         >
           All yours for the making.
         </h1>
@@ -177,9 +174,8 @@ export default function HeroSection() {
           onMouseMove={handleTouchMove}
           onMouseUp={handleTouchEnd}
           onMouseLeave={handleTouchEnd}
-          className={`relative w-full max-w-[1100px] h-[210px] sm:h-[240px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-2 sm:my-4 transition-opacity duration-1000 delay-300 ${
-            hasOpened ? "opacity-100" : "opacity-0"
-          }`}
+          className={`relative w-full max-w-[1100px] h-[210px] sm:h-[240px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-2 sm:my-4 transition-opacity duration-1000 delay-300 ${hasOpened ? "opacity-100" : "opacity-0"
+            }`}
         >
           {/* Subtle side vignettes to merge seamlessly into black background */}
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-black via-black/85 to-transparent z-30 pointer-events-none" />
@@ -202,7 +198,7 @@ export default function HeroSection() {
               // Spacing per icon slot
               const baseSpacing = 145; // desktop pixel spacing
               const targetTranslateX = offset * baseSpacing + dragOffset;
-              
+
               // On initial opening, elements fan out smoothly from center
               const translateX = hasOpened ? targetTranslateX : 0;
 
@@ -213,10 +209,10 @@ export default function HeroSection() {
                 ? isCenter
                   ? 1
                   : Math.abs(offset) === 1
-                  ? 0.75
-                  : Math.abs(offset) === 2
-                  ? 0.35
-                  : 0.15
+                    ? 0.75
+                    : Math.abs(offset) === 2
+                      ? 0.35
+                      : 0.15
                 : 0;
 
               return (
@@ -245,9 +241,8 @@ export default function HeroSection() {
 
           {/* Active App Text Label - Centered directly below the middle icon */}
           <div
-            className={`absolute bottom-1 z-40 flex items-center justify-center pointer-events-none transition-all duration-700 delay-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-            }`}
+            className={`absolute bottom-1 z-40 flex items-center justify-center pointer-events-none transition-all duration-700 delay-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+              }`}
           >
             <span className="text-xs sm:text-[13px] font-normal tracking-wide text-white/90 capitalize transition-opacity duration-300">
               {appList[activeIndex].name}
@@ -257,9 +252,8 @@ export default function HeroSection() {
 
         {/* Narrative Copy with Opening Slide Up */}
         <div
-          className={`max-w-[760px] mx-auto px-4 mt-6 sm:mt-8 mb-8 text-center transition-all duration-1000 delay-600 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`max-w-[760px] mx-auto px-4 mt-6 sm:mt-8 mb-8 text-center transition-all duration-1000 delay-600 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
         >
           <p className="text-base sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed font-normal">
             <strong className="text-white font-semibold">
@@ -271,9 +265,8 @@ export default function HeroSection() {
 
         {/* "Try it free" White Pill Button with Opening Slide Up */}
         <div
-          className={`transition-all duration-1000 delay-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            hasOpened ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
-          }`}
+          className={`transition-all duration-1000 delay-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
+            }`}
         >
           <a
             href="https://floxa.flumenx.in/"
