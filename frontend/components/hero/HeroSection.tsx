@@ -1,62 +1,82 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import AppIcon from "../ui/AppIcon";
+import React, { useState, useEffect } from "react";
 
-interface AppItem {
+interface DiscoveryCard {
   id: string;
-  name: string;
-  image: string;
-  anchor: string;
+  tag: string;
+  title: string;
+  summary: string;
+  status: string;
+  color: string;
+  icon: React.ReactNode;
+  tags: string[];
 }
 
-// Exactly matching Floxa's app suite carousel order
-const appList: AppItem[] = [
-  { id: "freeform", name: "Freeform", image: "/images/herosectionicons/Freeform.png", anchor: "#visual-productivity" },
-  { id: "keynote", name: "Keynote", image: "/images/herosectionicons/keynote.png", anchor: "#visual-productivity" },
-  { id: "final-cut", name: "Final Cut Pro", image: "/images/herosectionicons/final cut pro.png", anchor: "#final-cut-pro" },
-  { id: "pixelmator", name: "Pixelmator Pro", image: "/images/herosectionicons/pixelmator pro.png", anchor: "#pixelmator-pro" },
-  { id: "logic-pro", name: "Logic Pro", image: "/images/herosectionicons/logical pro.png", anchor: "#logic-pro" },
-  { id: "pages", name: "Pages", image: "/images/herosectionicons/pages.png", anchor: "#visual-productivity" },
-  { id: "compressor", name: "Compressor", image: "/images/herosectionicons/compossor.png", anchor: "#final-cut-pro" },
-  { id: "mainstage", name: "MainStage", image: "/images/herosectionicons/mainstage.png", anchor: "#logic-pro" },
-  { id: "numbers", name: "Numbers", image: "/images/herosectionicons/numbers.png", anchor: "#visual-productivity" },
-  { id: "motion", name: "Motion", image: "/images/herosectionicons/Motion.png", anchor: "#final-cut-pro" },
+const discoveryPillars: DiscoveryCard[] = [
+  {
+    id: "personality",
+    tag: "Brand Personality",
+    title: "The Visionary Archetype",
+    summary: "Bold, forward-thinking, and uncompromisingly authentic. Inspiring creators worldwide.",
+    status: "Captured in Discovery",
+    color: "#2997ff",
+    icon: (
+      <svg className="w-5 h-5 text-[#2997ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    tags: ["Progressive", "Articulate", "High Impact"],
+  },
+  {
+    id: "visual-direction",
+    tag: "Visual Preferences",
+    title: "Minimal High-Contrast Aesthetic",
+    summary: "Monochrome foundations with electric neon accents, spacious layouts, and Swiss typography.",
+    status: "Client Aligned",
+    color: "#ff375f",
+    icon: (
+      <svg className="w-5 h-5 text-[#ff375f]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+    ),
+    tags: ["Clean", "Architectural", "Editorial"],
+  },
+  {
+    id: "vision-goals",
+    tag: "Vision & Goals",
+    title: "Category Disruption",
+    summary: "Redefining the creative onboarding standard. Transitioning from ambiguous briefs to deep clarity.",
+    status: "Core Objective",
+    color: "#30d158",
+    icon: (
+      <svg className="w-5 h-5 text-[#30d158]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    tags: ["01 Create", "02 Invite", "03 Discover", "04 Direct"],
+  },
+  {
+    id: "audience",
+    tag: "Target Audience",
+    title: "Designers & Creative Studios",
+    summary: "Freelance brand identity designers, boutique branding agencies, and design consultants.",
+    status: "Primary Persona",
+    color: "#ff9f0a",
+    icon: (
+      <svg className="w-5 h-5 text-[#ff9f0a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    ),
+    tags: ["Identity", "Typography", "Strategy"],
+  },
 ];
 
 export default function HeroSection() {
+  const [activeTab, setActiveTab] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [baseSpacing, setBaseSpacing] = useState(145);
-
-  useEffect(() => {
-    const updateSpacing = () => {
-      const width = window.innerWidth;
-      if (width < 440) {
-        setBaseSpacing(88);
-      } else if (width < 640) {
-        setBaseSpacing(104);
-      } else if (width < 1024) {
-        setBaseSpacing(124);
-      } else {
-        setBaseSpacing(145);
-      }
-    };
-    updateSpacing();
-    window.addEventListener("resize", updateSpacing);
-    return () => window.removeEventListener("resize", updateSpacing);
-  }, []);
-  const [activeIndex, setActiveIndex] = useState(0); // Starts on Freeform matching Apple's showcase
   const [hasOpened, setHasOpened] = useState(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Drag interaction refs
-  const trackRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const currentDragOffset = useRef(0);
-  const [dragOffset, setDragOffset] = useState(0);
-
-  // Trigger opening animation on mount
   useEffect(() => {
     const timer = setTimeout(() => {
       setHasOpened(true);
@@ -64,225 +84,210 @@ export default function HeroSection() {
     return () => clearTimeout(timer);
   }, []);
 
-  const nextSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % appList.length);
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev - 1 + appList.length) % appList.length);
-  }, []);
-
-  const goToSlide = (idx: number) => {
-    setActiveIndex(idx);
-  };
-
-  // Autoplay interval tied to isPaused state and only after opening animation finishes
   useEffect(() => {
-    if (isPaused || !hasOpened) {
-      if (timerRef.current) clearInterval(timerRef.current);
-      return;
-    }
-
-    timerRef.current = setInterval(() => {
-      nextSlide();
-    }, 2800);
-
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [isPaused, hasOpened, nextSlide]);
-
-  // Touch and Mouse Drag Handlers
-  const handleTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
-    isDragging.current = true;
-    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-    startX.current = clientX;
-    currentDragOffset.current = 0;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
-    if (!isDragging.current) return;
-    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-    const diff = clientX - startX.current;
-    currentDragOffset.current = diff;
-    setDragOffset(diff);
-  };
-
-  const handleTouchEnd = () => {
-    if (!isDragging.current) return;
-    isDragging.current = false;
-    const threshold = 60;
-    if (currentDragOffset.current < -threshold) {
-      nextSlide();
-    } else if (currentDragOffset.current > threshold) {
-      prevSlide();
-    }
-    setDragOffset(0);
-    currentDragOffset.current = 0;
-  };
+    if (isPaused || !hasOpened) return;
+    const interval = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % discoveryPillars.length);
+    }, 3800);
+    return () => clearInterval(interval);
+  }, [isPaused, hasOpened]);
 
   return (
     <section
       id="overview"
-      className="relative pt-16 pb-20 sm:pt-26 sm:pb-18 overflow-hidden bg-black text-center select-none"
+      className="relative pt-24 pb-20 sm:pt-32 sm:pb-28 overflow-hidden bg-black text-center select-none"
     >
-      <div className="max-w-[1280px] mx-auto px-4 relative z-10 flex flex-col items-center">
-        {/* Top Header Row with Animated Wordmark and Floating Pause Button */}
-        <div className="w-full flex items-center justify-between mb-4 px-2 sm:px-6 relative">
-          <div className="w-10 h-10 hidden sm:block" />
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-[#0071e3]/15 via-[#bf5af2]/10 to-transparent blur-[120px] pointer-events-none -z-10" />
 
-          {/* Centered Wordmark with Opening Scale, Glow, and Shimmer Animation */}
-          <div
-            className={`flex items-center justify-center gap-2 mx-auto cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened
-                ? "opacity-100 translate-y-0 scale-100"
-                : "opacity-0 -translate-y-5 scale-90"
-              }`}
-          >
-            <span className="text-3xl sm:text-5xl font-pavelt tracking-normal apple-wordmark-shimmer">
-              Floxa
-            </span>
-          </div>
-
-          {/* Right Floating Play/Pause Button */}
-          <button
-            onClick={() => setIsPaused(!isPaused)}
-            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1d1d1f] hover:bg-[#2d2d30] border border-white/10 text-white/80 hover:text-white flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95 shadow-lg ${hasOpened ? "opacity-100 scale-100" : "opacity-0 scale-75"
-              }`}
-            aria-label={isPaused ? "Play hero swiper" : "Pause hero swiper"}
-          >
-            {isPaused ? (
-              <svg className="w-3.5 h-3.5 fill-current ml-0.5" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            ) : (
-              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                <rect x="6" y="4" width="3.5" height="16" rx="1" />
-                <rect x="14.5" y="4" width="3.5" height="16" rx="1" />
-              </svg>
-            )}
-          </button>
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center">
+        {/* Brand Eyebrow Pill */}
+        <div
+          className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/10 backdrop-blur-md mb-6 transition-all duration-700 ${
+            hasOpened ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+          }`}
+        >
+          <span className="w-2 h-2 rounded-full bg-[#0071e3] animate-pulse" />
+          <span className="text-[12px] sm:text-[13px] font-medium text-white/90 tracking-wide">
+            FLOXA by FlumenX
+          </span>
+          <span className="text-white/30">•</span>
+          <span className="text-[12px] sm:text-[13px] font-medium text-white/60">
+            Clarity Before Creation
+          </span>
         </div>
 
-        {/* Main Headline with Opening Staggered Reveal and Soft Blur */}
-        <h1
-          className={`text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-semibold tracking-tight text-white mb-8 sm:mb-12 leading-[1.06] transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened
-              ? "opacity-100 translate-y-0 filter-none"
-              : "opacity-0 translate-y-8 blur-sm"
-            }`}
+        {/* Wordmark with Opening Scale & Shimmer */}
+        <div
+          className={`flex items-center justify-center gap-2 mb-4 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            hasOpened ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-5 scale-90"
+          }`}
         >
-          All yours for the making.
+          <span className="text-4xl sm:text-6xl md:text-7xl font-pavelt tracking-normal apple-wordmark-shimmer">
+            FLOXA
+          </span>
+        </div>
+
+        {/* Main Headline */}
+        <h1
+          className={`text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-semibold tracking-tight text-white mb-6 leading-[1.08] max-w-4xl transition-all duration-1000 delay-150 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            hasOpened ? "opacity-100 translate-y-0 filter-none" : "opacity-0 translate-y-8 blur-sm"
+          }`}
+        >
+          Great Brands Begin<br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/60">
+            Before Design.
+          </span>
         </h1>
 
-        {/* Official Apple Curved App Icons Swiper / Carousel with Opening Fan-Out Animation */}
+        {/* Narrative Subhead */}
         <div
-          ref={trackRef}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onMouseDown={handleTouchStart}
-          onMouseMove={handleTouchMove}
-          onMouseUp={handleTouchEnd}
-          onMouseLeave={handleTouchEnd}
-          className={`relative w-full max-w-[1100px] h-[180px] xs:h-[200px] sm:h-[230px] md:h-[240px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-2 sm:my-4 transition-opacity duration-1000 delay-300 ${hasOpened ? "opacity-100" : "opacity-0"
-            }`}
+          className={`max-w-[760px] mx-auto px-4 mb-8 text-center transition-all duration-1000 delay-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
         >
-          {/* Subtle side vignettes to merge seamlessly into black background */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-black via-black/85 to-transparent z-30 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-black via-black/85 to-transparent z-30 pointer-events-none" />
-
-          {/* Icons Carousel Track */}
-          <div className="relative w-full h-full flex items-center justify-center">
-            {appList.map((app, idx) => {
-              // Calculate circular offset relative to activeIndex (-4 to +5)
-              let offset = (idx - activeIndex) % appList.length;
-              if (offset > appList.length / 2) offset -= appList.length;
-              if (offset < -appList.length / 2) offset += appList.length;
-
-              // Only render visible icons within range [-3, 3]
-              const isVisible = Math.abs(offset) <= 3;
-              if (!isVisible) return null;
-
-              const isCenter = offset === 0;
-
-              // Spacing per icon slot
-              const targetTranslateX = offset * baseSpacing + dragOffset;
-
-              // On initial opening, elements fan out smoothly from center
-              const translateX = hasOpened ? targetTranslateX : 0;
-
-              // Dynamic scale and opacity matching Apple's depth curve
-              const targetScale = isCenter ? 1.08 : Math.max(0.78, 1 - Math.abs(offset) * 0.12);
-              const scale = hasOpened ? targetScale : 0.6;
-              const opacity = hasOpened
-                ? isCenter
-                  ? 1
-                  : Math.abs(offset) === 1
-                    ? 0.75
-                    : Math.abs(offset) === 2
-                      ? 0.35
-                      : 0.15
-                : 0;
-
-              return (
-                <div
-                  key={app.id}
-                  onClick={() => goToSlide(idx)}
-                  className="absolute flex flex-col items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer"
-                  style={{
-                    transform: `translateX(${translateX}px) scale(${scale})`,
-                    opacity: opacity,
-                    zIndex: isCenter ? 20 : 10 - Math.abs(offset),
-                  }}
-                >
-                  {/* The Squircle Icon with Neon Edge Glow */}
-                  <div className="transition-transform duration-300 hover:scale-105 active:scale-95">
-                    <img
-                      src={app.image}
-                      alt={app.name}
-                      className="w-[76px] h-[76px] xs:w-[90px] xs:h-[90px] sm:w-[110px] sm:h-[110px] md:w-[124px] md:h-[124px] object-contain select-none pointer-events-none filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)]"
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Active App Text Label - Centered directly below the middle icon */}
-          <div
-            className={`absolute bottom-1 z-40 flex items-center justify-center pointer-events-none transition-all duration-700 delay-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-              }`}
-          >
-            <span className="text-xs sm:text-[13px] font-normal tracking-wide text-white/90 capitalize transition-opacity duration-300">
-              {appList[activeIndex].name}
-            </span>
-          </div>
-        </div>
-
-        {/* Narrative Copy with Opening Slide Up */}
-        <div
-          className={`max-w-[760px] mx-auto px-4 mt-6 sm:mt-8 mb-8 text-center transition-all duration-1000 delay-600 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-        >
-          <p className="text-base sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed font-normal">
-            <strong className="text-white font-semibold">
-              The apps you need for everything you want to create.
-            </strong>{" "}
-            Craft your stories with video in Final&nbsp;Cut&nbsp;Pro. Reimagine images in Pixelmator&nbsp;Pro. Produce your best music in Logic&nbsp;Pro. Supercharge productivity with premium content in Keynote, Pages, Numbers and Freeform. Boost workflows with AI features that build on Apple&nbsp;Intelligence.<sup>1</sup> And with Family Sharing, up to five other people can enjoy your subscription&nbsp;too.
+          <p className="text-base sm:text-lg md:text-[20px] text-[#a1a1a6] leading-relaxed font-normal">
+            <strong className="text-white font-semibold">Every brand has a story.</strong> FLOXA helps designers understand that story before turning ideas into creative work. Discover your client&apos;s brand personality, vision, goals, and preferences through a more structured brand discovery process.
+          </p>
+          <p className="text-sm sm:text-base text-white/50 mt-3 font-normal tracking-wide">
+            Before the logo. Before the colours. Before the first creative idea.
           </p>
         </div>
 
-        {/* "Try it free" White Pill Button with Opening Slide Up */}
+        {/* CTA Buttons Row */}
         <div
-          className={`transition-all duration-1000 delay-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${hasOpened ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
-            }`}
+          className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-14 transition-all duration-1000 delay-450 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            hasOpened ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
+          }`}
         >
           <a
             href="https://floxa.flumenx.in/"
-            className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-sm sm:text-base font-normal px-5 py-2 sm:px-6 sm:py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-sm sm:text-base font-medium px-7 py-3 rounded-full transition-all duration-150 active:scale-95 shadow-lg shadow-white/10"
           >
-            <span>Try it free</span>
-            <sup className="text-[10px] ml-0.5">2</sup>
+            <span>Get Started with FLOXA</span>
+            <svg className="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </a>
+
+          <a
+            href="#how-it-works"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-white/[0.08] hover:bg-white/[0.14] text-white text-sm sm:text-base font-normal px-6 py-3 rounded-full border border-white/10 transition-all duration-150 active:scale-95 backdrop-blur-md"
+          >
+            <span>See How It Works</span>
+          </a>
+        </div>
+
+        {/* Interactive Visual Showcase: Brand Discovery Interactive Deck */}
+        <div
+          className={`w-full max-w-[1040px] transition-all duration-1000 delay-600 ${
+            hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          {/* Deck Container Card with Glassmorphic Apple Border */}
+          <div className="relative rounded-[28px] sm:rounded-[36px] bg-[#161617]/90 border border-white/[0.12] p-5 sm:p-8 md:p-10 shadow-2xl backdrop-blur-xl overflow-hidden text-left">
+            {/* Top Toolbar */}
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-white/[0.08]">
+              <div className="flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                  <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
+                </div>
+                <span className="text-xs sm:text-[13px] text-white/50 font-mono tracking-tight pl-2 border-l border-white/10">
+                  FLOXA Discovery Canvas · Live Preview
+                </span>
+              </div>
+
+              {/* Pause/Play Interactive Deck */}
+              <button
+                onClick={() => setIsPaused(!isPaused)}
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white flex items-center justify-center transition-colors"
+                aria-label={isPaused ? "Resume discovery walkthrough" : "Pause discovery walkthrough"}
+              >
+                {isPaused ? (
+                  <svg className="w-3 h-3 fill-current ml-0.5" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                ) : (
+                  <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                    <rect x="6" y="4" width="3.5" height="16" rx="1" />
+                    <rect x="14.5" y="4" width="3.5" height="16" rx="1" />
+                  </svg>
+                )}
+              </button>
+            </div>
+
+            {/* Pillars Selection Tabs */}
+            <div className="flex items-center gap-2 sm:gap-3 py-6 overflow-x-auto no-scrollbar">
+              {discoveryPillars.map((pillar, idx) => {
+                const isActive = activeTab === idx;
+                return (
+                  <button
+                    key={pillar.id}
+                    onClick={() => {
+                      setActiveTab(idx);
+                      setIsPaused(true);
+                    }}
+                    className={`shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-2 border ${
+                      isActive
+                        ? "bg-white text-black border-white shadow-md scale-[1.02]"
+                        : "bg-white/[0.04] text-white/60 border-white/[0.08] hover:text-white hover:bg-white/[0.08]"
+                    }`}
+                  >
+                    <span>{pillar.tag}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Active Pillar Card Stage */}
+            <div className="relative rounded-2xl bg-black/60 border border-white/[0.08] p-6 sm:p-8 transition-all duration-500 min-h-[220px] flex flex-col justify-between">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                <div className="max-w-xl">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="p-1.5 rounded-lg bg-white/5 border border-white/10">
+                      {discoveryPillars[activeTab].icon}
+                    </div>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-white/50">
+                      {discoveryPillars[activeTab].tag}
+                    </span>
+                    <span className="text-xs px-2 py-0.5 rounded-full bg-[#0071e3]/20 text-[#2997ff] border border-[#0071e3]/30">
+                      {discoveryPillars[activeTab].status}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-tight mb-2">
+                    {discoveryPillars[activeTab].title}
+                  </h3>
+
+                  <p className="text-sm sm:text-base text-[#a1a1a6] leading-relaxed">
+                    {discoveryPillars[activeTab].summary}
+                  </p>
+                </div>
+
+                {/* Tags / Insights Badges */}
+                <div className="flex md:flex-col flex-wrap gap-2 shrink-0 md:items-end">
+                  {discoveryPillars[activeTab].tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="text-xs font-medium px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-white/80"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bottom discovery timeline indicator */}
+              <div className="mt-8 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs text-white/40">
+                <span>Phase: Pre-Design Brand Discovery</span>
+                <span>Clarity Score: 98% Aligned</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

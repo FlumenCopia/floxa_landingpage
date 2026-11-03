@@ -17,11 +17,12 @@ export default function LocalNav() {
   const closeMenu = () => setMobileMenuOpen(false);
 
   const navLinks = [
-    { label: "Overview", href: "#overview" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Final Cut Pro", href: "#final-cut-pro" },
-    { label: "Pixelmator Pro", href: "#pixelmator-pro" },
-    { label: "Logic Pro", href: "#logic-pro" },
+    { label: "The Problem", href: "#the-problem" },
+    { label: "The Experience", href: "#the-experience" },
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "Features", href: "#features" },
+    { label: "Who It's For", href: "#who-its-for" },
+    { label: "Why FLOXA", href: "#why-floxa" },
     { label: "FAQ", href: "#faq" },
   ];
 
@@ -33,19 +34,22 @@ export default function LocalNav() {
           : "bg-black/60 backdrop-blur-md border-white/[0.05]"
       }`}
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 h-14 sm:h-15 flex items-center justify-between">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 h-14 sm:h-15 flex items-center justify-between">
         {/* Product Brand */}
         <a
           href="#overview"
           onClick={closeMenu}
-          className="text-white hover:text-white/80 transition-colors flex items-center gap-2"
+          className="text-white hover:text-white/80 transition-colors flex items-center gap-2 group"
         >
-          <span className="text-xl sm:text-2xl md:text-3xl font-pavelt tracking-normal">Floxa</span>
+          <span className="text-xl sm:text-2xl md:text-[26px] font-pavelt tracking-normal">FLOXA</span>
+          <span className="text-[11px] font-medium text-white/40 tracking-wider uppercase border border-white/10 px-1.5 py-0.5 rounded-md hidden xs:inline group-hover:border-white/20 transition-colors">
+            by FlumenX
+          </span>
         </a>
 
         {/* Desktop / Tablet Links & White Pill CTA */}
         <div className="flex items-center space-x-3 sm:space-x-5 text-[12px]">
-          <div className="hidden lg:flex items-center space-x-6 text-white/70">
+          <div className="hidden lg:flex items-center space-x-5 xl:space-x-6 text-white/70">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -60,10 +64,11 @@ export default function LocalNav() {
           {/* White Pill Button */}
           <a
             href="https://floxa.flumenx.in/"
-            className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-[12px] font-normal px-3.5 sm:px-4 py-1.5 rounded-full transition-all duration-150 active:scale-95 shadow-sm whitespace-nowrap"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-[12px] font-medium px-4 py-1.5 rounded-full transition-all duration-150 active:scale-95 shadow-sm whitespace-nowrap"
           >
-            <span>Try it free</span>
-            <sup className="text-[9px] ml-0.5">2</sup>
+            <span>Get Started</span>
           </a>
 
           {/* Mobile / Tablet Hamburger Toggle */}
@@ -88,10 +93,10 @@ export default function LocalNav() {
       {/* Mobile / Tablet Dropdown Menu */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-black/95 backdrop-blur-xl border-b border-white/[0.08] ${
-          mobileMenuOpen ? "max-h-80 opacity-100 py-3" : "max-h-0 opacity-0 py-0"
+          mobileMenuOpen ? "max-h-96 opacity-100 py-4" : "max-h-0 opacity-0 py-0"
         }`}
       >
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col space-y-3">
+        <div className="max-w-[1240px] mx-auto px-6 flex flex-col space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.href}

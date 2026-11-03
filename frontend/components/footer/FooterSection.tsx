@@ -1,71 +1,94 @@
 "use client";
 
-import React, { useState } from "react";
-
-const footnotes = [
-  "Some features of Floxa require an Apple Intelligence–capable device. For a list of Apple Intelligence availability and technical requirements, see support.apple.com.",
-  "New subscribers only. Plan renews at ₹399/month or ₹3999/year based on plan selected. Plan automatically renews until cancelled. Terms apply.",
-  "New subscribers only. Plan automatically renews at ₹199/month or ₹1999/year based on plan selected until cancelled. College students and educators only. Verification is required. Terms apply. Limited-time offer; offer may end at any time.",
-  "New and qualified returning subscribers only. Plan renews at ₹399/month or ₹3999/year based on plan selected. Only one offer per Apple Account and only one offer per family if you’re part of a Family Sharing group.",
-  "Final Cut Camera is available on the App Store. Requires iPhone XS or later running iOS 18.6 or later, with some features requiring newer models.",
-  "Visual Search requires a Mac with Apple silicon or an iPad with Apple M1 chip or later. Available only in US English.",
-  "Transcript Search in Final Cut Pro requires a Mac with Apple silicon or an iPad with Apple M1 chip or later. Available only in US English.",
-  "Some content, including motion graphics, templates and plug-ins, is made available by third parties and is subject to their terms and conditions.",
-  "Apple Pencil is sold separately.",
-  "Requires that your iPad and Mac are signed in with the same Apple Account.",
-  "Session Players require iPad with Apple M1 chip or later or Mac with Apple silicon.",
-];
+import React from "react";
 
 export default function FooterSection() {
-  const [showAllFootnotes, setShowAllFootnotes] = useState(false);
+  const footerLinks = [
+    { label: "Home", href: "#overview" },
+    { label: "The Problem", href: "#the-problem" },
+    { label: "The Experience", href: "#the-experience" },
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "Features", href: "#features" },
+    { label: "Who It's For", href: "#who-its-for" },
+    { label: "Why FLOXA", href: "#why-floxa" },
+    { label: "FAQ", href: "#faq" },
+  ];
+
+  const legalLinks = [
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms and Conditions", href: "#" },
+    { label: "Contact", href: "https://floxa.flumenx.in/" },
+  ];
 
   return (
-    <footer className="bg-[#161617] text-[#86868b] text-[12px] leading-relaxed border-t border-white/[0.08] pt-12 pb-16">
-      <div className="max-w-[1024px] mx-auto px-4">
-        {/* Footnotes List */}
-        <div className="border-b border-white/[0.08] pb-8 mb-8">
-          <ol className="space-y-3 list-decimal list-inside text-[#86868b]">
-            {(showAllFootnotes ? footnotes : footnotes.slice(0, 4)).map((note, idx) => (
-              <li key={idx} className="pl-1">
-                {note}
-              </li>
+    <footer className="bg-[#161617] text-[#86868b] text-[12px] leading-relaxed border-t border-white/[0.08] pt-14 pb-16 select-none">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-8">
+        {/* Brand Mission & Tagline */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-10 border-b border-white/[0.08]">
+          <div className="space-y-2">
+            <div className="flex items-center gap-3">
+              <span className="text-white font-pavelt text-3xl sm:text-4xl tracking-normal">
+                FLOXA
+              </span>
+              <span className="text-xs font-medium text-white/50 border border-white/10 px-2 py-0.5 rounded-md">
+                by FlumenX
+              </span>
+            </div>
+            <p className="text-sm text-[#a1a1a6] max-w-md">
+              Helping creative professionals understand brands before design begins.
+            </p>
+          </div>
+
+          <div className="text-left md:text-right">
+            <p className="text-xs text-white/40 uppercase tracking-widest font-mono mb-1">
+              Tagline
+            </p>
+            <p className="text-lg sm:text-xl font-medium text-white">
+              Clarity Before Creation.
+            </p>
+          </div>
+        </div>
+
+        {/* Navigation Grid */}
+        <div className="py-8 border-b border-white/[0.08]">
+          <div className="flex flex-wrap gap-x-6 gap-y-3 text-xs sm:text-sm text-white/70">
+            {footerLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
             ))}
-          </ol>
-          {footnotes.length > 4 && (
-            <button
-              onClick={() => setShowAllFootnotes(!showAllFootnotes)}
-              className="mt-3 text-[#2997ff] hover:underline"
-            >
-              {showAllFootnotes ? "Show less" : `Show ${footnotes.length - 4} more footnotes`}
-            </button>
-          )}
+          </div>
         </div>
 
-        {/* Brand Header */}
-        <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/[0.08]">
-          <span className="text-white font-pavelt text-2xl sm:text-3xl tracking-normal">Floxa</span>
-        </div>
-
-        {/* Bottom Legal & Regional info */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[11px] text-[#86868b]">
+        {/* Bottom Legal & Copyright */}
+        <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[11px] text-[#86868b]">
           <div>
-            Copyright © 2026 Floxa. All rights reserved.
+            Copyright © 2026 FLOXA by FlumenX. All rights reserved.
           </div>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">Sales Policy</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">Legal</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">Site Map</a>
+            {legalLinks.map((link, idx) => (
+              <React.Fragment key={link.label}>
+                <a
+                  href={link.href}
+                  className="hover:text-white transition-colors"
+                  {...(link.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {link.label}
+                </a>
+                {idx < legalLinks.length - 1 && <span className="text-white/20">•</span>}
+              </React.Fragment>
+            ))}
           </div>
 
-          <div className="text-white/80 font-medium">
-            India
+          <div className="text-white/60 font-medium">
+            FLOXA Platform
           </div>
         </div>
       </div>

@@ -1,11 +1,12 @@
 import LocalNav from "../components/navbar/LocalNav";
 import HeroSection from "../components/hero/HeroSection";
-import HighlightsSection from "../components/highlights/HighlightsSection";
-import PricingSection from "../components/pricing/PricingSection";
-import FinalCutProSection from "../components/apps/FinalCutProSection";
-import PixelmatorProSection from "../components/apps/PixelmatorProSection";
-import LogicProSection from "../components/apps/LogicProSection";
-import ProductivitySection from "../components/apps/ProductivitySection";
+import ProblemSection from "../components/problem/ProblemSection";
+import ExperienceSection from "../components/experience/ExperienceSection";
+import HowItWorksSection from "../components/howitworks/HowItWorksSection";
+import FeaturesSection from "../components/features/FeaturesSection";
+import AudienceSection from "../components/audience/AudienceSection";
+import WhyFloxaSection from "../components/whyfloxa/WhyFloxaSection";
+import FinalCtaSection from "../components/cta/FinalCtaSection";
 import FaqSection from "../components/faq/FaqSection";
 import FooterSection from "../components/footer/FooterSection";
 
@@ -17,33 +18,35 @@ export default function Home() {
 
       {/* Main Page Content */}
       <main className="flex-1 w-full flex flex-col">
-        {/* 3. Hero Section: "All yours for the making" + Interactive App Showcase */}
+        {/* Section 1: Hero Section */}
         <HeroSection />
 
-        {/* 4. Highlights Section: "Meet your all-star team of creative apps" */}
-        <HighlightsSection />
+        {/* Section 2: The Problem */}
+        <ProblemSection />
 
-        {/* 5. Subscriptions / Pricing: "One powerful collection. One smart subscription" */}
-        <PricingSection />
+        {/* Section 3: Introducing FLOXA / The Experience */}
+        <ExperienceSection />
 
-        {/* 6. Final Cut Pro: "The ultimate video creation experience" */}
-        <FinalCutProSection />
+        {/* Section 4: How It Works */}
+        <HowItWorksSection />
 
-        {/* 7. Pixelmator Pro: "Creative imaging and design. Made for everyone" */}
-        <PixelmatorProSection />
+        {/* Section 5: Key Features */}
+        <FeaturesSection />
 
-        {/* 8. Logic Pro: "The fast track to the final mix. Wherever you go" */}
-        <LogicProSection />
+        {/* Section 6: Who Is FLOXA For? */}
+        <AudienceSection />
 
+        {/* Section 7: Why FLOXA? */}
+        <WhyFloxaSection />
 
-        {/* 9. Keynote, Pages, Numbers, Freeform: "Go from idea to done. In a snap" */}
-        <ProductivitySection />
+        {/* Section 8: Final Call to Action */}
+        <FinalCtaSection />
 
-        {/* 10. FAQ Accordion: "Questions? Answers." */}
+        {/* Section 9: FAQ Accordion */}
         <FaqSection />
       </main>
 
-      {/* 11. Official Apple Footer */}
+      {/* Section 10: Official FLOXA Footer */}
       <FooterSection />
     </div>
   );
