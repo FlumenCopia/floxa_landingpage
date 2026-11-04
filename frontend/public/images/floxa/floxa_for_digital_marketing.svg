@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Squircle Clip Path -->
+    <clipPath id="squircleMkt">
+      <rect x="6" y="6" width="188" height="188" rx="48" />
+    </clipPath>
+
+    <!-- Marketing Amber / Magenta Rim Border -->
+    <linearGradient id="rimGradMkt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9f0a" />
+      <stop offset="50%" stop-color="rgba(255,255,255,0.4)" />
+      <stop offset="100%" stop-color="rgba(255,55,95,0.3)" />
+    </linearGradient>
+
+    <!-- Bottom Vignette -->
+    <linearGradient id="bottomShadowMkt" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="transparent" />
+      <stop offset="60%" stop-color="rgba(0,0,0,0.55)" />
+      <stop offset="100%" stop-color="rgba(0,0,0,0.92)" />
+    </linearGradient>
+  </defs>
+
+  <!-- Masked Background Image (Official Floxa Fluid Texture) -->
+  <g clip-path="url(#squircleMkt)">
+    <image href="/images/floxa/banner3.png" x="-10" y="-10" width="220" height="220" preserveAspectRatio="xMidYMid slice" />
+    
+    <!-- Dark Glass Overlay for Contrast -->
+    <rect x="0" y="0" width="200" height="200" fill="rgba(20, 10, 5, 0.48)" />
+    <rect x="0" y="0" width="200" height="200" fill="url(#bottomShadowMkt)" />
+
+    <!-- Official White FLOXA Logo from screenshot -->
+    <g transform="translate(18, 55)">
+      <image href="/images/floxa/floxa_logo.png" x="0" y="0" width="164" height="52" preserveAspectRatio="xMidYMid meet" opacity="0.9" />
+    </g>
+
+    <!-- Subtitle -->
+    <text x="100" y="122" fill="rgba(255,255,255,0.6)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" letter-spacing="1">
+      GROWTH EDITION
+    </text>
+
+    <!-- Edition Badge Pill at Bottom -->
+    <g transform="translate(36, 142)">
+      <rect x="0" y="0" width="128" height="26" rx="13" fill="rgba(255, 159, 10, 0.15)" stroke="#ff9f0a" stroke-width="1.2" />
+      <text x="64" y="17" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1.2">
+        FOR MARKETING
+      </text>
+    </g>
+  </g>
+
+  <!-- Squircle Border -->
+  <rect x="6" y="6" width="188" height="188" rx="48" fill="none" stroke="url(#rimGradMkt)" stroke-width="2.5" />
+
+  <!-- Coming Soon Pill on Top Right -->
+  <g transform="translate(122, 12)">
+    <rect x="0" y="0" width="62" height="20" rx="10" fill="#1c1c1e" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+    <text x="31" y="14" fill="#a1a1a6" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="0.5">SOON</text>
+  </g>
+</svg>

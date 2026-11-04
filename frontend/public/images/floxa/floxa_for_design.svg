@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Squircle Clip Path -->
+    <clipPath id="squircle">
+      <rect x="6" y="6" width="188" height="188" rx="48" />
+    </clipPath>
+
+    <!-- Glowing Rim Border -->
+    <linearGradient id="neonRimDesign" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4dffa0" />
+      <stop offset="40%" stop-color="rgba(255,255,255,0.7)" />
+      <stop offset="100%" stop-color="rgba(77,255,160,0.3)" />
+    </linearGradient>
+
+    <!-- Bottom Vignette -->
+    <linearGradient id="bottomShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="transparent" />
+      <stop offset="60%" stop-color="rgba(0,0,0,0.5)" />
+      <stop offset="100%" stop-color="rgba(0,0,0,0.92)" />
+    </linearGradient>
+
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Masked Background Image (Official Floxa Fluid Texture) -->
+  <g clip-path="url(#squircle)">
+    <image href="/images/floxa/banner1.png" x="-10" y="-10" width="220" height="220" preserveAspectRatio="xMidYMid slice" />
+    
+    <!-- Dark Glass Overlay for Contrast -->
+    <rect x="0" y="0" width="200" height="200" fill="rgba(0, 7, 4, 0.45)" />
+    <rect x="0" y="0" width="200" height="200" fill="url(#bottomShadow)" />
+
+    <!-- Official White FLOXA Logo from screenshot -->
+    <g transform="translate(18, 55)" filter="url(#logoGlow)">
+      <image href="/images/floxa/floxa_logo.png" x="0" y="0" width="164" height="52" preserveAspectRatio="xMidYMid meet" />
+    </g>
+
+    <!-- Subtitle from screenshot -->
+    <text x="100" y="122" fill="rgba(255,255,255,0.7)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.5" font-weight="500" text-anchor="middle" letter-spacing="1">
+      DESIGN EDITION
+    </text>
+
+    <!-- Edition Badge Pill at Bottom -->
+    <g transform="translate(45, 142)">
+      <rect x="0" y="0" width="110" height="26" rx="13" fill="rgba(77, 255, 160, 0.15)" stroke="#4dffa0" stroke-width="1.5" />
+      <circle cx="16" cy="13" r="3.5" fill="#4dffa0" />
+      <text x="64" y="17" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1.2">
+        FOR DESIGN
+      </text>
+    </g>
+  </g>
+
+  <!-- Squircle Metallic Border with Neon Rim -->
+  <rect x="6" y="6" width="188" height="188" rx="48" fill="none" stroke="url(#neonRimDesign)" stroke-width="3" />
+</svg>
