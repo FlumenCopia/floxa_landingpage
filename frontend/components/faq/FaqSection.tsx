@@ -41,28 +41,36 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="pt-5 pb-8 sm:pt-8 sm:pb-10 md:pt-10 md:pb-12 bg-black text-white border-t border-white/[0.08]">
+    <section id="faq" className="pt-6 pb-10 sm:pt-10 sm:pb-14 md:pt-14 md:pb-16 bg-[#020806] text-[#e8f5ef] border-t border-[#4dffa0]/15 relative">
       <div className="max-w-[980px] mx-auto px-6 sm:px-8">
-        <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-white mb-4 sm:mb-6">
-          Questions? Answers.
+        {/* Eyebrow in Rose Gold */}
+        <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#e0a899] mb-2 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#e0a899]" />
+          Common Inquiries
+        </div>
+
+        <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-[#e8f5ef] mb-6 sm:mb-8">
+          Questions? <span className="rosegold-gradient-text">Answers.</span>
         </h2>
 
         <div className="w-full">
           {faqData.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div key={idx} className="border-b border-[#333336]">
+              <div key={idx} className="border-b border-[#4dffa0]/15">
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full py-6 sm:py-8 flex items-center justify-between text-left group cursor-pointer focus:outline-none"
+                  className="w-full py-6 sm:py-7 flex items-center justify-between text-left group cursor-pointer focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg md:text-[22px] font-semibold text-white tracking-tight pr-4 sm:pr-8 leading-snug group-hover:text-neutral-200 transition-colors">
+                  <span className={`text-base sm:text-lg md:text-[21px] font-semibold tracking-tight pr-4 sm:pr-8 leading-snug transition-colors ${
+                    isOpen ? "text-[#e0a899]" : "text-[#e8f5ef] group-hover:text-[#e0a899]"
+                  }`}>
                     {item.q}
                   </span>
                   <svg
-                    className={`w-5 h-5 sm:w-6 sm:h-6 text-[#86868b] shrink-0 transition-transform duration-300 ease-out group-hover:text-white ${
-                      isOpen ? "rotate-180 text-white" : ""
+                    className={`w-5 h-5 sm:w-6 sm:h-6 text-[#89aca0] shrink-0 transition-transform duration-300 ease-out group-hover:text-[#e0a899] ${
+                      isOpen ? "rotate-180 text-[#e0a899]" : ""
                     }`}
                     viewBox="0 0 24 24"
                     fill="none"
@@ -80,7 +88,7 @@ export default function FaqSection() {
                     isOpen ? "max-h-[600px] opacity-100 pb-7" : "max-h-0 opacity-0 pb-0"
                   }`}
                 >
-                  <p className="text-[15px] sm:text-[17px] md:text-[18px] text-[#a1a1a6] leading-relaxed pr-2 sm:pr-10">
+                  <p className="text-[15px] sm:text-[17px] md:text-[18px] text-[#89aca0] leading-relaxed pr-2 sm:pr-10">
                     {item.a}
                   </p>
                 </div>

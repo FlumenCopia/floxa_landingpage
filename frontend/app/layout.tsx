@@ -33,9 +33,10 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#020806" />
       </head>
       <body
-        className="bg-black text-[#f5f5f7] antialiased selection:bg-[#0071e3]/30 selection:text-white min-h-screen flex flex-col"
+        className="bg-[#020806] text-[#e8f5ef] antialiased selection:bg-[#e0a899]/30 selection:text-white min-h-screen flex flex-col"
         suppressHydrationWarning
       >
         {children}

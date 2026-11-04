@@ -30,8 +30,8 @@ export default function LocalNav() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         isScrolled || mobileMenuOpen
-          ? "bg-black/90 backdrop-blur-md border-white/[0.08] shadow-lg"
-          : "bg-black/60 backdrop-blur-md border-white/[0.05]"
+          ? "bg-[#020806]/92 backdrop-blur-md border-[#4dffa0]/20 shadow-[0_4px_24px_rgba(2,8,6,0.85)]"
+          : "bg-[#020806]/65 backdrop-blur-md border-[#4dffa0]/10"
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 h-14 sm:h-15 flex items-center justify-between">
@@ -39,31 +39,32 @@ export default function LocalNav() {
         <a
           href="#overview"
           onClick={closeMenu}
-          className="text-white hover:text-white/80 transition-colors flex items-center gap-2"
+          className="text-[#e8f5ef] hover:text-[#e0a899] transition-colors flex items-center gap-2 group"
         >
-          <span className="text-xl sm:text-2xl md:text-3xl font-pavelt tracking-normal">Floxa</span>
+          <span className="text-xl sm:text-2xl md:text-3xl font-pavelt tracking-normal group-hover:text-[#e0a899] transition-colors">Floxa</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#4dffa0] shadow-[0_0_8px_#4dffa0]" />
         </a>
 
-        {/* Desktop / Tablet Links & White Pill CTA */}
+        {/* Desktop / Tablet Links & Rose Gold Pill CTA */}
         <div className="flex items-center space-x-3 sm:space-x-5 text-[12px]">
-          <div className="hidden lg:flex items-center space-x-6 text-white/70">
+          <div className="hidden lg:flex items-center space-x-6 text-[#89aca0]">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="hover:text-white transition-colors"
+                className="hover:text-[#e0a899] transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          {/* White Pill Button */}
+          {/* Rose Gold Pill Button */}
           <a
             href="https://floxa.flumenx.in/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-[12px] font-normal px-3.5 sm:px-4 py-1.5 rounded-full transition-all duration-150 active:scale-95 shadow-sm whitespace-nowrap"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-[#fce0d8] via-[#e0a899] to-[#c47c6a] hover:brightness-105 text-[#170a07] text-[12px] font-semibold px-4 py-1.5 rounded-full transition-all duration-200 active:scale-95 shadow-[0_0_18px_rgba(224,168,153,0.35)] whitespace-nowrap"
           >
             <span>Try it free</span>
             <sup className="text-[9px] ml-0.5">2</sup>
@@ -72,7 +73,7 @@ export default function LocalNav() {
           {/* Mobile / Tablet Hamburger Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-1.5 rounded-lg text-white/80 hover:text-white focus:outline-none transition-colors"
+            className="lg:hidden p-1.5 rounded-lg text-[#89aca0] hover:text-[#e8f5ef] focus:outline-none transition-colors"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? (
@@ -90,7 +91,7 @@ export default function LocalNav() {
 
       {/* Mobile / Tablet Dropdown Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-black/95 backdrop-blur-xl border-b border-white/[0.08] ${
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-[#06160f]/95 backdrop-blur-xl border-b border-[#4dffa0]/20 ${
           mobileMenuOpen ? "max-h-80 opacity-100 py-3" : "max-h-0 opacity-0 py-0"
         }`}
       >
@@ -100,7 +101,7 @@ export default function LocalNav() {
               key={link.href}
               href={link.href}
               onClick={closeMenu}
-              className="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors"
+              className="text-sm font-medium text-[#89aca0] hover:text-[#e0a899] py-1 transition-colors"
             >
               {link.label}
             </a>

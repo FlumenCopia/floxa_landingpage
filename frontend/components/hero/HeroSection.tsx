@@ -158,8 +158,11 @@ export default function HeroSection() {
   return (
     <section
       id="overview"
-      className="relative pt-16 pb-20 sm:pt-26 sm:pb-18 overflow-hidden bg-black text-center select-none"
+      className="relative pt-16 pb-20 sm:pt-26 sm:pb-18 overflow-hidden bg-[#020806] text-center select-none"
     >
+      {/* Ambient Floxa Emerald & Rose Gold Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[480px] bg-gradient-to-b from-[#4dffa0]/10 via-[#e0a899]/5 to-transparent pointer-events-none blur-3xl z-0" />
+
       <div className="max-w-[1280px] mx-auto px-4 relative z-10 flex flex-col items-center">
         {/* Top Header Row with Animated Wordmark and Floating Pause Button */}
         <div className="w-full flex items-center justify-between mb-4 px-2 sm:px-6 relative">
@@ -181,7 +184,7 @@ export default function HeroSection() {
           {/* Right Floating Play/Pause Button */}
           <button
             onClick={() => setIsPaused(!isPaused)}
-            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1d1d1f] hover:bg-[#2d2d30] border border-white/10 text-white/80 hover:text-white flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95 shadow-lg ${
+            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#06160f]/90 hover:bg-[#081c13] border border-[#4dffa0]/20 text-[#e8f5ef] hover:text-white flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95 shadow-lg ${
               hasOpened ? "opacity-100 scale-100" : "opacity-0 scale-75"
             }`}
             aria-label={isPaused ? "Play hero swiper" : "Pause hero swiper"}
@@ -199,16 +202,16 @@ export default function HeroSection() {
           </button>
         </div>
 
-        {/* Main Headline with Opening Staggered Reveal and Soft Blur */}
+        {/* Main Headline with Opening Staggered Reveal and Rose Gold Accent */}
         <h1
-          className={`text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-semibold tracking-tight text-white mb-8 sm:mb-12 leading-[1.06] transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          className={`text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-semibold tracking-tight text-[#e8f5ef] mb-8 sm:mb-12 leading-[1.06] transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             hasOpened
               ? "opacity-100 translate-y-0 filter-none"
               : "opacity-0 translate-y-8 blur-sm"
           }`}
         >
           Great brands begin<br />
-          before design.
+          <span className="rosegold-gradient-text">before design.</span>
         </h1>
 
         {/* Curved App Icons Swiper / Carousel with Opening Fan-Out Animation */}
@@ -225,9 +228,9 @@ export default function HeroSection() {
             hasOpened ? "opacity-100" : "opacity-0"
           }`}
         >
-          {/* Subtle side vignettes to merge seamlessly into black background */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-black via-black/85 to-transparent z-30 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-black via-black/85 to-transparent z-30 pointer-events-none" />
+          {/* Subtle side vignettes to merge seamlessly into Floxa Obsidian background */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-[#020806] via-[#020806]/85 to-transparent z-30 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-[#020806] via-[#020806]/85 to-transparent z-30 pointer-events-none" />
 
           {/* Icons Carousel Track */}
           <div className="relative w-full h-full flex items-center justify-center">
@@ -375,15 +378,15 @@ export default function HeroSection() {
             hasOpened ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <p className="text-base sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed font-normal">
-            <strong className="text-white font-semibold">
+          <p className="text-base sm:text-lg md:text-[19px] text-[#89aca0] leading-relaxed font-normal">
+            <strong className="text-[#e8f5ef] font-semibold">
               Every brand has a story.
             </strong>{" "}
             FLOXA helps designers understand that story before turning ideas into creative work. Discover your client&apos;s brand personality, vision, goals, and preferences through a more structured brand discovery process. Before the logo. Before the colours. Before the first creative idea.<sup>1</sup> By FlumenX.
           </p>
         </div>
 
-        {/* "Try it free" White Pill Button with Opening Slide Up */}
+        {/* "Try it free" Rose Gold Pill Button with Opening Slide Up */}
         <div
           className={`transition-all duration-1000 delay-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             hasOpened ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
@@ -393,7 +396,7 @@ export default function HeroSection() {
             href="https://floxa.flumenx.in/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-sm sm:text-base font-normal px-5 py-2 sm:px-6 sm:py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-md"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-[#fce0d8] via-[#e0a899] to-[#c47c6a] hover:brightness-105 text-[#170a07] text-sm sm:text-base font-semibold px-6 py-2.5 sm:px-7 sm:py-3 rounded-full transition-all duration-200 active:scale-95 shadow-[0_0_24px_rgba(224,168,153,0.35)]"
           >
             <span>Try it free</span>
             <sup className="text-[10px] ml-0.5">2</sup>
