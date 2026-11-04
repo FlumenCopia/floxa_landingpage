@@ -7,7 +7,7 @@ const pricingCards = [
     id: "new-subscriber",
     title: "New subscriber",
     trial: "1 month free",
-    description: "₹399 per month or ₹3999 per year after your free trial.",
+    description: "₹399 per month or ₹3999 per year after your free trial. Get complete brand discovery tools.",
     footnote: "2",
     icon: (
       <svg className="w-6 h-6 text-white fill-current" viewBox="0 0 24 24">
@@ -22,7 +22,7 @@ const pricingCards = [
     id: "students-educators",
     title: "Students and\neducators",
     trial: "1 month free",
-    description: "₹199 per month or ₹1999 per year after your free trial.",
+    description: "₹199 per month or ₹1999 per year after your free trial. Special pricing for design students.",
     footnote: "3",
     icon: (
       <svg className="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@ const pricingCards = [
     id: "new-devices",
     title: "New devices",
     trial: "3 months free",
-    description: "Try Floxa with an iPad or Mac purchase.",
+    description: "Try Floxa with an iPad or Mac purchase. Clarity before creation.",
     footnote: "4",
     icon: (
       <svg className="w-7 h-7 text-white fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="1.8">
@@ -94,7 +94,9 @@ export default function PricingSection() {
               {/* Left-aligned White Pill Button matching screenshot */}
               <div className="mt-8 pt-2">
                 <a
-                  href="https://floxa.flumenx.in/"
+                  href="https://floxa.flumenx.in/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-sm font-normal px-5 py-2 sm:px-6 sm:py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-sm"
                 >
                   Try it free

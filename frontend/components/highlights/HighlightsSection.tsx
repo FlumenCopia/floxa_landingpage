@@ -18,43 +18,43 @@ const highlightItems: HighlightItem[] = [
     tabTitle: "Floxa",
     accentText: "",
     accentColor: "#ffffff",
-    headline: "Endless creativity. Unlimited possibilities. One suite deal.",
+    headline: "Every client has a vision. FLOXA helps bring it into focus.",
     image: "/images/highlights/creative_apps__bzylnonwi81y_large_2x.jpg",
     image2x: "/images/highlights/creative_apps__bzylnonwi81y_large_2x.jpg",
   },
   {
     id: "final-cut",
-    tabTitle: "Final Cut Pro",
-    accentText: "Final Cut Pro",
+    tabTitle: "Client Briefs",
+    accentText: "Unclear Client Briefs",
     accentColor: "#2997ff",
-    headline: "gives you smarter, faster ways to craft and cut captivating videos.",
+    headline: "become clear creative direction when the right questions are asked.",
     image: "/images/highlights/final_cut__fe9c0hwz9ca6_large_2x.png",
     image2x: "/images/highlights/final_cut__fe9c0hwz9ca6_large_2x.png",
   },
   {
     id: "pixelmator",
-    tabTitle: "Pixelmator Pro",
-    accentText: "Pixelmator Pro",
+    tabTitle: "Inspiration",
+    accentText: "Scattered Inspiration",
     accentColor: "#ff375f",
-    headline: "brings intelligent photo editing and graphic design tools to all your projects.",
+    headline: "is organized into coherent brand preferences and creative expectations.",
     image: "/images/highlights/pixelmator__ec2adx2gleky_large_2x.png",
     image2x: "/images/highlights/pixelmator__ec2adx2gleky_large_2x.png",
   },
   {
     id: "logic-pro",
-    tabTitle: "Logic Pro",
-    accentText: "Logic Pro",
+    tabTitle: "Expectations",
+    accentText: "Creative Expectations",
     accentColor: "#ff9f0a",
-    headline: "puts a complete professional recording studio at your fingertips.",
+    headline: "are aligned so designer and client share the same vision from day one.",
     image: "/images/highlights/logic_pro__djsdokna5umq_large_2x.png",
     image2x: "/images/highlights/logic_pro__djsdokna5umq_large_2x.png",
   },
   {
     id: "productivity",
-    tabTitle: "Productivity Apps",
+    tabTitle: "Brand Discovery",
     accentText: "",
     accentColor: "#30d158",
-    headline: "Intelligent features and premium content amp up productivity in Keynote, Pages, Numbers and Freeform.",
+    headline: "Less guessing. Better understanding. A clearer creative starting point.",
     image: "/images/highlights/apps__caiq4numczxy_large_2x.png",
     image2x: "/images/highlights/apps__caiq4numczxy_large_2x.png",
   },
@@ -118,13 +118,13 @@ export default function HighlightsSection() {
   };
 
   return (
-    <section className="pt-3 pb-3 sm:pt-6 sm:pb-6 md:pt-10 md:pb-10 bg-black text-white overflow-hidden relative select-none">
+    <section id="highlights" className="pt-3 pb-3 sm:pt-6 sm:pb-6 md:pt-10 md:pb-10 bg-black text-white overflow-hidden relative select-none">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-8 mb-2 sm:mb-4">
         {/* Section Header Row */}
         <div>
           <h2 className="text-2xl sm:text-4xl md:text-[44px] font-semibold tracking-tight text-white leading-[1.12] max-w-2xl">
-            Meet your all-star team<br />
-            of creative apps.
+            Great design needs<br />
+            more than a good brief.
           </h2>
         </div>
       </div>
@@ -177,16 +177,15 @@ export default function HighlightsSection() {
                     <p className="text-base xs:text-lg sm:text-xl md:text-2xl font-semibold leading-snug text-white tracking-tight">
                       {item.id === "creative-apps" ? (
                         <>
-                          Endless creativity. Unlimited possibilities.{" "}
-                          <span className="text-white/80 block sm:inline">One suite deal.</span>
+                          Every client has a vision.{" "}
+                          <span className="text-white/80 block sm:inline">FLOXA helps bring it into focus.</span>
                         </>
                       ) : item.id === "productivity" ? (
                         <>
-                          Intelligent features and premium content amp up productivity in{" "}
-                          <span className="keynote-gradient">Keynote, </span>
-                          <span className="pages-gradient">Pages, </span>
-                          <span className="numbers-gradient">Numbers </span>
-                          and <span className="freeform-gradient">Freeform.</span>
+                          Less guessing. Better understanding.{" "}
+                          <span className="keynote-gradient">A clearer </span>
+                          <span className="pages-gradient">creative </span>
+                          <span className="freeform-gradient">starting point.</span>
                         </>
                       ) : (
                         <>

@@ -4,36 +4,32 @@ import React, { useState } from "react";
 
 const faqData = [
   {
-    q: "How do I download Floxa?",
-    a: "You can download all the apps included in Floxa from the App Store. It comes with Final Cut Pro, Logic Pro and Pixelmator Pro as well as Motion, Compressor, MainStage and other tools. You also get premium content with powerful intelligence in Keynote, Pages, Numbers and Freeform.",
+    q: "What is FLOXA?",
+    a: "FLOXA by FlumenX is a brand discovery platform designed for freelance brand identity designers, branding studios, and creative professionals. It provides a structured discovery workflow to help designers understand client vision, brand personality, goals, and visual direction before design begins.",
   },
   {
-    q: "Which apps are included in Floxa?",
-    a: "Floxa gives subscribers access to a suite of creative apps designed for video, music, and image editing and creation. You can make videos in Final Cut Pro, Motion and Compressor; produce music in Logic Pro and MainStage; and edit photos or graphics in Pixelmator Pro. And while Keynote, Pages, Numbers and Freeform remain free for everyone, a Floxa subscription offers premium templates, a library of high-quality, royalty-free photos and graphics, and powerful intelligence features.",
+    q: "Why is brand discovery necessary before design?",
+    a: "Starting a project without understanding the brand leads to unclear briefs, scattered inspiration, mismatched expectations, and unnecessary revision cycles. FLOXA puts discovery at the beginning of the process, ensuring client and designer share a clear creative direction from day one.",
   },
   {
-    q: "Can I still use my existing versions of Final Cut Pro, Logic Pro, Pixelmator Pro, MainStage, Motion and Compressor?",
-    a: "Yes. If you already own Final Cut Pro, Logic Pro, Pixelmator Pro, MainStage, Motion or Compressor, you can continue using them. These standalone Mac apps are also available for one-time purchase and re-download from the App Store, so you can keep working with the tools you have.",
+    q: "How do clients interact with FLOXA?",
+    a: "You create a project and share a personalized discovery link. Clients walk through an intuitive, guided experience to communicate their vision, preferences, brand values, and expectations seamlessly across any device.",
   },
   {
-    q: "Will I still be able to use Keynote, Pages, Numbers and Freeform for free?",
-    a: "Yes. You can continue using Keynote, Pages, Numbers and Freeform for free. And while these apps remain free for everyone, a Floxa subscription offers premium templates, a library of high-quality, royalty-free photos and graphics, and powerful intelligence features.",
+    q: "What kind of insights does FLOXA gather?",
+    a: "FLOXA gathers structured insights about brand personality, target audience, business goals, competitor differentiation, aesthetic preferences, and creative expectations.",
   },
   {
-    q: "What happens to projects and content I created if my subscription ends?",
-    a: "All the projects and content you create with an active subscription to Floxa — including any images you generate or add from the Content Hub — remain licensed in the context of your original creation. Projects in Final Cut Pro, Logic Pro and Pixelmator Pro remain on all your devices, and you can copy or share them to any other device. To open or edit a project, you need to be an active subscriber. Keynote, Pages, Numbers and Freeform documents remain unchanged and can be edited; however, no new edits using paid features will be possible.",
+    q: "Who is FLOXA made for?",
+    a: "FLOXA is made for independent freelance brand identity designers, branding studios, creative agencies, and brand consultants who want to bring more clarity and structure to their client engagements.",
   },
   {
-    q: "Which hardware and OS version do I need to use Floxa?",
-    a: "For the optimal experience, full functionality is available with macOS, iPadOS and iOS and later. Floxa requires an Apple Account and internet connection to subscribe. Final Cut Pro requires a Mac with macOS 15.6 or later or an iPad with Apple M1 chip or later. Logic Pro requires macOS 15.6 or later, a Mac with Apple silicon, and an iPad with Apple A12 Bionic chip or later. Pixelmator Pro requires a Mac or an iPad with Apple M1 chip or later. Keynote, Pages and Numbers require macOS 15.6 or later, iPadOS 18 or later, iOS 18 or later.",
+    q: "How does FLOXA fit into my existing design workflow?",
+    a: "FLOXA operates at Step Zero. The insights collected during brand discovery provide a validated foundation and clear creative brief before you open Figma, Illustrator, or your sketchbook.",
   },
   {
-    q: "Can I share Floxa with my family?",
-    a: "Yes, a standard Floxa subscription can be shared with up to five other family members using Family Sharing. Educator and student subscriptions are for individual use and cannot be shared through Family Sharing.",
-  },
-  {
-    q: "What are the requirements for using the intelligence features in Floxa?",
-    a: "Floxa includes intelligence features that are exclusive to subscribers. For system requirements and usage limits for Floxa intelligence features, see support.apple.com. For additional Apple Intelligence features that may be available, see support.apple.com for geographic and language availability and system requirements.",
+    q: "How do I get started with FLOXA?",
+    a: "You can get started immediately by visiting floxa.flumenx.in. Set up your first project, share the discovery link with your client, and start your creative work with clarity.",
   },
 ];
 
@@ -96,4 +92,3 @@ export default function FaqSection() {
     </section>
   );
 }
-

@@ -18,10 +18,11 @@ export default function LocalNav() {
 
   const navLinks = [
     { label: "Overview", href: "#overview" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Final Cut Pro", href: "#final-cut-pro" },
-    { label: "Pixelmator Pro", href: "#pixelmator-pro" },
-    { label: "Logic Pro", href: "#logic-pro" },
+    { label: "The Problem", href: "#highlights" },
+    { label: "How It Works", href: "#final-cut-pro" },
+    { label: "Visual Direction", href: "#pixelmator-pro" },
+    { label: "Why FLOXA", href: "#logic-pro" },
+    { label: "Who It's For", href: "#visual-productivity" },
     { label: "FAQ", href: "#faq" },
   ];
 
@@ -59,7 +60,9 @@ export default function LocalNav() {
 
           {/* White Pill Button */}
           <a
-            href="https://floxa.flumenx.in/"
+            href="https://floxa.flumenx.in/login"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-[12px] font-normal px-3.5 sm:px-4 py-1.5 rounded-full transition-all duration-150 active:scale-95 shadow-sm whitespace-nowrap"
           >
             <span>Try it free</span>

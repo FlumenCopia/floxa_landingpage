@@ -3,24 +3,19 @@
 import React, { useState } from "react";
 
 const footnotes = [
-  "Some features of Floxa require an Apple Intelligence–capable device. For a list of Apple Intelligence availability and technical requirements, see support.apple.com.",
-  "New subscribers only. Plan renews at ₹399/month or ₹3999/year based on plan selected. Plan automatically renews until cancelled. Terms apply.",
-  "New subscribers only. Plan automatically renews at ₹199/month or ₹1999/year based on plan selected until cancelled. College students and educators only. Verification is required. Terms apply. Limited-time offer; offer may end at any time.",
-  "New and qualified returning subscribers only. Plan renews at ₹399/month or ₹3999/year based on plan selected. Only one offer per Apple Account and only one offer per family if you’re part of a Family Sharing group.",
-  "Final Cut Camera is available on the App Store. Requires iPhone XS or later running iOS 18.6 or later, with some features requiring newer models.",
-  "Visual Search requires a Mac with Apple silicon or an iPad with Apple M1 chip or later. Available only in US English.",
-  "Transcript Search in Final Cut Pro requires a Mac with Apple silicon or an iPad with Apple M1 chip or later. Available only in US English.",
-  "Some content, including motion graphics, templates and plug-ins, is made available by third parties and is subject to their terms and conditions.",
-  "Apple Pencil is sold separately.",
-  "Requires that your iPad and Mac are signed in with the same Apple Account.",
-  "Session Players require iPad with Apple M1 chip or later or Mac with Apple silicon.",
+  "FLOXA by FlumenX helps creative professionals understand brands before design begins. Clarity Before Creation.",
+  "New subscribers get started with structured brand discovery tools at floxa.flumenx.in.",
+  "Student and educator plans require verification and are for eligible creative students only.",
+  "Terms and conditions apply to all client discovery workspaces and links.",
+  "Client discovery links are mobile-optimized and compatible with all modern browsers.",
+  "Discovery summaries and briefs remain permanently accessible in your project archive.",
 ];
 
 export default function FooterSection() {
   const [showAllFootnotes, setShowAllFootnotes] = useState(false);
 
   return (
-    <footer className="bg-[#161617] text-[#86868b] text-[12px] leading-relaxed border-t border-white/[0.08] pt-12 pb-16">
+    <footer className="bg-[#161617] text-[#86868b] text-[12px] leading-relaxed border-t border-white/[0.08] pt-12 pb-16 select-none">
       <div className="max-w-[1024px] mx-auto px-4">
         {/* Footnotes List */}
         <div className="border-b border-white/[0.08] pb-8 mb-8">
@@ -34,7 +29,7 @@ export default function FooterSection() {
           {footnotes.length > 4 && (
             <button
               onClick={() => setShowAllFootnotes(!showAllFootnotes)}
-              className="mt-3 text-[#2997ff] hover:underline"
+              className="mt-3 text-[#2997ff] hover:underline cursor-pointer"
             >
               {showAllFootnotes ? "Show less" : `Show ${footnotes.length - 4} more footnotes`}
             </button>
@@ -42,26 +37,36 @@ export default function FooterSection() {
         </div>
 
         {/* Brand Header */}
-        <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/[0.08]">
-          <span className="text-white font-pavelt text-2xl sm:text-3xl tracking-normal">Floxa</span>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/[0.08]">
+          <div className="flex items-center gap-3">
+            <span className="text-white font-pavelt text-2xl sm:text-3xl tracking-normal">Floxa</span>
+            <span className="text-[11px] text-white/50 border border-white/10 px-2 py-0.5 rounded-md">by FlumenX</span>
+          </div>
+          <p className="text-xs text-[#a1a1a6]">
+            Clarity Before Creation.
+          </p>
         </div>
 
         {/* Bottom Legal & Regional info */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[11px] text-[#86868b]">
           <div>
-            Copyright © 2026 Floxa. All rights reserved.
+            Copyright © 2026 FLOXA by FlumenX. All rights reserved.
           </div>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <a href="#overview" className="hover:text-white transition-colors">Home</a>
+            <span>|</span>
+            <a href="#final-cut-pro" className="hover:text-white transition-colors">How It Works</a>
+            <span>|</span>
+            <a href="#pixelmator-pro" className="hover:text-white transition-colors">Features</a>
+            <span>|</span>
+            <a href="#logic-pro" className="hover:text-white transition-colors">Why FLOXA</a>
+            <span>|</span>
+            <a href="https://floxa.flumenx.in/login" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Contact & Login</a>
+            <span>|</span>
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <span>|</span>
             <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">Sales Policy</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">Legal</a>
-            <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">Site Map</a>
           </div>
 
           <div className="text-white/80 font-medium">

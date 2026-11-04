@@ -170,7 +170,8 @@ export default function HeroSection() {
               : "opacity-0 translate-y-8 blur-sm"
             }`}
         >
-          All yours for the making.
+          Great brands begin<br />
+          before design.
         </h1>
 
         {/* Official Apple Curved App Icons Swiper / Carousel with Opening Fan-Out Animation */}
@@ -265,9 +266,9 @@ export default function HeroSection() {
         >
           <p className="text-base sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed font-normal">
             <strong className="text-white font-semibold">
-              The apps you need for everything you want to create.
+              Every brand has a story.
             </strong>{" "}
-            Craft your stories with video in Final&nbsp;Cut&nbsp;Pro. Reimagine images in Pixelmator&nbsp;Pro. Produce your best music in Logic&nbsp;Pro. Supercharge productivity with premium content in Keynote, Pages, Numbers and Freeform. Boost workflows with AI features that build on Apple&nbsp;Intelligence.<sup>1</sup> And with Family Sharing, up to five other people can enjoy your subscription&nbsp;too.
+            FLOXA helps designers understand that story before turning ideas into creative work. Discover your client&apos;s brand personality, vision, goals, and preferences through a more structured brand discovery process. Before the logo. Before the colours. Before the first creative idea.<sup>1</sup> By FlumenX.
           </p>
         </div>
 
@@ -277,7 +278,9 @@ export default function HeroSection() {
             }`}
         >
           <a
-            href="https://floxa.flumenx.in/"
+            href="https://floxa.flumenx.in/login"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-white hover:bg-[#e8e8ed] text-black text-sm sm:text-base font-normal px-5 py-2 sm:px-6 sm:py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-md"
           >
             <span>Try it free</span>

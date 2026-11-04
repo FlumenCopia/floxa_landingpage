@@ -2,9 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Floxa - Apple (IN)",
+  title: "FLOXA | Brand Discovery for Designers",
   description:
-    "With a Floxa subscription, get intelligent tools in Final Cut Pro, Logic Pro, and Pixelmator Pro, plus premium productivity content.",
+    "Discover FLOXA by FlumenX, a brand discovery platform designed to help creative professionals understand client vision, brand personality, and creative direction before design begins. Clarity Before Creation.",
+  keywords: [
+    "Brand discovery platform",
+    "Brand discovery software",
+    "Brand discovery for designers",
+    "Client discovery tool",
+    "Branding questionnaire",
+    "Brand identity workflow",
+    "Creative brief tool",
+    "Client onboarding for designers",
+    "Brand strategy tools",
+    "FlumenX",
+    "FLOXA",
+  ],
+  authors: [{ name: "FlumenX" }],
   icons: {
     icon: "/favicon.ico",
   },
@@ -16,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-IN" className="dark scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>

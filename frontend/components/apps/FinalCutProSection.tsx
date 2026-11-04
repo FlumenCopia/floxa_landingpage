@@ -5,41 +5,38 @@ import AppIcon from "../ui/AppIcon";
 
 const fcpCards = [
   {
-    title: "Start-to-finish performance.",
-    desc: "Shoot pro-level footage with complete control in Final Cut Camera on iPhone. Then edit on iPad or Mac with powerful and approachable tools and effects, fine-tune the audio and share your finished story — all in one seamless flow.",
-    footnote: "5",
+    title: "01 — Create your project.",
+    desc: "Set up a project and prepare for the brand discovery process with customized inquiry modules and structured client questions.",
     image: "/images/final_cut/performance__bl64dj5mbevm_large.png",
     imageWide: true,
   },
   {
-    title: "Instantly find the moment you’re looking for.",
-    desc: "Track down a shot without scrubbing through footage using Visual Search and locate the perfect sound bite with only a few keywords using Transcript Search.",
-    footnote: "6, 7",
+    title: "02 — Invite your client.",
+    desc: "Share the discovery link and let your client communicate their vision, preferences, and expectations in an intuitive guided flow.",
     image: "/images/final_cut/instant__e39ichvbco02_large.png",
     imageWide: true,
   },
   {
-    title: "Video editing with speed and flexibility.",
-    desc: "The Magnetic Timeline lets you move and trim freely while maintaining synchronisation so you can explore endless creative possibilities. Connected Clips and storylines hold your edit together. Multicam helps you cut the perfect interview. And Auditions let you find the best take.",
+    title: "03 — Discover the brand.",
+    desc: "Gather insights about brand personality, target audience, business goals, competitors, and visual direction before sketching.",
     image: "/images/final_cut/devices__frevx0bf0eqa_large.png",
     imageWide: true,
   },
   {
-    title: "Perfect timing, every time.",
-    desc: "Beat Detection matches your music’s rhythm so you can align clips effortlessly and keep your edits in sync with the beat.",
+    title: "04 — Start with clarity.",
+    desc: "Use the information collected to build a stronger foundation for your creative work, logos, and visual brand identity.",
     image: "/images/final_cut/edit__cw1sr34faok2_large.png",
     imageWide: true,
   },
   {
-    title: "Beautiful, customisable graphics.",
-    desc: "Add professionally designed motion graphics to your project with Motion in Floxa, or select graphics from third-party providers like MotionVFX, FxFactory and more.",
-    footnote: "8",
+    title: "Align goals and expectations.",
+    desc: "Create a shared understanding of what the brand needs to communicate and achieve so everyone is aligned on day one.",
     image: "/images/final_cut/graphics__ggu9cihv99u2_large.png",
     imageWide: true,
   },
   {
-    title: "Fast delivery.",
-    desc: "Quickly batch export files that are optimised for any size — from your iPhone screen to the big screen. You can even use Compressor to customise export settings using a variety of pro formats.",
+    title: "A clearer creative starting point.",
+    desc: "Use discovery insights to approach the design process with more context, direction, and confidence. Clarity before creation.",
     image: "/images/final_cut/delivery__f66kogmgc3yy_large.png",
     imageWide: false,
   },
@@ -58,47 +55,22 @@ export default function FinalCutProSection() {
   return (
     <section id="final-cut-pro" className="pt-4 pb-6 sm:pt-6 sm:pb-8 md:pt-10 md:pb-12 bg-black text-white relative select-none">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
-        {/* Cinematic Hero Visual Banner (Commented out) */}
-        {/*
-        <div className="relative w-full max-w-[1180px] mx-auto mb-16 sm:mb-20 overflow-hidden flex items-center justify-center">
-          <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
-
-          <img
-            src="/images/final_cut/hero_statics_endframe__d5km437k2zqu_xlarge.jpg"
-            srcSet="
-              /images/final_cut/hero_statics_endframe__d5km437k2zqu_large.jpg 1068w,
-              /images/final_cut/hero_statics_endframe__d5km437k2zqu_xlarge.jpg 1440w
-            "
-            sizes="(max-width: 1068px) 100vw, 1200px"
-            alt="Video timeline of a person in a silver outfit in front of a blue and magenta background, Final Cut Pro trim controls"
-            className="w-full h-auto max-h-[580px] object-contain select-none pointer-events-none filter drop-shadow-2xl"
-          />
-        </div>
-        */}
-
         {/* App Section Header matching Screenshot 1 */}
         <div className="mb-3 sm:mb-5 max-w-2xl">
-          {/* App Chiclet Icon (Commented out)
-          <div className="mb-4">
-            <AppIcon name="final-cut" size={40} />
-          </div>
-          */}
-
           {/* Eyebrow in vibrant purple */}
           <div className="text-lg sm:text-xl font-semibold text-[#bf5af2] tracking-tight mb-2">
-            Final Cut Pro
+            How It Works
           </div>
 
           {/* Main Headline */}
           <h2 className="text-2xl sm:text-4xl md:text-[48px] font-semibold tracking-tight text-white mb-6 leading-[1.1]">
-            The ultimate video<br />
-            creation experience.
+            From client ideas to<br />
+            creative clarity.
           </h2>
 
           {/* Narrative Body Copy */}
           <p className="text-base sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed mb-6 font-normal">
-            <strong className="text-white font-semibold">Craft with power and precision</strong> using Final&nbsp;Cut&nbsp;Pro on Mac and iPad. With intuitive tools designed to elevate every frame, your vision moves from concept to cinematic story at the speed of thought.
+            <strong className="text-white font-semibold">A collection of thoughts can become a clearer creative vision</strong> when the right questions are asked. FLOXA puts brand discovery at the beginning of the process, helping designers understand the client&apos;s vision before moving into visual execution.
           </p>
         </div>
 
@@ -132,11 +104,6 @@ export default function FinalCutProSection() {
                       {card.title}{" "}
                     </strong>
                     {card.desc}
-                    {card.footnote && (
-                      <sup className="text-[10px] ml-0.5 text-white/70">
-                        {card.footnote}
-                      </sup>
-                    )}
                   </p>
                 </div>
               </div>
@@ -148,7 +115,7 @@ export default function FinalCutProSection() {
             <button
               onClick={() => scroll("left")}
               className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shadow-sm"
-              aria-label="Previous Final Cut Pro item"
+              aria-label="Previous item"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
@@ -157,7 +124,7 @@ export default function FinalCutProSection() {
             <button
               onClick={() => scroll("right")}
               className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shadow-sm"
-              aria-label="Next Final Cut Pro item"
+              aria-label="Next item"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />

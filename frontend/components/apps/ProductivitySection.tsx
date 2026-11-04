@@ -5,34 +5,33 @@ import AppIcon from "../ui/AppIcon";
 
 const productivityCards = [
   {
-    title: "Quickly put together presenter notes.",
-    desc: "Generate notes for any slide using insights from your entire presentation. They’re added to your existing notes and can be easily fine-tuned with Writing Tools.",
-    appAvailability: "Available in Keynote, Pages, Numbers and Freeform",
+    title: "Freelance Brand Identity Designers.",
+    desc: "Understand your clients better and establish a clearer direction before creating logos and visual identities.",
+    appAvailability: "For Independent Designers",
     image: "/images/productivity/slides__fqpujht4t4mm_large.png",
   },
   {
-    title: "Advanced image creation and editing.",
-    desc: "Make and remix images, illustrations and graphic elements right in your documents. Super Resolution lets you upscale images while preserving details and Auto Crop gives you suggestions for the best look.",
-    footnote: "1",
-    appAvailability: "Available in Keynote, Pages, Numbers and Freeform",
+    title: "Branding Studios & Creative Agencies.",
+    desc: "Bring more structure to client discovery and help teams work from a shared understanding of the brand.",
+    appAvailability: "For Creative Teams",
     image: "/images/productivity/imagery__fomaia2g1yye_large.jpg",
   },
   {
-    title: "Get a head start with beautiful templates and themes.",
-    desc: "All you need to create everything from event posters to storyboard decks, with multiple layouts and full customisation.",
-    appAvailability: "Available in Keynote, Pages and Numbers",
+    title: "Brand Consultants & Strategists.",
+    desc: "Organize discovery conversations and gather insights that support brand strategy and identity projects.",
+    appAvailability: "For Brand Strategists",
     image: "/images/productivity/templates__dtsfh52oryye_large.jpg",
   },
   {
-    title: "Clean up your slides.",
-    desc: "Refine and deliver presentation-ready designs with ease. Keynote can automatically correct layout, typography and alignment issues with a single tap or click.",
-    appAvailability: "Available in Keynote in beta",
+    title: "Creative Professionals.",
+    desc: "Build a better foundation for creative projects by understanding the people and ideas behind each brand.",
+    appAvailability: "For Creative Practitioners",
     image: "/images/productivity/clean_up__bqwo4cyihtea_large.png",
   },
   {
-    title: "Complete your sheet with Magic Fill.",
-    desc: "Get suggested contents or generate formulas for empty cells based on recognised patterns in nearby data.",
-    appAvailability: "Available in Numbers",
+    title: "A Clearer Creative Starting Point.",
+    desc: "Use discovery insights to approach the design process with more context, direction, and client alignment.",
+    appAvailability: "For All Brand Projects",
     image: "/images/productivity/magic_fill__eipdlug12o02_large.png",
   },
 ];
@@ -59,33 +58,27 @@ export default function ProductivitySection() {
               /images/productivity/hero__d78ra8ka1sa6_large_2x.png 1440w
             "
             sizes="(max-width: 1068px) 100vw, 1268px"
-            alt="iPad Pro 13, iPhone 16, and MacBook Pro showcasing Keynote, Pages, Numbers, and Freeform"
+            alt="iPad Pro, iPhone, and MacBook Pro showcasing FLOXA brand discovery tools"
             className="w-full h-auto object-contain select-none pointer-events-none"
           />
         </div>
 
         {/* Header with productivity apps */}
         <div className="mb-3 sm:mb-5 max-w-2xl">
-          {/* App Icons (Commented out)
-          <div className="flex items-center gap-3 mb-4">
-            <AppIcon name="keynote" size={48} />
-            <AppIcon name="pages" size={48} />
-            <AppIcon name="numbers" size={48} />
-            <AppIcon name="freeform" size={48} />
+          <div className="text-lg sm:text-xl font-semibold text-[#30d158] tracking-tight mb-2">
+            Who It&apos;s For
           </div>
-          */}
 
           <h2 className="text-2xl sm:text-4xl md:text-[48px] font-semibold tracking-tight text-white mb-6 leading-[1.1]">
-            Go from idea to done.<br />
-            In a snap.
+            Made for people who<br />
+            build brands.
           </h2>
 
           <p className="text-base sm:text-lg md:text-[19px] text-[#a1a1a6] leading-relaxed mb-6 font-normal">
-            Powerful features that build on Apple&nbsp;Intelligence help you{" "}
             <strong className="text-white font-semibold">
-              get more done in Keynote, Pages, Numbers and Freeform.<sup>1</sup>
+              For those who bring brands to life.
             </strong>{" "}
-            As a Floxa subscriber, you get access to a wide range of high-quality content and new AI capabilities to help with your projects.
+            Build a better foundation for creative projects by understanding the people and ideas behind each brand. FLOXA gives designers and studios a structured way to discover client needs before creative execution begins.
           </p>
         </div>
 
@@ -119,11 +112,6 @@ export default function ProductivitySection() {
                       {card.title}{" "}
                     </strong>
                     {card.desc}
-                    {card.footnote && (
-                      <sup className="text-[10px] ml-0.5 text-white/70">
-                        {card.footnote}
-                      </sup>
-                    )}
                   </p>
                   <span className="text-xs text-white/40 font-medium">
                     {card.appAvailability}
@@ -138,7 +126,7 @@ export default function ProductivitySection() {
             <button
               onClick={() => scroll("left")}
               className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shadow-sm"
-              aria-label="Previous Productivity item"
+              aria-label="Previous item"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
@@ -147,7 +135,7 @@ export default function ProductivitySection() {
             <button
               onClick={() => scroll("right")}
               className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shadow-sm"
-              aria-label="Next Productivity item"
+              aria-label="Next item"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
