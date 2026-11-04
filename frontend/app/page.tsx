@@ -11,7 +11,7 @@ import FooterSection from "../components/footer/FooterSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#020806] text-[#e8f5ef] flex flex-col font-sans selection:bg-[#e0a899]/30">
+    <div className="min-h-screen bg-[#020806] text-[#e8f5ef] flex flex-col font-sans selection:bg-[#4dffa0]/30 selection:text-white">
       {/* Sticky Local Nav */}
       <LocalNav />
 

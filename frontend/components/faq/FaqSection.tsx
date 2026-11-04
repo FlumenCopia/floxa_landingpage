@@ -43,9 +43,9 @@ export default function FaqSection() {
   return (
     <section id="faq" className="pt-6 pb-10 sm:pt-10 sm:pb-14 md:pt-14 md:pb-16 bg-[#020806] text-[#e8f5ef] border-t border-[#4dffa0]/15 relative">
       <div className="max-w-[980px] mx-auto px-6 sm:px-8">
-        {/* Eyebrow in Rose Gold */}
-        <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#e0a899] mb-2 flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#e0a899]" />
+        {/* Eyebrow in Electric Mint */}
+        <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#4dffa0] mb-2 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#4dffa0]" />
           Common Inquiries
         </div>
 
@@ -64,13 +64,13 @@ export default function FaqSection() {
                   aria-expanded={isOpen}
                 >
                   <span className={`text-base sm:text-lg md:text-[21px] font-semibold tracking-tight pr-4 sm:pr-8 leading-snug transition-colors ${
-                    isOpen ? "text-[#e0a899]" : "text-[#e8f5ef] group-hover:text-[#e0a899]"
+                    isOpen ? "text-[#4dffa0]" : "text-[#e8f5ef] group-hover:text-[#4dffa0]"
                   }`}>
                     {item.q}
                   </span>
                   <svg
-                    className={`w-5 h-5 sm:w-6 sm:h-6 text-[#89aca0] shrink-0 transition-transform duration-300 ease-out group-hover:text-[#e0a899] ${
-                      isOpen ? "rotate-180 text-[#e0a899]" : ""
+                    className={`w-5 h-5 sm:w-6 sm:h-6 text-[#89aca0] shrink-0 transition-transform duration-300 ease-out group-hover:text-[#4dffa0] ${
+                      isOpen ? "rotate-180 text-[#4dffa0]" : ""
                     }`}
                     viewBox="0 0 24 24"
                     fill="none"

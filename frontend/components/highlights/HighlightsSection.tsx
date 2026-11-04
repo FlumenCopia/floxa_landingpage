@@ -25,7 +25,7 @@ const highlightItems: HighlightItem[] = [
     id: "final-cut",
     tabTitle: "Client Briefs",
     accentText: "Unclear Client Briefs",
-    accentColor: "#e0a899",
+    accentColor: "#6ee7b7",
     headline: "become clear creative direction when the right questions are asked.",
     image: "/images/floxa_screens/discovery_step5_clean.png",
   },
@@ -41,7 +41,7 @@ const highlightItems: HighlightItem[] = [
     id: "logic-pro",
     tabTitle: "Expectations",
     accentText: "Creative Expectations",
-    accentColor: "#fce0d8",
+    accentColor: "#a7f3d0",
     headline: "are aligned so designer and client share the same vision from day one.",
     image: "/images/floxa_screens/analytics_clean.png",
   },
@@ -111,9 +111,9 @@ export default function HighlightsSection() {
   return (
     <section id="highlights" className="pt-4 pb-6 sm:pt-8 sm:pb-8 md:pt-12 md:pb-12 bg-[#020806] text-[#e8f5ef] overflow-hidden relative select-none">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 md:px-8 mb-4 sm:mb-6">
-        {/* Eyebrow in Rose Gold */}
-        <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#e0a899] mb-2 flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#e0a899]" />
+        {/* Eyebrow in Electric Mint */}
+        <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#4dffa0] mb-2 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#4dffa0]" />
           The Problem
         </div>
 
@@ -166,7 +166,7 @@ export default function HighlightsSection() {
                   className={`shrink-0 mr-5 rounded-[24px] sm:rounded-[36px] bg-[#06160f]/90 border border-[#4dffa0]/18 overflow-hidden transition-all duration-700 flex flex-col justify-between shadow-2xl h-[360px] xs:h-[390px] sm:h-[480px] md:h-[580px] relative pointer-events-auto ${
                     isActive
                       ? "opacity-100 scale-100 z-20 border-[#4dffa0]/35 shadow-[0_0_35px_rgba(77,255,160,0.12)]"
-                      : "opacity-40 hover:opacity-70 scale-[0.96] z-10 cursor-pointer hover:border-[#e0a899]/30"
+                      : "opacity-40 hover:opacity-70 scale-[0.96] z-10 cursor-pointer hover:border-[#4dffa0]/40"
                   }`}
                 >
                   {/* Card Caption / Heading */}
@@ -229,7 +229,7 @@ export default function HighlightsSection() {
                     }}
                     className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 p-0.5 ${
                       isActive
-                        ? "w-6 sm:w-8 bg-gradient-to-r from-[#fce0d8] to-[#e0a899] shadow-[0_0_8px_rgba(224,168,153,0.5)]"
+                        ? "w-6 sm:w-8 bg-gradient-to-r from-[#a7f3d0] to-[#4dffa0] shadow-[0_0_8px_rgba(77,255,160,0.5)]"
                         : "w-2 sm:w-2.5 bg-white/25 hover:bg-white/50"
                     }`}
                     aria-label={`Slide ${idx + 1}: ${item.tabTitle}`}
@@ -244,7 +244,7 @@ export default function HighlightsSection() {
             {/* Play/Pause Button */}
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#081c13] hover:bg-[#0c2419] border border-[#4dffa0]/20 text-[#e0a899] flex items-center justify-center transition-colors shadow-sm cursor-pointer"
+              className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#081c13] hover:bg-[#0c2419] border border-[#4dffa0]/20 text-[#4dffa0] flex items-center justify-center transition-colors shadow-sm cursor-pointer"
               aria-label={isPlaying ? "Pause highlights gallery" : "Play highlights gallery"}
             >
               {isPlaying ? (

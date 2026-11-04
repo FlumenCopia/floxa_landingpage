@@ -31,12 +31,20 @@
   --muted: #89aca0;
   --dim: #4a6b5e;
 
-  /* Luxury Rose Gold Palette */
-  --rosegold: #e0a899;
-  --rosegold-light: #fce0d8;
-  --rosegold-dark: #c47c6a;
-  --rosegold-border: rgba(224, 168, 153, 0.28);
-  --rosegold-glow: rgba(224, 168, 153, 0.35);
+  /* Luminous Mint & Emerald Palette - Perfectly aligned with Floxa Green UI */
+  --mint: #4dffa0;
+  --mint-light: #d1fae5;
+  --mint-seafoam: #6ee7b7;
+  --mint-dark: #10b981;
+  --mint-border: rgba(77, 255, 160, 0.32);
+  --mint-glow: rgba(77, 255, 160, 0.35);
+
+  /* Legacy aliases mapped to matching Floxa Mint & Seafoam */
+  --rosegold: #4dffa0;
+  --rosegold-light: #d1fae5;
+  --rosegold-dark: #10b981;
+  --rosegold-border: rgba(77, 255, 160, 0.32);
+  --rosegold-glow: rgba(77, 255, 160, 0.35);
 
   /* Legacy Apple aliases mapped into Floxa Obsidian */
   --apple-gray-text: #89aca0;
@@ -44,7 +52,7 @@
   --apple-card-border: rgba(77, 255, 160, 0.15);
   --apple-blue: #4dffa0;
   --apple-blue-hover: #3de890;
-  --apple-link: #e0a899;
+  --apple-link: #4dffa0;
 }
 
 body {
@@ -55,9 +63,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   background-image: 
-    radial-gradient(ellipse 90% 45% at 50% -10%, rgba(77, 255, 160, 0.08), transparent 70%),
-    radial-gradient(ellipse 60% 40% at 85% 35%, rgba(224, 168, 153, 0.05), transparent 60%),
-    radial-gradient(ellipse 70% 45% at 15% 75%, rgba(77, 255, 160, 0.06), transparent 70%);
+    radial-gradient(ellipse 90% 45% at 50% -10%, rgba(77, 255, 160, 0.09), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 85% 35%, rgba(110, 231, 183, 0.05), transparent 60%),
+    radial-gradient(ellipse 70% 45% at 15% 75%, rgba(77, 255, 160, 0.07), transparent 70%);
   background-attachment: fixed;
 }
 
@@ -70,24 +78,27 @@ body {
   scrollbar-width: none;
 }
 
-/* Luxury Rose Gold Gradient Text */
-.rosegold-gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #fce0d8 35%, #e0a899 70%, #c47c6a 100%);
+/* Luminous Mint & Emerald Gradient Text */
+.rosegold-gradient-text,
+.mint-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #d1fae5 32%, #4dffa0 70%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Luxury Rose Gold Button */
-.rosegold-pill-btn {
-  background: linear-gradient(135deg, #fce0d8 0%, #e0a899 50%, #c47c6a 100%);
-  color: #170a07;
+/* Luminous Mint & Emerald Button */
+.rosegold-pill-btn,
+.mint-pill-btn {
+  background: linear-gradient(135deg, #4dffa0 0%, #34d399 50%, #10b981 100%);
+  color: #02140a;
   font-weight: 600;
-  box-shadow: 0 4px 20px rgba(224, 168, 153, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 20px rgba(77, 255, 160, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.7);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.rosegold-pill-btn:hover {
+.rosegold-pill-btn:hover,
+.mint-pill-btn:hover {
   filter: brightness(1.08);
-  box-shadow: 0 6px 28px rgba(224, 168, 153, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 28px rgba(77, 255, 160, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   transform: translateY(-1px);
 }
 
@@ -106,7 +117,7 @@ body {
   -webkit-backdrop-filter: blur(20px);
 }
 .floxa-glass-card:hover {
-  border-color: rgba(224, 168, 153, 0.38);
+  border-color: rgba(77, 255, 160, 0.45);
 }
 
 /* Floxa Sticky Nav Glass */
@@ -131,8 +142,8 @@ body {
   background: linear-gradient(
     90deg,
     #ffffff 0%,
-    #fce0d8 25%,
-    #e0a899 45%,
+    #d1fae5 25%,
+    #6ee7b7 45%,
     #ffffff 55%,
     #4dffa0 75%,
     #ffffff 100%

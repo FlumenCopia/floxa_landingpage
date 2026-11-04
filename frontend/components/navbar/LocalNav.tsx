@@ -39,32 +39,32 @@ export default function LocalNav() {
         <a
           href="#overview"
           onClick={closeMenu}
-          className="text-[#e8f5ef] hover:text-[#e0a899] transition-colors flex items-center gap-2 group"
+          className="text-[#e8f5ef] hover:text-[#4dffa0] transition-colors flex items-center gap-2 group"
         >
-          <span className="text-xl sm:text-2xl md:text-3xl font-pavelt tracking-normal group-hover:text-[#e0a899] transition-colors">Floxa</span>
+          <span className="text-xl sm:text-2xl md:text-3xl font-pavelt tracking-normal group-hover:text-[#4dffa0] transition-colors">Floxa</span>
           <span className="w-1.5 h-1.5 rounded-full bg-[#4dffa0] shadow-[0_0_8px_#4dffa0]" />
         </a>
 
-        {/* Desktop / Tablet Links & Rose Gold Pill CTA */}
+        {/* Desktop / Tablet Links & Electric Mint Pill CTA */}
         <div className="flex items-center space-x-3 sm:space-x-5 text-[12px]">
           <div className="hidden lg:flex items-center space-x-6 text-[#89aca0]">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="hover:text-[#e0a899] transition-colors"
+                className="hover:text-[#4dffa0] transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          {/* Rose Gold Pill Button */}
+          {/* Electric Mint Pill Button */}
           <a
             href="https://floxa.flumenx.in/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-[#fce0d8] via-[#e0a899] to-[#c47c6a] hover:brightness-105 text-[#170a07] text-[12px] font-semibold px-4 py-1.5 rounded-full transition-all duration-200 active:scale-95 shadow-[0_0_18px_rgba(224,168,153,0.35)] whitespace-nowrap"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-[#4dffa0] via-[#38e88f] to-[#1fd879] hover:brightness-105 text-[#02140a] text-[12px] font-semibold px-4 py-1.5 rounded-full transition-all duration-200 active:scale-95 shadow-[0_0_18px_rgba(77,255,160,0.35)] whitespace-nowrap"
           >
             <span>Try it free</span>
             <sup className="text-[9px] ml-0.5">2</sup>
@@ -101,7 +101,7 @@ export default function LocalNav() {
               key={link.href}
               href={link.href}
               onClick={closeMenu}
-              className="text-sm font-medium text-[#89aca0] hover:text-[#e0a899] py-1 transition-colors"
+              className="text-sm font-medium text-[#89aca0] hover:text-[#4dffa0] py-1 transition-colors"
             >
               {link.label}
             </a>

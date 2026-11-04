@@ -16,7 +16,7 @@ interface AppItem {
   isHighlighted?: boolean;
 }
 
-// 3 Floxa suite products: Floxa for Design (highlighted) + Coming Soon suites
+// 4 Floxa suite products: Floxa for Design (highlighted) + Coming Soon suites (Work, Digital Marketing, Learning)
 const appList: AppItem[] = [
   {
     id: "floxa-design",
@@ -55,23 +55,35 @@ const appList: AppItem[] = [
     anchor: "#overview",
     status: "coming-soon",
   },
+  {
+    id: "floxa-learning",
+    name: "Floxa for Learning",
+    suite: "Learning",
+    tagline: "Skills & Brand Academy",
+    bgImage: "/images/floxa/banner2.png",
+    accentColor: "#fbbf24",
+    glowColor: "rgba(251, 191, 36, 0.4)",
+    tintClass: "from-[#f59e0b]/20 to-black/70",
+    anchor: "#overview",
+    status: "coming-soon",
+  },
 ];
 
 export default function HeroSection() {
   const [isPaused, setIsPaused] = useState(false);
-  const [baseSpacing, setBaseSpacing] = useState(165);
+  const [baseSpacing, setBaseSpacing] = useState(215);
 
   useEffect(() => {
     const updateSpacing = () => {
       const width = window.innerWidth;
       if (width < 440) {
-        setBaseSpacing(100);
+        setBaseSpacing(115);
       } else if (width < 640) {
-        setBaseSpacing(130);
+        setBaseSpacing(145);
       } else if (width < 1024) {
-        setBaseSpacing(160);
+        setBaseSpacing(185);
       } else {
-        setBaseSpacing(190);
+        setBaseSpacing(215);
       }
     };
     updateSpacing();
@@ -160,8 +172,8 @@ export default function HeroSection() {
       id="overview"
       className="relative pt-16 pb-20 sm:pt-26 sm:pb-18 overflow-hidden bg-[#020806] text-center select-none"
     >
-      {/* Ambient Floxa Emerald & Rose Gold Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[480px] bg-gradient-to-b from-[#4dffa0]/10 via-[#e0a899]/5 to-transparent pointer-events-none blur-3xl z-0" />
+      {/* Ambient Floxa Emerald & Seafoam Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[480px] bg-gradient-to-b from-[#4dffa0]/10 via-[#6ee7b7]/5 to-transparent pointer-events-none blur-3xl z-0" />
 
       <div className="max-w-[1280px] mx-auto px-4 relative z-10 flex flex-col items-center">
         {/* Top Header Row with Animated Wordmark and Floating Pause Button */}
@@ -224,13 +236,13 @@ export default function HeroSection() {
           onMouseMove={handleTouchMove}
           onMouseUp={handleTouchEnd}
           onMouseLeave={handleTouchEnd}
-          className={`relative w-full max-w-[1100px] h-[190px] xs:h-[210px] sm:h-[240px] md:h-[250px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-2 sm:my-4 transition-opacity duration-1000 delay-300 ${
+          className={`relative w-full max-w-[1100px] h-[210px] xs:h-[230px] sm:h-[265px] md:h-[285px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-3 sm:my-5 transition-opacity duration-1000 delay-300 ${
             hasOpened ? "opacity-100" : "opacity-0"
           }`}
         >
           {/* Subtle side vignettes to merge seamlessly into Floxa Obsidian background */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-[#020806] via-[#020806]/85 to-transparent z-30 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-[#020806] via-[#020806]/85 to-transparent z-30 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-20 bg-gradient-to-r from-[#020806] via-[#020806]/85 to-transparent z-30 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-20 bg-gradient-to-l from-[#020806] via-[#020806]/85 to-transparent z-30 pointer-events-none" />
 
           {/* Icons Carousel Track */}
           <div className="relative w-full h-full flex items-center justify-center">
@@ -253,14 +265,14 @@ export default function HeroSection() {
               const translateX = hasOpened ? targetTranslateX : 0;
 
               // Dynamic scale and opacity matching Apple's depth curve
-              const targetScale = isCenter ? 1.12 : Math.max(0.78, 1 - Math.abs(offset) * 0.16);
+              const targetScale = isCenter ? 1.12 : Math.max(0.82, 1 - Math.abs(offset) * 0.12);
               const scale = hasOpened ? targetScale : 0.6;
               const opacity = hasOpened
                 ? isCenter
                   ? 1
                   : Math.abs(offset) === 1
-                    ? 0.75
-                    : 0.35
+                    ? 0.82
+                    : 0.55
                 : 0;
 
               return (
@@ -274,92 +286,64 @@ export default function HeroSection() {
                     zIndex: isCenter ? 20 : 10 - Math.abs(offset),
                   }}
                 >
-                  {/* The Official Floxa Squircle Icon */}
+                  {/* Clean, Authentic Floxa Product Card */}
                   <div className="transition-transform duration-300 hover:scale-105 active:scale-95 relative">
                     <div
-                      className={`relative w-[86px] h-[86px] xs:w-[100px] xs:h-[100px] sm:w-[120px] sm:h-[120px] md:w-[132px] md:h-[132px] rounded-[24%] overflow-hidden select-none transition-all duration-500 ${
+                      className={`relative w-[110px] h-[122px] xs:w-[128px] xs:h-[140px] sm:w-[155px] sm:h-[168px] md:w-[172px] md:h-[185px] rounded-[22px] xs:rounded-[26px] sm:rounded-[30px] md:rounded-[34px] overflow-hidden select-none transition-all duration-500 bg-gradient-to-b from-[#06150e] via-[#040e09] to-[#020704] ${
                         app.isHighlighted && isCenter
-                          ? "ring-2 ring-[#4dffa0] shadow-[0_0_36px_rgba(77,255,160,0.65),0_12px_28px_rgba(0,0,0,0.9)]"
+                          ? "border border-[#4dffa0]/90 shadow-[0_8px_32px_rgba(77,255,160,0.22),0_2px_8px_rgba(0,0,0,0.9)]"
                           : app.isHighlighted
-                          ? "ring-1.5 ring-[#4dffa0]/70 shadow-[0_0_22px_rgba(77,255,160,0.4),0_8px_20px_rgba(0,0,0,0.8)]"
-                          : "ring-1 ring-white/15 shadow-[0_12px_24px_rgba(0,0,0,0.8)]"
+                          ? "border border-[#4dffa0]/50 shadow-[0_6px_20px_rgba(77,255,160,0.15)]"
+                          : "border border-white/10 hover:border-white/20 shadow-[0_6px_20px_rgba(0,0,0,0.6)]"
                       }`}
-                      style={{ background: "#050706" }}
                     >
-                      {/* Fluid Metallic Liquid Silk Wallpaper from Floxa */}
+                      {/* Subtle Floxa Liquid Silk Texture Watermark */}
                       <img
                         src={app.bgImage}
-                        alt={app.name}
-                        className="absolute inset-0 w-full h-full object-cover scale-110 pointer-events-none select-none"
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none select-none"
                       />
 
-                      {/* Colored Atmospheric Vignette */}
-                      <div className={`absolute inset-0 bg-gradient-to-b ${app.tintClass} pointer-events-none`} />
-
-                      {/* Apple Specular Glass Reflection */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/60 pointer-events-none" />
-
-                      {/* Inner Glass Edge Bevel */}
-                      <div className="absolute inset-0 rounded-[24%] ring-1 ring-inset ring-white/10 pointer-events-none" />
-
-                      {/* Floxa Icon Card Content */}
-                      <div className="relative z-10 w-full h-full flex flex-col items-center justify-between py-2.5 sm:py-3.5 px-2">
+                      {/* Card Inner Content */}
+                      <div className="relative z-10 w-full h-full flex flex-col items-center justify-between py-3 sm:py-4 px-2.5 sm:px-3">
                         {/* Top Suite Label */}
-                        <span
-                          className="text-[7.5px] xs:text-[8.5px] sm:text-[9.5px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full"
-                          style={{
-                            backgroundColor: "rgba(0, 0, 0, 0.65)",
-                            color: app.accentColor,
-                            border: `1px solid ${app.accentColor}55`,
-                          }}
-                        >
-                          {app.suite}
-                        </span>
+                        <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.08]">
+                          <span
+                            className="w-1.5 h-1.5 rounded-full"
+                            style={{ backgroundColor: app.accentColor }}
+                          />
+                          <span className="text-[8.5px] xs:text-[9.5px] sm:text-[11px] font-semibold tracking-wider uppercase text-[#e8f5ef]">
+                            {app.suite}
+                          </span>
+                        </div>
 
-                        {/* Center Section: Logo + Middle "Coming Soon" Badge */}
-                        <div className="relative w-full flex flex-col items-center justify-center my-auto py-0.5">
-                          {/* FLOXA Logo (dimmed slightly for Coming Soon suites to provide contrast for center badge) */}
-                          <div
-                            className={`w-[84%] flex items-center justify-center transition-opacity duration-300 ${
+                        {/* Center Section: FLOXA Logo + Center Coming Soon Badge */}
+                        <div className="relative w-full flex items-center justify-center my-auto py-1">
+                          <img
+                            src="/images/floxa/floxa_logo.png"
+                            alt="FLOXA"
+                            className={`w-[78%] h-auto object-contain transition-opacity duration-300 filter drop-shadow-md select-none ${
                               app.status === "coming-soon" ? "opacity-30" : "opacity-100"
                             }`}
-                          >
-                            <img
-                              src="/images/floxa/floxa_logo.png"
-                              alt="FLOXA"
-                              className="w-full h-auto object-contain filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
-                            />
-                          </div>
+                          />
 
-                          {/* Center Frosted Glass "Coming Soon" Badge right in the middle of the icon */}
+                          {/* Refined Center Coming Soon Badge */}
                           {app.status === "coming-soon" && (
                             <div className="absolute inset-0 flex items-center justify-center z-20">
-                              <span className="backdrop-blur-md bg-black/85 border border-white/25 text-white/95 font-semibold tracking-wider uppercase text-[7.5px] xs:text-[8.5px] sm:text-[9.5px] px-2.5 py-1 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.8)] flex items-center gap-1.5 whitespace-nowrap scale-100 hover:scale-105 transition-transform">
-                                <svg
-                                  className="w-2.5 h-2.5 text-white/70 shrink-0"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <circle cx="12" cy="12" r="9" strokeWidth="2" />
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 7v5l3 2" />
-                                </svg>
+                              <span className="backdrop-blur-md bg-[#020806]/90 border border-[#6ee7b7]/35 text-[#6ee7b7] font-semibold tracking-wider uppercase text-[8px] xs:text-[9px] sm:text-[10px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#4dffa0]" />
                                 <span>Coming Soon</span>
                               </span>
                             </div>
                           )}
                         </div>
 
-                        {/* Bottom Status / Edition Indicator */}
-                        <div className="flex items-center gap-1">
-                          {app.status === "available" ? (
-                            <span className="flex items-center gap-1 text-[7.5px] xs:text-[8px] sm:text-[9px] font-semibold tracking-wider text-[#4dffa0] uppercase">
+                        {/* Bottom Status Indicator */}
+                        <div className="min-h-[16px] flex items-center justify-center">
+                          {app.status === "available" && (
+                            <span className="flex items-center gap-1.5 text-[8.5px] xs:text-[9.5px] sm:text-[10.5px] font-semibold tracking-wider text-[#4dffa0] uppercase">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#4dffa0] animate-pulse" />
                               Active
-                            </span>
-                          ) : (
-                            <span className="text-[7px] xs:text-[7.5px] sm:text-[8px] font-medium tracking-wider text-white/40 uppercase">
-                              Floxa Universe
                             </span>
                           )}
                         </div>
@@ -386,7 +370,7 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* "Try it free" Rose Gold Pill Button with Opening Slide Up */}
+        {/* "Try it free" Electric Mint Pill Button with Opening Slide Up */}
         <div
           className={`transition-all duration-1000 delay-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             hasOpened ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
@@ -396,7 +380,7 @@ export default function HeroSection() {
             href="https://floxa.flumenx.in/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-[#fce0d8] via-[#e0a899] to-[#c47c6a] hover:brightness-105 text-[#170a07] text-sm sm:text-base font-semibold px-6 py-2.5 sm:px-7 sm:py-3 rounded-full transition-all duration-200 active:scale-95 shadow-[0_0_24px_rgba(224,168,153,0.35)]"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-[#4dffa0] via-[#38e88f] to-[#1fd879] hover:brightness-105 text-[#02140a] text-sm sm:text-base font-semibold px-6 py-2.5 sm:px-7 sm:py-3 rounded-full transition-all duration-200 active:scale-95 shadow-[0_0_24px_rgba(77,255,160,0.4)]"
           >
             <span>Try it free</span>
             <sup className="text-[10px] ml-0.5">2</sup>

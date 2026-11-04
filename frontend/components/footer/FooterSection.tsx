@@ -29,7 +29,7 @@ export default function FooterSection() {
           {footnotes.length > 4 && (
             <button
               onClick={() => setShowAllFootnotes(!showAllFootnotes)}
-              className="mt-3 text-[#e0a899] hover:underline cursor-pointer"
+              className="mt-3 text-[#4dffa0] hover:underline cursor-pointer"
             >
               {showAllFootnotes ? "Show less" : `Show ${footnotes.length - 4} more footnotes`}
             </button>
@@ -42,7 +42,7 @@ export default function FooterSection() {
             <span className="text-[#e8f5ef] font-pavelt text-2xl sm:text-3xl tracking-normal">Floxa</span>
             <span className="text-[11px] text-[#4dffa0] border border-[#4dffa0]/25 bg-[#4dffa0]/10 px-2 py-0.5 rounded-md">by FlumenX</span>
           </div>
-          <p className="text-xs text-[#e0a899] font-medium tracking-wide">
+          <p className="text-xs text-[#6ee7b7] font-medium tracking-wide">
             Clarity Before Creation.
           </p>
         </div>
@@ -54,19 +54,19 @@ export default function FooterSection() {
           </div>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <a href="#overview" className="hover:text-[#e0a899] transition-colors">Home</a>
+            <a href="#overview" className="hover:text-[#4dffa0] transition-colors">Home</a>
             <span className="text-white/20">|</span>
-            <a href="#final-cut-pro" className="hover:text-[#e0a899] transition-colors">How It Works</a>
+            <a href="#final-cut-pro" className="hover:text-[#4dffa0] transition-colors">How It Works</a>
             <span className="text-white/20">|</span>
-            <a href="#pixelmator-pro" className="hover:text-[#e0a899] transition-colors">Features</a>
+            <a href="#pixelmator-pro" className="hover:text-[#4dffa0] transition-colors">Features</a>
             <span className="text-white/20">|</span>
-            <a href="#logic-pro" className="hover:text-[#e0a899] transition-colors">Why FLOXA</a>
+            <a href="#logic-pro" className="hover:text-[#4dffa0] transition-colors">Why FLOXA</a>
             <span className="text-white/20">|</span>
-            <a href="https://floxa.flumenx.in/login" target="_blank" rel="noopener noreferrer" className="hover:text-[#e0a899] transition-colors">Contact & Login</a>
+            <a href="https://floxa.flumenx.in/login" target="_blank" rel="noopener noreferrer" className="hover:text-[#4dffa0] transition-colors">Contact & Login</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-[#e0a899] transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-[#4dffa0] transition-colors">Privacy Policy</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-[#e0a899] transition-colors">Terms of Use</a>
+            <a href="#" className="hover:text-[#4dffa0] transition-colors">Terms of Use</a>
           </div>
 
           <div className="text-[#e8f5ef] font-medium">

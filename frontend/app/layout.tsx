@@ -36,7 +36,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#020806" />
       </head>
       <body
-        className="bg-[#020806] text-[#e8f5ef] antialiased selection:bg-[#e0a899]/30 selection:text-white min-h-screen flex flex-col"
+        className="bg-[#020806] text-[#e8f5ef] antialiased selection:bg-[#4dffa0]/30 selection:text-white min-h-screen flex flex-col"
         suppressHydrationWarning
       >
         {children}

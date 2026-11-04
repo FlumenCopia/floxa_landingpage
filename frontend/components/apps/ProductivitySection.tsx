@@ -76,9 +76,9 @@ export default function ProductivitySection() {
 
         {/* Header */}
         <div className="mb-6 sm:mb-8 max-w-2xl">
-          {/* Eyebrow in Rose Gold */}
-          <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#e0a899] mb-2 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#e0a899]" />
+          {/* Eyebrow in Electric Mint */}
+          <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#4dffa0] mb-2 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#4dffa0]" />
             Who It&apos;s For
           </div>
 
@@ -108,7 +108,7 @@ export default function ProductivitySection() {
                 className="w-[84vw] xs:w-[78vw] sm:w-[420px] md:w-[480px] lg:w-[520px] max-w-[92vw] sm:max-w-none shrink-0 flex flex-col group snap-start cursor-pointer"
               >
                 {/* Normal Stylish Media Card Tile - Clean, zero iPhone bezel */}
-                <div className="relative w-full aspect-[16/9.5] sm:aspect-[16/9] rounded-[20px] sm:rounded-[26px] bg-[#05130c] border border-[#4dffa0]/18 overflow-hidden flex items-center justify-center p-2.5 sm:p-3 shadow-xl transition-all duration-300 group-hover:border-[#e0a899]/45 group-hover:shadow-[0_0_28px_rgba(77,255,160,0.15)] group-hover:-translate-y-1">
+                <div className="relative w-full aspect-[16/9.5] sm:aspect-[16/9] rounded-[20px] sm:rounded-[26px] bg-[#05130c] border border-[#4dffa0]/18 overflow-hidden flex items-center justify-center p-2.5 sm:p-3 shadow-xl transition-all duration-300 group-hover:border-[#4dffa0]/45 group-hover:shadow-[0_0_28px_rgba(77,255,160,0.18)] group-hover:-translate-y-1">
                   <img
                     src={card.image}
                     alt={card.title}
@@ -127,7 +127,7 @@ export default function ProductivitySection() {
                     </strong>
                     {card.desc}
                   </p>
-                  <span className="text-xs text-[#e0a899] font-medium tracking-wide">
+                  <span className="text-xs text-[#6ee7b7] font-medium tracking-wide">
                     {card.appAvailability}
                   </span>
                 </div>
@@ -139,7 +139,7 @@ export default function ProductivitySection() {
           <div className="flex items-center justify-end gap-3 mt-4">
             <button
               onClick={() => scroll("left")}
-              className="w-10 h-10 rounded-full bg-[#06160f] hover:bg-[#081c13] border border-[#4dffa0]/20 text-[#e0a899] flex items-center justify-center transition-colors shadow-md"
+              className="w-10 h-10 rounded-full bg-[#06160f] hover:bg-[#081c13] border border-[#4dffa0]/20 text-[#4dffa0] flex items-center justify-center transition-colors shadow-md"
               aria-label="Previous item"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,7 +148,7 @@ export default function ProductivitySection() {
             </button>
             <button
               onClick={() => scroll("right")}
-              className="w-10 h-10 rounded-full bg-[#06160f] hover:bg-[#081c13] border border-[#4dffa0]/20 text-[#e0a899] flex items-center justify-center transition-colors shadow-md"
+              className="w-10 h-10 rounded-full bg-[#06160f] hover:bg-[#081c13] border border-[#4dffa0]/20 text-[#4dffa0] flex items-center justify-center transition-colors shadow-md"
               aria-label="Next item"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,7 +175,7 @@ export default function ProductivitySection() {
                 <h3 className="text-base sm:text-lg font-semibold text-[#e8f5ef]">
                   {selectedCard.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#e0a899]">
+                <p className="text-xs sm:text-sm text-[#6ee7b7]">
                   {selectedCard.appAvailability}
                 </p>
               </div>
