@@ -16,7 +16,8 @@ interface AppItem {
   isHighlighted?: boolean;
 }
 
-// 4 Floxa suite products: Floxa for Design (active) + Coming Soon suites (Work, Digital Marketing, Learning)
+// 3 Floxa suite products matching the original layout:
+// Floxa for Design (highlighted center), Floxa for Work, and Floxa for Digital Marketing
 const appList: AppItem[] = [
   {
     id: "floxa-design",
@@ -55,24 +56,12 @@ const appList: AppItem[] = [
     anchor: "#overview",
     status: "coming-soon",
   },
-  {
-    id: "floxa-learning",
-    name: "Floxa for Learning",
-    suite: "Learning",
-    tagline: "Skills & Brand Academy",
-    bgImage: "/images/floxa/banner2.png",
-    accentColor: "#fbbf24",
-    glowColor: "rgba(251, 191, 36, 0.4)",
-    tintClass: "from-[#f59e0b]/20 to-black/70",
-    anchor: "#overview",
-    status: "coming-soon",
-  },
 ];
 
-// Tripled list for infinite seamless conveyor belt physics:
-// Set 0: indices 0..3
-// Set 1: indices 4..7 (Starting set: index 4 = Floxa for Design)
-// Set 2: indices 8..11
+// Tripled list for seamless infinite physical sliding:
+// Set 0: indices 0..2
+// Set 1: indices 3..5 (Starts at index 3: Floxa for Design centered)
+// Set 2: indices 6..8
 const loopedAppList = [...appList, ...appList, ...appList];
 
 export default function HeroSection() {
@@ -80,28 +69,28 @@ export default function HeroSection() {
   const [isHovered, setIsHovered] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
 
-  // Virtual index inside loopedAppList (starts on middle set at index 4: Floxa for Design)
-  const [virtualIndex, setVirtualIndex] = useState(4);
+  // Virtual index in loopedAppList (starts at index 3: Floxa for Design)
+  const [virtualIndex, setVirtualIndex] = useState(3);
   const [isTransitioning, setIsTransitioning] = useState(true);
 
-  // Responsive sizing for conveyor belt
+  // Responsive dimensions for 3-card presentation
   const [dimensions, setDimensions] = useState({
     cardWidth: 174,
     cardHeight: 190,
-    gap: 24,
+    gap: 36,
   });
 
   useEffect(() => {
     const updateDimensions = () => {
       const width = window.innerWidth;
       if (width < 440) {
-        setDimensions({ cardWidth: 124, cardHeight: 138, gap: 14 });
+        setDimensions({ cardWidth: 124, cardHeight: 138, gap: 16 });
       } else if (width < 640) {
-        setDimensions({ cardWidth: 144, cardHeight: 158, gap: 18 });
+        setDimensions({ cardWidth: 144, cardHeight: 158, gap: 22 });
       } else if (width < 1024) {
-        setDimensions({ cardWidth: 162, cardHeight: 176, gap: 20 });
+        setDimensions({ cardWidth: 162, cardHeight: 176, gap: 28 });
       } else {
-        setDimensions({ cardWidth: 176, cardHeight: 192, gap: 24 });
+        setDimensions({ cardWidth: 174, cardHeight: 190, gap: 36 });
       }
     };
     updateDimensions();
@@ -157,17 +146,17 @@ export default function HeroSection() {
   }, [isPaused, isHovered, hasOpened, nextSlide]);
 
   // Seamless Infinite Loop Normalization:
-  // When a transition completes and index is outside middle set [4..7],
+  // When a transition completes and index is outside middle set [3..5],
   // instantly shift back to middle set with transition: none so it is 100% invisible.
   const handleTransitionEnd = (e: React.TransitionEvent<HTMLDivElement>) => {
     if (e.target !== trackRef.current) return;
 
-    if (virtualIndex >= 8) {
+    if (virtualIndex >= 6) {
       setIsTransitioning(false);
-      setVirtualIndex((prev) => prev - 4);
-    } else if (virtualIndex < 4) {
+      setVirtualIndex((prev) => prev - 3);
+    } else if (virtualIndex < 3) {
       setIsTransitioning(false);
-      setVirtualIndex((prev) => prev + 4);
+      setVirtualIndex((prev) => prev + 3);
     }
   };
 
@@ -270,7 +259,7 @@ export default function HeroSection() {
           <span className="mint-gradient-text">before design.</span>
         </h1>
 
-        {/* Conveyor Belt Track Container */}
+        {/* 3-Card Carousel Stage: Exactly 3 cards visible (Left, Center, Right) */}
         <div
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => {
@@ -283,15 +272,15 @@ export default function HeroSection() {
           onMouseDown={handleTouchStart}
           onMouseMove={handleTouchMove}
           onMouseUp={handleTouchEnd}
-          className={`relative w-full max-w-[1140px] h-[220px] xs:h-[240px] sm:h-[280px] md:h-[305px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-3 sm:my-5 transition-opacity duration-1000 delay-300 ${
+          className={`relative w-full max-w-[820px] h-[220px] xs:h-[240px] sm:h-[280px] md:h-[305px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing my-3 sm:my-5 transition-opacity duration-1000 delay-300 ${
             hasOpened ? "opacity-100" : "opacity-0"
           }`}
         >
-          {/* Subtle side vignettes to merge seamlessly into Floxa Obsidian background */}
-          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-36 bg-gradient-to-r from-[#020806] via-[#020806]/90 to-transparent z-40 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-36 bg-gradient-to-l from-[#020806] via-[#020806]/90 to-transparent z-40 pointer-events-none" />
+          {/* Subtle side vignettes to merge outer cards smoothly into Floxa Obsidian background */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 md:w-28 bg-gradient-to-r from-[#020806] via-[#020806]/85 to-transparent z-40 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 md:w-28 bg-gradient-to-l from-[#020806] via-[#020806]/85 to-transparent z-40 pointer-events-none" />
 
-          {/* Unified Looped Flex Track: All cards glide in unison with zero flyover glitches */}
+          {/* Continuous Conveyor Track: Only 3 cards visible, moving in unison without crossover glitches */}
           <div
             ref={trackRef}
             onTransitionEnd={handleTransitionEnd}
@@ -315,27 +304,23 @@ export default function HeroSection() {
               const distance = Math.abs(idx - virtualIndex);
               const isCenter = distance === 0;
 
-              // Smooth scale, opacity, and elevation based on distance from center
-              let scale = 0.74;
+              // Only distance 0 (center) and distance 1 (left & right) are visible
+              let scale = 0.72;
               let opacity = 0;
               let zIndex = 1;
 
               if (distance === 0) {
-                scale = 1.08;
+                scale = 1.1;
                 opacity = 1;
                 zIndex = 30;
               } else if (distance === 1) {
-                scale = 0.94;
-                opacity = 0.82;
+                scale = 0.88;
+                opacity = 0.75;
                 zIndex = 20;
-              } else if (distance === 2) {
-                scale = 0.84;
-                opacity = 0.45;
-                zIndex = 10;
-              } else if (distance === 3) {
-                scale = 0.76;
-                opacity = 0.15;
-                zIndex = 5;
+              } else {
+                scale = 0.72;
+                opacity = 0;
+                zIndex = 1;
               }
 
               return (
@@ -349,10 +334,10 @@ export default function HeroSection() {
                     transform: `scale(${scale})`,
                     opacity: opacity,
                     zIndex: zIndex,
-                    pointerEvents: distance <= 2 ? "auto" : "none",
+                    pointerEvents: distance <= 1 ? "auto" : "none",
                   }}
                 >
-                  {/* Clean, Authentic Floxa Product Card */}
+                  {/* Clean, Authentic Floxa Product Card (Zero fake AI shine, authentic obsidian surface) */}
                   <div
                     className={`relative w-full h-full rounded-[22px] xs:rounded-[26px] sm:rounded-[30px] md:rounded-[34px] overflow-hidden select-none transition-all duration-500 bg-gradient-to-b from-[#06160f] via-[#04100b] to-[#020806] ${
                       isCenter && app.isHighlighted
@@ -403,7 +388,7 @@ export default function HeroSection() {
                         )}
                       </div>
 
-                      {/* Bottom Status Indicator */}
+                      {/* Bottom Status Indicator (No 'Floxa Universe' text line) */}
                       <div className="min-h-[16px] flex items-center justify-center">
                         {app.status === "available" && (
                           <span className="flex items-center gap-1.5 text-[8.5px] xs:text-[9.5px] sm:text-[10px] font-semibold tracking-wider text-[#4dffa0] uppercase">
@@ -418,29 +403,6 @@ export default function HeroSection() {
               );
             })}
           </div>
-        </div>
-
-        {/* 4 Suite Indicator Dots */}
-        <div className="flex items-center justify-center gap-2 mt-2 sm:mt-3 mb-2">
-          {appList.map((app, idx) => {
-            const isActive = (virtualIndex % appList.length) === idx;
-            return (
-              <button
-                key={app.id}
-                onClick={() => {
-                  setIsTransitioning(true);
-                  const currentBase = Math.floor(virtualIndex / appList.length) * appList.length;
-                  setVirtualIndex(currentBase + idx);
-                }}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  isActive
-                    ? "w-6 bg-[#4dffa0] shadow-[0_0_8px_rgba(77,255,160,0.6)]"
-                    : "w-1.5 bg-white/20 hover:bg-white/40"
-                }`}
-                aria-label={`Go to ${app.name}`}
-              />
-            );
-          })}
         </div>
 
         {/* Narrative Copy with Opening Slide Up */}
