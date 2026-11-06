@@ -61,14 +61,17 @@ export default function PixelmatorColorPicker() {
   const pointerY = 50 + radiusPercent * Math.sin(rad);
 
   return (
-    <div className="relative w-full mx-auto overflow-hidden flex flex-col items-center justify-center select-none">
-      {/* Top and Bottom Vignettes for smooth blending into black */}
-      <div className="absolute top-0 inset-x-0 h-20 sm:h-32 bg-gradient-to-b from-black to-transparent z-20 pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-28 sm:h-40 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
+    <div className="relative w-full max-w-[1360px] mx-auto rounded-[28px] sm:rounded-[36px] bg-[#030A06] border border-[#00E599]/25 shadow-[0_20px_50px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col items-center justify-center select-none py-6 sm:py-10 px-3 sm:px-6">
+      {/* Ambient background glow inside the studio */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#00E599]/10 rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Top and Bottom Vignettes for smooth blending into obsidian */}
+      <div className="absolute top-0 inset-x-0 h-20 sm:h-32 bg-gradient-to-b from-[#030A06] to-transparent z-20 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-28 sm:h-40 bg-gradient-to-t from-[#030A06] to-transparent z-20 pointer-events-none" />
 
       {/* Main Visual Stage */}
-      <div className="relative w-full h-[320px] sm:h-[480px] md:h-[620px] lg:h-[740px] xl:h-[820px] flex items-center justify-center overflow-hidden rounded-2xl sm:rounded-none">
-        {/* Background Flower Image with Dynamic Live Hue Rotation */}
+      <div className="relative w-full h-[320px] sm:h-[480px] md:h-[620px] lg:h-[700px] flex items-center justify-center overflow-hidden rounded-2xl">
+        {/* Background Floral Artwork with Dynamic Hue Rotation */}
         <img
           src="/images/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.png"
           srcSet="
@@ -76,8 +79,8 @@ export default function PixelmatorColorPicker() {
             /images/pixelmator/hero_endframe__chfdpsnstqeu_xlarge.png 1440w
           "
           sizes="(max-width: 1068px) 100vw, 1500px"
-          alt="Textured floral object dynamically changing colors in Pixelmator Pro"
-          className="absolute inset-0 w-full h-full object-cover sm:object-contain scale-100 sm:scale-110 md:scale-120 lg:scale-125 filter transition-[filter] duration-75 pointer-events-none"
+          alt="Textured floral object dynamically changing colors"
+          className="absolute inset-0 w-full h-full object-cover sm:object-contain scale-100 sm:scale-110 md:scale-120 filter transition-[filter] duration-75 pointer-events-none"
           style={{
             filter: `hue-rotate(${hueRotation}deg) saturate(1.15)`,
           }}
@@ -93,14 +96,14 @@ export default function PixelmatorColorPicker() {
           title="Drag or click anywhere on the color wheel to change the background color"
         >
           {/* Outer circular translucent plate with subtle border */}
-          <div className="absolute inset-0 rounded-full bg-[#161617]/85 backdrop-blur-md shadow-2xl border border-white/10" />
+          <div className="absolute inset-0 rounded-full bg-[#071911]/85 backdrop-blur-md shadow-2xl border border-white/10" />
 
-          {/* Left Pink Arc and Right White Arc matching Apple reference UI */}
+          {/* Left Pink Arc and Right White Arc */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none"
             viewBox="0 0 200 200"
           >
-            {/* Left Pink/Magenta Arc */}
+            {/* Left Pink Arc */}
             <path
               d="M 49.5,27.9 A 88 88 0 0 0 49.5,172.1"
               fill="none"
@@ -109,7 +112,7 @@ export default function PixelmatorColorPicker() {
               strokeLinecap="round"
               className="drop-shadow-[0_0_4px_rgba(255,45,85,0.4)]"
             />
-            {/* Right White/Silver Arc */}
+            {/* Right White Arc */}
             <path
               d="M 150.5,27.9 A 88 88 0 0 1 150.5,172.1"
               fill="none"
@@ -127,7 +130,7 @@ export default function PixelmatorColorPicker() {
               WebkitMaskImage: "radial-gradient(transparent 56%, black 58%)",
             }}
           >
-            {/* Conic Gradient Base matching Apple Color Palette */}
+            {/* Conic Gradient Base */}
             <div
               className="w-full h-full"
               style={{
@@ -135,7 +138,7 @@ export default function PixelmatorColorPicker() {
                   "conic-gradient(from 0deg, #ff0033 0%, #ff5500 12%, #ffcc00 25%, #28cd41 40%, #00e5ff 52%, #0066ff 66%, #5856d6 78%, #ff2d55 90%, #ff0033 100%)",
               }}
             />
-            {/* 3D Inward Depth / Funnel Cone Shadow Overlay */}
+            {/* 3D Inward Depth / Cone Shadow Overlay */}
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
@@ -146,7 +149,7 @@ export default function PixelmatorColorPicker() {
           </div>
 
           {/* Center Dark Aperture with Crosshair */}
-          <div className="relative w-[42%] h-[42%] rounded-full bg-[#161617] border border-white/[0.08] flex items-center justify-center shadow-[inset_0_2px_8px_rgba(0,0,0,0.9)]">
+          <div className="relative w-[42%] h-[42%] rounded-full bg-[#05140e] border border-white/[0.12] flex items-center justify-center shadow-[inset_0_2px_8px_rgba(0,0,0,0.9)]">
             {/* Crosshair indicator */}
             <div className="relative w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center text-white/50 pointer-events-none">
               <div className="absolute w-full h-[1px] bg-white/40" />
@@ -167,14 +170,14 @@ export default function PixelmatorColorPicker() {
       </div>
 
       {/* Interactive Helper & Auto-Play / Pause Toggle */}
-      <div className="relative z-30 mt-3 flex items-center gap-3">
+      <div className="relative z-30 mt-4 flex items-center gap-3">
         <button
           onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-xs text-white/80 hover:text-white transition-all duration-150 backdrop-blur-md shadow-sm"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-medium text-white transition-all duration-150 backdrop-blur-md shadow-sm cursor-pointer"
         >
           {isAutoPlaying ? (
             <>
-              <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+              <svg className="w-3 h-3 fill-current text-[#00E599]" viewBox="0 0 24 24">
                 <rect x="6" y="4" width="3.5" height="16" rx="1" />
                 <rect x="14.5" y="4" width="3.5" height="16" rx="1" />
               </svg>
@@ -182,7 +185,7 @@ export default function PixelmatorColorPicker() {
             </>
           ) : (
             <>
-              <svg className="w-3 h-3 fill-current ml-0.5" viewBox="0 0 24 24">
+              <svg className="w-3 h-3 fill-current ml-0.5 text-[#00E599]" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
               <span>Auto Cycle Colors</span>
@@ -190,7 +193,7 @@ export default function PixelmatorColorPicker() {
           )}
         </button>
 
-        <span className="text-[11px] text-white/40 hidden sm:inline">
+        <span className="text-[12px] text-slate-400 hidden sm:inline">
           Drag the white pointer on the color wheel to change hues
         </span>
       </div>

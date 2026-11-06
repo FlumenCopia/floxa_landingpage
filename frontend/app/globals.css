@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-xs: 420px;
+}
+
 @font-face {
   font-family: 'Pavelt';
   src: url('/pavelt/Pavelt.otf') format('opentype'),
@@ -16,57 +20,30 @@
 }
 
 :root {
-  /* Floxa Official Obsidian-Emerald Color Theme */
-  --background: #020806;
-  --foreground: #e8f5ef;
-  --bg: #020806;
-  --surface: #06160f;
-  --card: #06160f;
-  --card2: #081c13;
-  --border: rgba(77, 255, 160, 0.2);
-  --border2: rgba(77, 255, 160, 0.32);
-  --neon: #4dffa0;
-  --neon-dim: rgba(77, 255, 160, 0.08);
-  --neon-mid: rgba(77, 255, 160, 0.18);
-  --muted: #89aca0;
-  --dim: #4a6b5e;
-
-  /* Luminous Mint & Emerald Palette - Perfectly aligned with Floxa Green UI */
-  --mint: #4dffa0;
-  --mint-light: #d1fae5;
-  --mint-seafoam: #6ee7b7;
-  --mint-dark: #10b981;
-  --mint-border: rgba(77, 255, 160, 0.32);
-  --mint-glow: rgba(77, 255, 160, 0.35);
-
-  /* Legacy aliases mapped to matching Floxa Mint & Seafoam */
-  --rosegold: #4dffa0;
-  --rosegold-light: #d1fae5;
-  --rosegold-dark: #10b981;
-  --rosegold-border: rgba(77, 255, 160, 0.32);
-  --rosegold-glow: rgba(77, 255, 160, 0.35);
-
-  /* Legacy Apple aliases mapped into Floxa Obsidian */
-  --apple-gray-text: #89aca0;
-  --apple-card-bg: #06160f;
-  --apple-card-border: rgba(77, 255, 160, 0.15);
-  --apple-blue: #4dffa0;
-  --apple-blue-hover: #3de890;
-  --apple-link: #4dffa0;
+  /* Floxa Exact UI Color Palette from Reference Design */
+  --floxa-neon: #00E599;
+  --floxa-emerald: #00B377;
+  --floxa-mint-tint: #E6FBF2;
+  --floxa-forest-dark: #030A06;
+  --floxa-forest-card: #071911;
+  
+  --floxa-light-bg: #F8FAFB;
+  --floxa-light-card: #FFFFFF;
+  --floxa-light-border: #E2ECE6;
+  --floxa-text-dark: #0A130E;
+  --floxa-text-muted: #526058;
 }
 
+html,
 body {
-  background-color: #020806;
-  color: #e8f5ef;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #F8FAFB;
+  color: #0A130E;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-image: 
-    radial-gradient(ellipse 90% 45% at 50% -10%, rgba(77, 255, 160, 0.09), transparent 70%),
-    radial-gradient(ellipse 60% 40% at 85% 35%, rgba(110, 231, 183, 0.05), transparent 60%),
-    radial-gradient(ellipse 70% 45% at 15% 75%, rgba(77, 255, 160, 0.07), transparent 70%);
-  background-attachment: fixed;
+  max-width: 100%;
+  width: 100%;
 }
 
 /* Custom scrollbar hiding for horizontal galleries */
@@ -78,89 +55,80 @@ body {
   scrollbar-width: none;
 }
 
-/* Luminous Mint & Emerald Gradient Text */
+/* Luminous Mint Gradient for dark sections */
 .rosegold-gradient-text,
-.mint-gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #d1fae5 32%, #4dffa0 70%, #10b981 100%);
+.mint-gradient-text,
+.floxa-neon-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #D1FAE5 35%, #00E599 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Luminous Mint & Emerald Button */
+/* Dark Green Gradient text for light sections */
+.floxa-heading-gradient {
+  background: linear-gradient(135deg, #0A130E 40%, #00B377 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Exact Floxa Primary Pill Button from Reference UI */
+.floxa-pill-primary {
+  background-color: #00E599;
+  color: #03140C;
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px rgba(0, 229, 153, 0.32);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.floxa-pill-primary:hover {
+  background-color: #05f0a2;
+  box-shadow: 0 6px 24px rgba(0, 229, 153, 0.48);
+  transform: translateY(-1px);
+}
+.floxa-pill-primary:active {
+  transform: scale(0.97);
+}
+
+/* Backward compatibility for existing button classes */
 .rosegold-pill-btn,
 .mint-pill-btn {
-  background: linear-gradient(135deg, #4dffa0 0%, #34d399 50%, #10b981 100%);
-  color: #02140a;
+  background: #00E599;
+  color: #03140C;
   font-weight: 600;
-  box-shadow: 0 4px 20px rgba(77, 255, 160, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.7);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 229, 153, 0.35);
+  transition: all 0.25s ease;
 }
 .rosegold-pill-btn:hover,
 .mint-pill-btn:hover {
-  filter: brightness(1.08);
-  box-shadow: 0 6px 28px rgba(77, 255, 160, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background: #05f0a2;
   transform: translateY(-1px);
 }
 
-/* Floxa Neon Emerald Gradient Text */
-.floxa-neon-gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #a8ffd2 40%, #4dffa0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Dark Glass Pill Button (Hero secondary button) */
+.floxa-pill-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  font-weight: 500;
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+}
+.floxa-pill-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
-/* Floxa Deep Glassmorphism Card */
-.floxa-glass-card {
-  background: rgba(6, 22, 15, 0.75);
-  border: 1px solid rgba(77, 255, 160, 0.16);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+/* Light Card Style matching Reference Cards */
+.floxa-white-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8EFEA;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
-.floxa-glass-card:hover {
-  border-color: rgba(77, 255, 160, 0.45);
-}
-
-/* Floxa Sticky Nav Glass */
-.floxa-nav-glass {
-  background: rgba(2, 8, 6, 0.88);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(77, 255, 160, 0.14);
-}
-
-/* Floxa Wordmark Shimmer with Rose Gold & Emerald sheen */
-@keyframes floxaShimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.apple-wordmark-shimmer {
-  background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #d1fae5 25%,
-    #6ee7b7 45%,
-    #ffffff 55%,
-    #4dffa0 75%,
-    #ffffff 100%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: floxaShimmer 4s ease-in-out infinite;
-}
-
-@keyframes fanOutGlow {
-  0% {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.floxa-white-card:hover {
+  border-color: rgba(0, 229, 153, 0.45);
+  box-shadow: 0 10px 32px rgba(0, 179, 119, 0.08);
 }

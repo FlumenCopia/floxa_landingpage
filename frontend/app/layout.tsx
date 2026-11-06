@@ -30,13 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#020806" />
+        <meta name="theme-color" content="#030A06" />
       </head>
       <body
-        className="bg-[#020806] text-[#e8f5ef] antialiased selection:bg-[#4dffa0]/30 selection:text-white min-h-screen flex flex-col"
+        className="bg-[#F8FAFB] text-[#0A130E] antialiased selection:bg-[#00E599]/30 selection:text-black min-h-screen flex flex-col"
         suppressHydrationWarning
       >
         {children}

@@ -11,39 +11,38 @@ import FooterSection from "../components/footer/FooterSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#020806] text-[#e8f5ef] flex flex-col font-sans selection:bg-[#4dffa0]/30 selection:text-white">
-      {/* Sticky Local Nav */}
+    <div className="min-h-screen bg-[#F8FAFB] text-[#0A130E] flex flex-col font-sans selection:bg-[#00E599]/30 selection:text-black">
+      {/* Sticky Navigation */}
       <LocalNav />
 
       {/* Main Page Content */}
       <main className="flex-1 w-full flex flex-col">
-        {/* 3. Hero Section: "All yours for the making" + Interactive App Showcase */}
+        {/* Hero Section (Dark Obsidian Theme with Mint Aurora Mesh) */}
         <HeroSection />
 
-        {/* 4. Highlights Section: "Meet your all-star team of creative apps" */}
+        {/* Highlights Section (Clean Light Theme with Mint Accents) */}
         <HighlightsSection />
 
-        {/* 5. Subscriptions / Pricing: "One powerful collection. One smart subscription" */}
+        {/* Pricing Section (Clean Light Theme with Featured Green Border) */}
         <PricingSection />
 
-        {/* 6. Final Cut Pro: "The ultimate video creation experience" */}
+        {/* How It Works Section */}
         <FinalCutProSection />
 
-        {/* 7. Pixelmator Pro: "Creative imaging and design. Made for everyone" */}
+        {/* Key Features & Interactive Color Experience */}
         <PixelmatorProSection />
 
-        {/* 8. Logic Pro: "The fast track to the final mix. Wherever you go" */}
+        {/* Why FLOXA Section */}
         <LogicProSection />
 
-
-        {/* 9. Keynote, Pages, Numbers, Freeform: "Go from idea to done. In a snap" */}
+        {/* Who It's For Section */}
         <ProductivitySection />
 
-        {/* 10. FAQ Accordion: "Questions? Answers." */}
+        {/* FAQ Accordion Section */}
         <FaqSection />
       </main>
 
-      {/* 11. Official Apple Footer */}
+      {/* Elevated CTA Banner & Dark Obsidian Footer matching Reference */}
       <FooterSection />
     </div>
   );
