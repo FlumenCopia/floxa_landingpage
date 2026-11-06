@@ -7,7 +7,7 @@
 @font-face {
   font-family: 'Pavelt';
   src: url('/pavelt/Pavelt.otf') format('opentype'),
-       url('/pavelt/Pavelt.ttf') format('truetype');
+    url('/pavelt/Pavelt.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -26,7 +26,7 @@
   --floxa-mint-tint: #E6FBF2;
   --floxa-forest-dark: #030A06;
   --floxa-forest-card: #071911;
-  
+
   --floxa-light-bg: #F8FAFB;
   --floxa-light-card: #FFFFFF;
   --floxa-light-border: #E2ECE6;
@@ -50,6 +50,7 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -73,18 +74,20 @@ body {
 
 /* Exact Floxa Primary Pill Button from Reference UI */
 .floxa-pill-primary {
-  background-color: #00E599;
-  color: #03140C;
+  background-color: #00B377;
+  color: #FFFFFF;
   font-weight: 600;
   border-radius: 9999px;
-  box-shadow: 0 4px 18px rgba(0, 229, 153, 0.32);
+  box-shadow: 0 4px 14px rgba(0, 179, 119, 0.22);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .floxa-pill-primary:hover {
-  background-color: #05f0a2;
-  box-shadow: 0 6px 24px rgba(0, 229, 153, 0.48);
+  background-color: #00A36C;
+  box-shadow: 0 6px 18px rgba(0, 179, 119, 0.32);
   transform: translateY(-1px);
 }
+
 .floxa-pill-primary:active {
   transform: scale(0.97);
 }
@@ -92,15 +95,17 @@ body {
 /* Backward compatibility for existing button classes */
 .rosegold-pill-btn,
 .mint-pill-btn {
-  background: #00E599;
-  color: #03140C;
+  background: #00B377;
+  color: #FFFFFF;
   font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0, 229, 153, 0.35);
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 179, 119, 0.22);
   transition: all 0.25s ease;
 }
+
 .rosegold-pill-btn:hover,
 .mint-pill-btn:hover {
-  background: #05f0a2;
+  background: #00A36C;
   transform: translateY(-1px);
 }
 
@@ -115,6 +120,7 @@ body {
   -webkit-backdrop-filter: blur(12px);
   transition: all 0.2s ease;
 }
+
 .floxa-pill-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.35);
@@ -128,6 +134,7 @@ body {
   border-radius: 20px;
   transition: all 0.3s ease;
 }
+
 .floxa-white-card:hover {
   border-color: rgba(0, 229, 153, 0.45);
   box-shadow: 0 10px 32px rgba(0, 179, 119, 0.08);

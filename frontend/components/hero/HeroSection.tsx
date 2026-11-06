@@ -31,26 +31,26 @@ export default function HeroSection() {
               Collaborate, create and deliver stunning brand experiences with FLOXA. Understand your client&apos;s story, brand personality, goals, and visual direction before design begins.
             </p>
 
-              {/* Primary Action Button */}
-              <div>
-                <a
-                  href="https://floxa.flumenx.in/login"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full xs:w-auto inline-flex items-center justify-center gap-2 bg-[#00E599] hover:bg-[#05f0a2] text-[#03140C] text-sm sm:text-base font-semibold px-8 py-3.5 sm:py-3.5 rounded-full transition-all duration-200 active:scale-95 shadow-[0_0_24px_rgba(0,229,153,0.45)] whitespace-nowrap"
-                >
-                  <span>Start Your Project</span>
-                  <span className="text-base">→</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Right Column: The Showing Card / Front Tab with 3D Depth */}
-            <div className="lg:col-span-7 flex justify-center lg:justify-end">
-              <FrontTabCard />
+            {/* Primary Action Button */}
+            <div>
+              <a
+                href="https://floxa.flumenx.in/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full xs:w-auto inline-flex items-center justify-center gap-2 bg-[#00B377] hover:bg-[#00A36C] text-white text-sm sm:text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-200 active:scale-95 shadow-[0_4px_16px_rgba(0,179,119,0.25)] hover:shadow-[0_6px_22px_rgba(0,179,119,0.35)] whitespace-nowrap"
+              >
+                <span>Start Your Project</span>
+                <span className="text-base">→</span>
+              </a>
             </div>
           </div>
+
+          {/* Right Column: The Showing Card / Front Tab with 3D Depth */}
+          <div className="lg:col-span-7 flex justify-center lg:justify-end">
+            <FrontTabCard />
+          </div>
         </div>
+      </div>
     </section>
   );
 }

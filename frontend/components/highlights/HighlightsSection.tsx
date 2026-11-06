@@ -180,52 +180,52 @@ export default function HighlightsSection() {
           <FeaturesGreenHorizons />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
-          {/* Left: Heading & Intro */}
-          <div className="lg:col-span-5 flex flex-col text-left">
-            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2">
-              POWERFUL FEATURES —
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl md:text-[46px] font-bold tracking-tight text-[#0A130E] mb-5 leading-[1.08]">
-              Everything you need to bring brands to life.
-            </h2>
-
-            <p className="text-base sm:text-lg text-[#526058] leading-relaxed mb-8">
-              From discovery to delivery, FLOXA helps you manage your creative workflow effortlessly. Less guessing, better understanding, and a clear creative direction.
-            </p>
-
-            <div>
-              <a
-                href="#final-cut-pro"
-                className="w-full xs:w-auto inline-flex items-center justify-center gap-2 bg-[#00E599] hover:bg-[#05f0a2] text-[#03140C] font-semibold text-sm sm:text-base px-7 py-3 rounded-full shadow-[0_4px_18px_rgba(0,229,153,0.3)] transition-all active:scale-95"
-              >
-                <span>Explore Features</span>
-                <span>→</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Right: 2x3 Grid of Feature Cards matching Photo */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-            {featureGrid.map((feat, idx) => (
-              <div
-                key={idx}
-                className="rounded-2xl bg-white border border-[#E2ECE6] p-4 sm:p-5 shadow-sm hover:shadow-md hover:border-[#00B377]/40 transition-all duration-300"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[#E6FBF2] flex items-center justify-center mb-3">
-                  {feat.icon}
-                </div>
-                <h3 className="text-sm sm:text-base font-bold text-[#0A130E] mb-1">
-                  {feat.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#526058] leading-relaxed">
-                  {feat.desc}
-                </p>
+            {/* Left: Heading & Intro */}
+            <div className="lg:col-span-5 flex flex-col text-left">
+              <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2">
+                POWERFUL FEATURES —
               </div>
-            ))}
+
+              <h2 className="text-3xl sm:text-4xl md:text-[46px] font-bold tracking-tight text-[#0A130E] mb-5 leading-[1.08]">
+                Everything you need to bring brands to life.
+              </h2>
+
+              <p className="text-base sm:text-lg text-[#526058] leading-relaxed mb-8">
+                From discovery to delivery, FLOXA helps you manage your creative workflow effortlessly. Less guessing, better understanding, and a clear creative direction.
+              </p>
+
+              <div>
+                <a
+                  href="#final-cut-pro"
+                  className="w-full xs:w-auto inline-flex items-center justify-center gap-2 bg-[#00B377] hover:bg-[#00A36C] text-white font-semibold text-sm sm:text-base px-7 py-3 rounded-full shadow-[0_4px_14px_rgba(0,179,119,0.2)] hover:shadow-[0_6px_20px_rgba(0,179,119,0.3)] transition-all active:scale-95"
+                >
+                  <span>Explore Features</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right: 2x3 Grid of Feature Cards matching Photo */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              {featureGrid.map((feat, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white border border-[#E2ECE6] p-4 sm:p-5 shadow-sm hover:shadow-md hover:border-[#00B377]/40 transition-all duration-300"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#E6FBF2] flex items-center justify-center mb-3">
+                    {feat.icon}
+                  </div>
+                  <h3 className="text-sm sm:text-base font-bold text-[#0A130E] mb-1">
+                    {feat.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#526058] leading-relaxed">
+                    {feat.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
         {/* 2. Interactive Discovery Screens Gallery */}
         <div className="pt-8 border-t border-[#E2ECE6]">
@@ -278,11 +278,10 @@ export default function HighlightsSection() {
                   style={{
                     width: "min(86vw, 980px)",
                   }}
-                  className={`shrink-0 mr-5 rounded-[24px] sm:rounded-[36px] bg-white border overflow-hidden transition-all duration-700 flex flex-col justify-between h-[360px] xs:h-[390px] sm:h-[480px] md:h-[580px] relative pointer-events-auto ${
-                    isActive
+                  className={`shrink-0 mr-5 rounded-[24px] sm:rounded-[36px] bg-white border overflow-hidden transition-all duration-700 flex flex-col justify-between h-[360px] xs:h-[390px] sm:h-[480px] md:h-[580px] relative pointer-events-auto ${isActive
                       ? "opacity-100 scale-100 z-20 border-[#00E599] shadow-[0_14px_45px_rgba(0,179,119,0.12)]"
                       : "opacity-45 hover:opacity-75 scale-[0.97] z-10 cursor-pointer border-[#E2ECE6] shadow-sm hover:border-[#00B377]/40"
-                  }`}
+                    }`}
                 >
                   {/* Card Caption / Heading */}
                   <div className="p-5 sm:p-7 md:p-9 pb-2 sm:pb-3 z-20 max-w-2xl">
@@ -341,11 +340,10 @@ export default function HighlightsSection() {
                       setCurrentIndex(idx);
                       setIsPlaying(false);
                     }}
-                    className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 p-0.5 ${
-                      isActive
+                    className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 p-0.5 ${isActive
                         ? "w-6 sm:w-8 bg-[#00E599] shadow-[0_0_8px_rgba(0,229,153,0.6)]"
                         : "w-2 sm:w-2.5 bg-slate-200 hover:bg-slate-300"
-                    }`}
+                      }`}
                     aria-label={`Slide ${idx + 1}: ${item.tabTitle}`}
                   />
                 );

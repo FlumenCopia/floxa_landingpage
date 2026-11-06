@@ -37,7 +37,7 @@ export default function FooterSection() {
               href="https://floxa.flumenx.in/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full xs:w-auto inline-flex items-center justify-center gap-2 bg-[#00E599] hover:bg-[#05f0a2] text-[#03140C] font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full transition-all duration-200 active:scale-95 shadow-[0_0_24px_rgba(0,229,153,0.4)] whitespace-nowrap"
+              className="w-full xs:w-auto inline-flex items-center justify-center gap-2 bg-[#00B377] hover:bg-[#00A36C] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full transition-all duration-200 active:scale-95 shadow-[0_4px_16px_rgba(0,179,119,0.25)] hover:shadow-[0_6px_22px_rgba(0,179,119,0.35)] whitespace-nowrap"
             >
               <span>Get Started</span>
               <span className="text-base">→</span>

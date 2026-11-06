@@ -74,10 +74,9 @@ export default function PricingSection() {
           {pricingCards.map((card) => (
             <div
               key={card.id}
-              className={`rounded-[24px] sm:rounded-[32px] bg-white border p-5 sm:p-8 md:p-7 lg:p-9 flex flex-col justify-between min-h-[320px] sm:min-h-[380px] transition-all duration-300 ${
-                card.isFeatured
-                  ? "border-2 border-[#00E599] shadow-[0_12px_40px_rgba(0,229,153,0.16)] relative"
-                  : "border-[#E2ECE6] shadow-sm hover:border-[#00B377]/40 hover:shadow-md"
+              className={`rounded-[24px] sm:rounded-[32px] bg-white border p-5 sm:p-8 md:p-7 lg:p-9 flex flex-col justify-between min-h-[320px] sm:min-h-[380px] transition-all duration-300 ${card.isFeatured
+                    ? "border-2 border-[#00B377] shadow-[0_12px_40px_rgba(0,179,119,0.12)] relative"
+                    : "border-[#E2ECE6] shadow-sm hover:border-[#00B377]/40 hover:shadow-md"
               }`}
             >
               <div>
@@ -110,13 +109,13 @@ export default function PricingSection() {
                 </div>
               </div>
 
-              {/* Left-aligned Electric Mint Pill Button */}
+              {/* Left-aligned Smooth Emerald Pill Button */}
               <div className="mt-8 pt-2">
                 <a
                   href="https://floxa.flumenx.in/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full xs:w-auto inline-flex items-center justify-center gap-2 bg-[#00E599] hover:bg-[#05f0a2] text-[#03140C] text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-200 active:scale-95 shadow-[0_4px_16px_rgba(0,229,153,0.3)]"
+                  className="w-full xs:w-auto inline-flex items-center justify-center gap-2 bg-[#00B377] hover:bg-[#00A36C] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-all duration-200 active:scale-95 shadow-[0_4px_12px_rgba(0,179,119,0.2)]"
                 >
                   <span>Try it free</span>
                   <span className="text-xs">→</span>

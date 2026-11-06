@@ -29,11 +29,10 @@ export default function LocalNav() {
   return (
     <nav
       suppressHydrationWarning
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-        isScrolled || mobileMenuOpen
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled || mobileMenuOpen
           ? "bg-[#030A06]/92 backdrop-blur-md border-[#00E599]/20 shadow-[0_4px_24px_rgba(3,10,6,0.85)]"
           : "bg-[#030A06]/70 backdrop-blur-md border-white/[0.08]"
-      }`}
+        }`}
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
         {/* Product Brand */}
@@ -62,12 +61,12 @@ export default function LocalNav() {
             ))}
           </div>
 
-          {/* Electric Mint Pill Button */}
+          {/* Smooth Emerald Pill Button */}
           <a
             href="https://floxa.flumenx.in/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-[#00E599] hover:bg-[#05f0a2] text-[#03140C] text-[13px] font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-full transition-all duration-200 active:scale-95 shadow-[0_0_18px_rgba(0,229,153,0.35)] whitespace-nowrap"
+            className="inline-flex items-center justify-center bg-[#00B377] hover:bg-[#00A36C] text-white text-[13px] font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-full transition-all duration-200 active:scale-95 shadow-[0_2px_10px_rgba(0,179,119,0.22)] hover:shadow-[0_4px_14px_rgba(0,179,119,0.32)] whitespace-nowrap"
           >
             <span>Try it free</span>
             <sup className="text-[9px] ml-0.5">2</sup>
@@ -94,9 +93,8 @@ export default function LocalNav() {
 
       {/* Mobile / Tablet Dropdown Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-[#030A06]/98 backdrop-blur-xl border-b border-[#00E599]/20 ${
-          mobileMenuOpen ? "max-h-[500px] opacity-100 py-4" : "max-h-0 opacity-0 py-0"
-        }`}
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-[#030A06]/98 backdrop-blur-xl border-b border-[#00E599]/20 ${mobileMenuOpen ? "max-h-[500px] opacity-100 py-4" : "max-h-0 opacity-0 py-0"
+          }`}
       >
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col space-y-2">
           {navLinks.map((link) => (
@@ -116,7 +114,7 @@ export default function LocalNav() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="w-full inline-flex items-center justify-center bg-[#00E599] hover:bg-[#05f0a2] text-[#03140C] text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_0_18px_rgba(0,229,153,0.35)] transition-all"
+              className="w-full inline-flex items-center justify-center bg-[#00B377] hover:bg-[#00A36C] text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_4px_14px_rgba(0,179,119,0.22)] transition-all"
             >
               <span>Try it free</span>
             </a>
