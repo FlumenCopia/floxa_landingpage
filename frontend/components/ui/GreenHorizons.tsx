@@ -314,47 +314,49 @@ export function BodyGreenHorizons() {
 
 /**
  * Green Color Horizons for the Footer CTA section.
+ * Positioned in the upper banner area to illuminate the CTA while keeping
+ * the lower legal, navigation, and footnotes text crisp on pure dark obsidian.
  */
 export function FooterGreenHorizons() {
   return (
-    <div className="absolute left-1/2 -translate-x-1/2 w-screen h-full inset-y-0 pointer-events-none overflow-hidden select-none z-0">
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-l from-[#00E599]/42 via-[#00B377]/25 to-transparent rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 left-0 w-[650px] h-[450px] bg-gradient-to-r from-[#00E599]/30 via-[#059669]/18 to-transparent rounded-full blur-[110px]" />
+      <div className="absolute left-1/2 -translate-x-1/2 w-screen h-[380px] top-0 pointer-events-none overflow-hidden select-none z-0">
+        <div className="absolute top-10 right-0 w-[750px] h-[350px] bg-gradient-to-l from-[#00B377]/30 via-[#10B981]/18 to-transparent rounded-full blur-[100px]" />
+        <div className="absolute top-20 left-0 w-[600px] h-[300px] bg-gradient-to-r from-[#00B377]/22 via-[#059669]/14 to-transparent rounded-full blur-[90px]" />
 
-      <svg
-        className="absolute inset-0 w-full h-full object-cover"
-        viewBox="0 0 1600 400"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <linearGradient id="footer-silk-wave" x1="0%" y1="50%" x2="100%" y2="50%">
-            <stop offset="0%" stopColor="#00E599" stopOpacity="0.0" />
-            <stop offset="35%" stopColor="#00E599" stopOpacity="0.8" />
-            <stop offset="70%" stopColor="#34D399" stopOpacity="0.95" />
-            <stop offset="100%" stopColor="#00E599" stopOpacity="0.2" />
-          </linearGradient>
+        <svg
+          className="absolute inset-0 w-full h-full object-cover"
+          viewBox="0 0 1600 380"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="footer-silk-wave" x1="0%" y1="50%" x2="100%" y2="50%">
+              <stop offset="0%" stopColor="#00B377" stopOpacity="0.0" />
+              <stop offset="35%" stopColor="#00B377" stopOpacity="0.75" />
+              <stop offset="70%" stopColor="#34D399" stopOpacity="0.85" />
+              <stop offset="100%" stopColor="#00B377" stopOpacity="0.2" />
+            </linearGradient>
 
-          <linearGradient id="footer-silk-fill" x1="50%" y1="0%" x2="50%" y2="100%">
-            <stop offset="0%" stopColor="#00E599" stopOpacity="0.35" />
-            <stop offset="60%" stopColor="#059669" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#030A06" stopOpacity="0.0" />
-          </linearGradient>
-        </defs>
+            <linearGradient id="footer-silk-fill" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stopColor="#00B377" stopOpacity="0.25" />
+              <stop offset="60%" stopColor="#059669" stopOpacity="0.10" />
+              <stop offset="100%" stopColor="#030A06" stopOpacity="0.0" />
+            </linearGradient>
+          </defs>
 
-        <path
-          d="M -100,400 C 300,180 800,360 1200,200 C 1380,120 1520,130 1700,140 L 1700,400 Z"
-          fill="url(#footer-silk-fill)"
-        />
+          <path
+            d="M -100,380 C 300,160 800,320 1200,170 C 1380,100 1520,110 1700,120 L 1700,380 Z"
+            fill="url(#footer-silk-fill)"
+          />
 
-        <path
-          d="M -100,400 C 300,180 800,360 1200,200 C 1380,120 1520,130 1700,140"
-          stroke="url(#footer-silk-wave)"
-          strokeWidth="4.5"
-          filter="drop-shadow(0 0 20px rgba(0,229,153,0.9))"
-        />
-      </svg>
-    </div>
-  );
+          <path
+            d="M -100,380 C 300,160 800,320 1200,170 C 1380,100 1520,110 1700,120"
+            stroke="url(#footer-silk-wave)"
+            strokeWidth="3.5"
+            filter="drop-shadow(0 0 14px rgba(0,179,119,0.5))"
+          />
+        </svg>
+      </div>
+      );
 }
