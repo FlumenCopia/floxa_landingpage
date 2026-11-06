@@ -81,8 +81,7 @@ export default function ProductivitySection() {
         {/* Header */}
         <div className="mb-8 sm:mb-10 max-w-2xl">
           {/* Eyebrow in Floxa Emerald */}
-          <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B377]" />
+          <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2">
             Who It&apos;s For
           </div>
 

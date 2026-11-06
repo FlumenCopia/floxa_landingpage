@@ -160,9 +160,8 @@ export default function FinalCutProSection() {
           </div>
 
           {/* Right: Workflow Narrative & Checklist matching Photo */}
-          <div className="lg:col-span-5 flex flex-col text-left">
-            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00B377]" />
+          <div className="lg:col-span-5 flex flex-col text-left relative z-10">
+            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2 font-bold">
               WORKFLOW
             </div>
 
@@ -170,24 +169,24 @@ export default function FinalCutProSection() {
               A seamless creative workflow, from start to finish.
             </h2>
 
-            <p className="text-base text-[#526058] leading-relaxed mb-6 font-normal">
+            <p className="text-base sm:text-lg text-[#374151] leading-relaxed mb-6 font-normal">
               Experience a smooth and intuitive process designed for modern creative teams. FLOXA unifies discovery, alignment, and delivery in one cohesive environment.
             </p>
 
             {/* 3 Green Checkmarks matching Photo */}
-            <div className="space-y-3 mb-8">
+            <div className="space-y-3.5 mb-8">
               {[
                 "Create & Manage Projects",
                 "Collaborate in Real-Time",
                 "Get Approvals & Deliver",
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#E6FBF2] text-[#00B377] flex items-center justify-center shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-[#E6FBF2] text-[#00B377] border border-[#00E599]/30 flex items-center justify-center shrink-0 shadow-sm">
                     <svg className="w-3.5 h-3.5 stroke-current fill-none" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-sm sm:text-base font-semibold text-[#0A130E]">
+                  <span className="text-[15px] sm:text-base font-bold text-[#0A130E] tracking-tight">
                     {item}
                   </span>
                 </div>
@@ -212,8 +211,7 @@ export default function FinalCutProSection() {
         <div className="relative pt-8 border-t border-[#E2ECE6]">
           <BodyGreenHorizons />
           <div className="mb-8 max-w-2xl">
-            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00B377]" />
+            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2">
               HOW IT WORKS
             </div>
 

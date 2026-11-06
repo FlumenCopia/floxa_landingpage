@@ -13,10 +13,8 @@ const pricingCards = [
     isFeatured: true,
     icon: (
       <svg className="w-6 h-6 text-[#00B377] fill-current" viewBox="0 0 24 24">
-        {/* Person with stars icon */}
+        {/* Clean subscriber user icon without AI stars */}
         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-        <path d="M19.5 2.5l.8 1.7 1.7.8-1.7.8-.8 1.7-.8-1.7-1.7-.8 1.7-.8z" />
-        <path d="M17 9l.5 1 1 .5-1 .5-.5 1-.5-1-1-.5 1-.5z" />
       </svg>
     ),
   },
@@ -59,8 +57,7 @@ export default function PricingSection() {
 
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8 relative z-10">
         {/* Eyebrow in Floxa Emerald */}
-        <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2 flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00B377]" />
+        <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2">
           Plans & Pricing
         </div>
 

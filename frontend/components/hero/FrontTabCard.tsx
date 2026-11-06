@@ -10,7 +10,6 @@ interface SuiteTab {
   description: string;
   status: "available" | "coming-soon";
   accentColor: string;
-  icon: React.ReactNode;
 }
 
 const suiteTabs: SuiteTab[] = [
@@ -22,14 +21,6 @@ const suiteTabs: SuiteTab[] = [
     description: "Understand your client's vision, brand personality, goals, and visual direction before design begins.",
     status: "available",
     accentColor: "#00E599",
-    icon: (
-      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-        <rect x="3" y="3" width="7" height="7" rx="1.5" />
-        <rect x="14" y="3" width="7" height="7" rx="1.5" />
-        <rect x="14" y="14" width="7" height="7" rx="1.5" />
-        <rect x="3" y="14" width="7" height="7" rx="1.5" />
-      </svg>
-    ),
   },
   {
     id: "floxa-dm",
@@ -39,11 +30,6 @@ const suiteTabs: SuiteTab[] = [
     description: "Multi-channel marketing campaigns, brand asset distribution, social strategy, and growth analytics.",
     status: "coming-soon",
     accentColor: "#F472B6",
-    icon: (
-      <svg className="w-3.5 h-3.5 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-      </svg>
-    ),
   },
   {
     id: "floxa-work",
@@ -53,12 +39,6 @@ const suiteTabs: SuiteTab[] = [
     description: "Team collaboration, project milestone tracking, client presentation decks, and approval workflows.",
     status: "coming-soon",
     accentColor: "#818CF8",
-    icon: (
-      <svg className="w-3.5 h-3.5 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24">
-        <rect x="2" y="7" width="20" height="14" rx="2" />
-        <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
-      </svg>
-    ),
   },
   {
     id: "floxa-it",
@@ -68,12 +48,6 @@ const suiteTabs: SuiteTab[] = [
     description: "Design-to-code pipelines, headless brand asset APIs, enterprise SSO, and developer tooling.",
     status: "coming-soon",
     accentColor: "#38BDF8",
-    icon: (
-      <svg className="w-3.5 h-3.5 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
-      </svg>
-    ),
   },
   {
     id: "floxa-learning",
@@ -83,12 +57,6 @@ const suiteTabs: SuiteTab[] = [
     description: "Masterclasses in brand discovery, creative frameworks, client management, and verified certification.",
     status: "coming-soon",
     accentColor: "#FBBF24",
-    icon: (
-      <svg className="w-3.5 h-3.5 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24">
-        <path d="M12 14l9-5-9-5-9 5 9 5z" />
-        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-      </svg>
-    ),
   },
 ];
 
@@ -179,23 +147,17 @@ export default function FrontTabCard() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTabId(tab.id)}
-                  className={`flex items-center gap-1.5 px-2 sm:px-3 py-1 rounded-full text-[9.5px] sm:text-[11px] font-medium whitespace-nowrap transition-all cursor-pointer shrink-0 ${
+                  className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-medium whitespace-nowrap transition-all cursor-pointer shrink-0 ${
                     isActive
                       ? "bg-[#00E599] text-[#03140C] font-semibold shadow-[0_0_12px_rgba(0,229,153,0.4)]"
                       : "bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/[0.08]"
                   }`}
                 >
-                  <span
-                    className="w-1.5 h-1.5 rounded-full shrink-0"
-                    style={{
-                      backgroundColor: isActive ? "#03140C" : tab.accentColor,
-                    }}
-                  />
                   <span>{tab.shortLabel}</span>
 
                   {!isAvailable && (
                     <span
-                      className={`text-[8px] sm:text-[8.5px] uppercase tracking-wider px-1 sm:px-1.5 py-0.2 rounded font-semibold ${
+                      className={`text-[8px] sm:text-[8.5px] uppercase tracking-wider px-1.5 py-0.2 rounded font-semibold ${
                         isActive
                           ? "bg-[#03140C]/20 text-[#03140C]"
                           : "bg-white/[0.08] text-[#00E599] border border-[#00E599]/30"
@@ -207,7 +169,7 @@ export default function FrontTabCard() {
 
                   {isAvailable && (
                     <span
-                      className={`text-[8px] sm:text-[8.5px] uppercase tracking-wider px-1 sm:px-1.5 py-0.2 rounded font-semibold ${
+                      className={`text-[8px] sm:text-[8.5px] uppercase tracking-wider px-1.5 py-0.2 rounded font-semibold ${
                         isActive
                           ? "bg-[#03140C]/20 text-[#03140C]"
                           : "bg-[#00E599]/15 text-[#00E599]"
@@ -223,8 +185,8 @@ export default function FrontTabCard() {
 
           {/* Main App Workspace: Collapsible Responsive Sidebar + Dynamic Panel */}
           <div className="flex min-h-[280px] xs:min-h-[300px] sm:min-h-[350px]">
-            {/* Left Sidebar: Icon-Rail on mobile (< sm), expanding to full width on tablet/desktop (>= sm) */}
-            <div className="w-10 xs:w-11 sm:w-[155px] p-1.5 sm:p-2.5 bg-[#030E09]/80 border-r border-white/[0.06] flex flex-col justify-between shrink-0">
+            {/* Left Sidebar: Clean suite labels on mobile and desktop */}
+            <div className="w-16 xs:w-20 sm:w-[155px] p-1.5 sm:p-2.5 bg-[#030E09]/80 border-r border-white/[0.06] flex flex-col justify-between shrink-0">
               <div className="space-y-1">
                 <div className="hidden sm:block px-2 py-1 text-[9px] font-semibold uppercase tracking-wider text-slate-500">
                   Suites
@@ -238,18 +200,13 @@ export default function FrontTabCard() {
                       key={tab.id}
                       onClick={() => setActiveTabId(tab.id)}
                       title={tab.shortLabel}
-                      className={`w-full flex items-center justify-center sm:justify-between p-1.5 sm:px-2.5 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] font-medium transition-all text-left cursor-pointer ${
+                      className={`w-full flex items-center justify-between px-2 py-1.5 sm:px-2.5 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] font-medium transition-all text-left cursor-pointer ${
                         isActive
                           ? "bg-[#00E599] text-[#03140C] font-semibold shadow-[0_0_12px_rgba(0,229,153,0.35)]"
                           : "text-slate-400 hover:text-white hover:bg-white/[0.05]"
                       }`}
                     >
-                      <div className="flex items-center gap-1.5 truncate">
-                        <span className={isActive ? "text-[#03140C]" : "text-slate-400"}>
-                          {tab.icon}
-                        </span>
-                        <span className="hidden sm:inline truncate">{tab.shortLabel.replace("Floxa for ", "")}</span>
-                      </div>
+                      <span className="truncate">{tab.shortLabel.replace("Floxa for ", "")}</span>
 
                       <div className="hidden sm:flex items-center">
                         {!isAvailable ? (
@@ -263,7 +220,15 @@ export default function FrontTabCard() {
                             Soon
                           </span>
                         ) : (
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#00E599] animate-pulse shrink-0 ml-1" />
+                          <span
+                            className={`text-[7.5px] px-1 py-0.2 rounded uppercase font-semibold shrink-0 ml-1 ${
+                              isActive
+                                ? "bg-[#03140C]/20 text-[#03140C]"
+                                : "bg-[#00E599]/20 text-[#00E599]"
+                            }`}
+                          >
+                            Live
+                          </span>
                         )}
                       </div>
                     </button>
@@ -274,7 +239,6 @@ export default function FrontTabCard() {
               {/* Bottom Cloud Status */}
               <div className="pt-2 border-t border-white/[0.06] flex items-center justify-center sm:justify-start px-0.5 sm:px-1">
                 <div className="flex items-center gap-1.5 text-[9px] text-slate-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00E599]" />
                   <span className="hidden sm:inline">FLOXA Core v2.4</span>
                 </div>
               </div>
@@ -350,10 +314,7 @@ export default function FrontTabCard() {
 
                   {/* Bottom Quick Action Strip inside Front Tab */}
                   <div className="mt-2.5 sm:mt-3 pt-2 border-t border-white/[0.06] flex items-center justify-between text-[9px] sm:text-[10px] text-slate-400">
-                    <span className="flex items-center gap-1.5 truncate">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00E599] animate-pulse shrink-0" />
-                      <span className="truncate">Synced with FLOXA Cloud</span>
-                    </span>
+                    <span className="truncate">Synced with FLOXA Cloud</span>
                     <span className="text-[#00E599] font-medium shrink-0 ml-2">3 connected</span>
                   </div>
                 </>
@@ -365,18 +326,6 @@ export default function FrontTabCard() {
                     style={{ backgroundColor: activeSuite.accentColor }}
                   />
 
-                  {/* Icon Badge */}
-                  <div
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center mb-2 sm:mb-3 shadow-lg border shrink-0"
-                    style={{
-                      backgroundColor: `${activeSuite.accentColor}15`,
-                      borderColor: `${activeSuite.accentColor}35`,
-                      color: activeSuite.accentColor,
-                    }}
-                  >
-                    {activeSuite.icon}
-                  </div>
-
                   <h3 className="text-white font-bold text-xs sm:text-base mb-0.5 sm:mb-1">
                     {activeSuite.fullLabel}
                   </h3>
@@ -387,11 +336,7 @@ export default function FrontTabCard() {
                     {activeSuite.tagline}
                   </p>
 
-                  <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/[0.08] border border-white/[0.15] mb-2 sm:mb-3 shadow-md">
-                    <span
-                      className="w-1.5 h-1.5 rounded-full animate-ping"
-                      style={{ backgroundColor: activeSuite.accentColor }}
-                    />
+                  <div className="inline-flex items-center px-3 py-0.5 rounded-full bg-white/[0.08] border border-white/[0.15] mb-2 sm:mb-3 shadow-md">
                     <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white">
                       Coming Soon
                     </span>

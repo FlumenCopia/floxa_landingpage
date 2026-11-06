@@ -47,8 +47,7 @@ export default function FaqSection() {
         >
           <div className="max-w-[980px] mx-auto px-5 sm:px-8 relative z-20">
             {/* Eyebrow in Floxa Emerald */}
-            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00B377]" />
+            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2">
               Common Inquiries
             </div>
 

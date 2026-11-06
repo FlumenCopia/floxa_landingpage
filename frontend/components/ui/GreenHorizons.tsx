@@ -95,10 +95,12 @@ export function HeroGreenHorizons() {
 export function WorkflowGreenHorizons() {
   return (
     <div className="absolute left-1/2 -translate-x-1/2 w-screen h-full inset-y-0 pointer-events-none overflow-hidden select-none z-0">
-      {/* 1. LEFT FLANK: Massive Green Silk Wave blooming from the browser's left edge behind the "Welcome back!" card */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[55vw] max-w-[760px] min-w-[500px] h-[780px] pointer-events-none">
+      {/* 1. LEFT FLANK: Green Silk Wave behind the "Welcome back!" card.
+          On mobile (< lg), positioned at top-0 behind the card with soft bounds so it never covers the text below!
+          On desktop (lg+), full height spanning the left column. */}
+      <div className="absolute left-0 top-0 lg:top-1/2 lg:-translate-y-1/2 w-[90vw] max-w-[560px] lg:w-[55vw] lg:max-w-[760px] lg:min-w-[500px] h-[460px] lg:h-[780px] pointer-events-none">
         {/* Soft volumetric ambient green shade background */}
-        <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-[620px] h-[680px] bg-gradient-to-r from-[#00E599]/50 via-[#10B981]/38 to-transparent rounded-full blur-[85px]" />
+        <div className="absolute -left-20 top-0 lg:top-1/2 lg:-translate-y-1/2 w-[480px] lg:w-[620px] h-[440px] lg:h-[680px] bg-gradient-to-r from-[#00E599]/40 via-[#10B981]/25 to-transparent rounded-full blur-[85px]" />
 
         {/* 3D Organic Curved Silk Wave Shape */}
         <svg
@@ -109,23 +111,23 @@ export function WorkflowGreenHorizons() {
         >
           <defs>
             <linearGradient id="wf-left-silk-1" x1="0%" y1="20%" x2="100%" y2="80%">
-              <stop offset="0%" stopColor="#00E599" stopOpacity="0.9" />
-              <stop offset="35%" stopColor="#10B981" stopOpacity="0.8" />
-              <stop offset="70%" stopColor="#059669" stopOpacity="0.55" />
+              <stop offset="0%" stopColor="#00E599" stopOpacity="0.85" />
+              <stop offset="35%" stopColor="#10B981" stopOpacity="0.75" />
+              <stop offset="70%" stopColor="#059669" stopOpacity="0.45" />
               <stop offset="100%" stopColor="#047857" stopOpacity="0.0" />
             </linearGradient>
 
             <linearGradient id="wf-left-silk-2" x1="10%" y1="0%" x2="90%" y2="100%">
-              <stop offset="0%" stopColor="#6EE7B7" stopOpacity="0.85" />
-              <stop offset="35%" stopColor="#00E599" stopOpacity="0.75" />
-              <stop offset="70%" stopColor="#059669" stopOpacity="0.45" />
+              <stop offset="0%" stopColor="#6EE7B7" stopOpacity="0.8" />
+              <stop offset="35%" stopColor="#00E599" stopOpacity="0.65" />
+              <stop offset="70%" stopColor="#059669" stopOpacity="0.35" />
               <stop offset="100%" stopColor="#022C22" stopOpacity="0.0" />
             </linearGradient>
 
             <linearGradient id="wf-left-crest" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#A7F3D0" stopOpacity="0.95" />
               <stop offset="35%" stopColor="#00E599" stopOpacity="1" />
-              <stop offset="75%" stopColor="#10B981" stopOpacity="0.85" />
+              <stop offset="75%" stopColor="#10B981" stopOpacity="0.8" />
               <stop offset="100%" stopColor="#047857" stopOpacity="0.0" />
             </linearGradient>
           </defs>
@@ -146,24 +148,26 @@ export function WorkflowGreenHorizons() {
           <path
             d="M -50,80 C 200,100 420,230 500,430 C 560,570 520,700 370,780"
             stroke="url(#wf-left-crest)"
-            strokeWidth="5.5"
-            filter="drop-shadow(0 0 20px rgba(0,229,153,0.9))"
+            strokeWidth="5"
+            filter="drop-shadow(0 0 18px rgba(0,229,153,0.85))"
           />
 
           {/* Echo Wave Crest Line 2 */}
           <path
             d="M -50,200 C 160,220 350,330 420,490 C 470,600 430,710 300,780"
             stroke="url(#wf-left-crest)"
-            strokeWidth="3"
-            opacity="0.85"
+            strokeWidth="2.5"
+            opacity="0.8"
           />
         </svg>
       </div>
 
-      {/* 2. RIGHT FLANK: Sweeping Green Silk Wave blooming from the browser's right edge behind "A seamless creative workflow..." */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[55vw] max-w-[720px] min-w-[480px] h-[780px] pointer-events-none">
+      {/* 2. RIGHT FLANK: Sweeping Green Silk Wave in desktop right margin.
+          HIDDEN ON MOBILE (lg:block only) to guarantee 100% crisp contrast and readability
+          for "A seamless creative workflow...", checklist items, and CTA button! */}
+      <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[55vw] max-w-[720px] min-w-[480px] h-[780px] pointer-events-none">
         {/* Ambient green shade bloom */}
-        <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[620px] h-[680px] bg-gradient-to-l from-[#00E599]/45 via-[#10B981]/32 to-transparent rounded-full blur-[85px]" />
+        <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[620px] h-[680px] bg-gradient-to-l from-[#00E599]/35 via-[#10B981]/22 to-transparent rounded-full blur-[85px]" />
 
         <svg
           className="absolute inset-0 w-full h-full"
@@ -173,39 +177,39 @@ export function WorkflowGreenHorizons() {
         >
           <defs>
             <linearGradient id="wf-right-silk" x1="100%" y1="10%" x2="0%" y2="90%">
-              <stop offset="0%" stopColor="#00E599" stopOpacity="0.85" />
-              <stop offset="40%" stopColor="#10B981" stopOpacity="0.7" />
-              <stop offset="75%" stopColor="#059669" stopOpacity="0.45" />
+              <stop offset="0%" stopColor="#00E599" stopOpacity="0.75" />
+              <stop offset="40%" stopColor="#10B981" stopOpacity="0.55" />
+              <stop offset="75%" stopColor="#059669" stopOpacity="0.3" />
               <stop offset="100%" stopColor="#047857" stopOpacity="0.0" />
             </linearGradient>
 
             <linearGradient id="wf-right-crest" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#A7F3D0" stopOpacity="0.95" />
-              <stop offset="40%" stopColor="#00E599" stopOpacity="1" />
-              <stop offset="80%" stopColor="#10B981" stopOpacity="0.75" />
+              <stop offset="0%" stopColor="#A7F3D0" stopOpacity="0.9" />
+              <stop offset="40%" stopColor="#00E599" stopOpacity="0.95" />
+              <stop offset="80%" stopColor="#10B981" stopOpacity="0.65" />
               <stop offset="100%" stopColor="#047857" stopOpacity="0.0" />
             </linearGradient>
           </defs>
 
-          {/* Wave Body sweeping from right edge inward */}
+          {/* Wave Body sweeping from right edge inward, smoothly fading */}
           <path
-            d="M 750,60 C 510,140 320,300 250,490 C 190,630 240,730 360,780 L 750,780 Z"
+            d="M 750,40 C 510,120 300,280 230,480 C 170,640 220,740 360,820 L 750,820 Z"
             fill="url(#wf-right-silk)"
           />
 
           {/* Glowing Crest Line */}
           <path
-            d="M 750,60 C 510,140 320,300 250,490 C 190,630 240,730 360,780"
+            d="M 750,40 C 510,120 300,280 230,480 C 170,640 220,740 360,820"
             stroke="url(#wf-right-crest)"
-            strokeWidth="5.5"
-            filter="drop-shadow(0 0 18px rgba(0,229,153,0.9))"
+            strokeWidth="5"
+            filter="drop-shadow(0 0 18px rgba(0,229,153,0.85))"
           />
 
           <path
-            d="M 750,170 C 550,240 380,380 320,530 C 270,640 310,720 420,780"
+            d="M 750,150 C 550,220 370,360 300,520 C 250,640 290,720 420,800"
             stroke="url(#wf-right-crest)"
-            strokeWidth="3"
-            opacity="0.75"
+            strokeWidth="2.5"
+            opacity="0.7"
           />
         </svg>
       </div>
@@ -220,9 +224,9 @@ export function WorkflowGreenHorizons() {
 export function FeaturesGreenHorizons() {
   return (
     <div className="absolute left-1/2 -translate-x-1/2 w-screen h-full inset-y-0 pointer-events-none overflow-hidden select-none z-0">
-      {/* Top Right large green silk shade bloom from the browser's right edge */}
-      <div className="absolute -top-10 right-0 w-[55vw] max-w-[760px] min-w-[500px] h-[780px] pointer-events-none">
-        <div className="absolute -right-20 top-0 w-[620px] h-[650px] bg-gradient-to-bl from-[#00E599]/42 via-[#10B981]/28 to-transparent rounded-full blur-[90px]" />
+      {/* Top Right large green silk shade bloom - visible on tablet and desktop */}
+      <div className="hidden sm:block absolute -top-10 right-0 w-[55vw] max-w-[760px] lg:min-w-[500px] h-[780px] pointer-events-none">
+        <div className="absolute -right-20 top-0 w-[620px] h-[650px] bg-gradient-to-bl from-[#00E599]/35 via-[#10B981]/22 to-transparent rounded-full blur-[90px]" />
 
         <svg
           className="absolute inset-0 w-full h-full"
@@ -232,15 +236,15 @@ export function FeaturesGreenHorizons() {
         >
           <defs>
             <linearGradient id="feat-silk" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#00E599" stopOpacity="0.85" />
-              <stop offset="35%" stopColor="#10B981" stopOpacity="0.7" />
-              <stop offset="75%" stopColor="#059669" stopOpacity="0.4" />
+              <stop offset="0%" stopColor="#00E599" stopOpacity="0.8" />
+              <stop offset="35%" stopColor="#10B981" stopOpacity="0.6" />
+              <stop offset="75%" stopColor="#059669" stopOpacity="0.35" />
               <stop offset="100%" stopColor="#047857" stopOpacity="0.0" />
             </linearGradient>
 
             <linearGradient id="feat-crest" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#6EE7B7" stopOpacity="1" />
-              <stop offset="45%" stopColor="#00E599" stopOpacity="1" />
+              <stop offset="0%" stopColor="#6EE7B7" stopOpacity="0.95" />
+              <stop offset="45%" stopColor="#00E599" stopOpacity="0.95" />
               <stop offset="90%" stopColor="#10B981" stopOpacity="0.0" />
             </linearGradient>
           </defs>
@@ -254,14 +258,14 @@ export function FeaturesGreenHorizons() {
             d="M 800,30 C 550,110 340,280 260,480 C 200,630 250,730 380,780"
             stroke="url(#feat-crest)"
             strokeWidth="5"
-            filter="drop-shadow(0 0 18px rgba(0,229,153,0.9))"
+            filter="drop-shadow(0 0 18px rgba(0,229,153,0.85))"
           />
         </svg>
       </div>
 
-      {/* Mid Left green shade bloom from the browser's left edge */}
-      <div className="absolute top-1/2 left-0 w-[50vw] max-w-[650px] min-w-[450px] h-[700px] pointer-events-none">
-        <div className="absolute -left-20 top-0 w-[550px] h-[600px] bg-gradient-to-tr from-[#00E599]/35 via-[#059669]/22 to-transparent rounded-full blur-[90px]" />
+      {/* Mid Left green shade bloom - desktop only */}
+      <div className="hidden lg:block absolute top-1/2 left-0 w-[50vw] max-w-[650px] min-w-[450px] h-[700px] pointer-events-none">
+        <div className="absolute -left-20 top-0 w-[550px] h-[600px] bg-gradient-to-tr from-[#00E599]/30 via-[#059669]/18 to-transparent rounded-full blur-[90px]" />
 
         <svg
           className="absolute inset-0 w-full h-full"
@@ -271,23 +275,23 @@ export function FeaturesGreenHorizons() {
         >
           <defs>
             <linearGradient id="feat-left-silk" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#00E599" stopOpacity="0.8" />
-              <stop offset="40%" stopColor="#10B981" stopOpacity="0.65" />
-              <stop offset="80%" stopColor="#059669" stopOpacity="0.3" />
+              <stop offset="0%" stopColor="#00E599" stopOpacity="0.75" />
+              <stop offset="40%" stopColor="#10B981" stopOpacity="0.55" />
+              <stop offset="80%" stopColor="#059669" stopOpacity="0.25" />
               <stop offset="100%" stopColor="#047857" stopOpacity="0.0" />
             </linearGradient>
           </defs>
 
           <path
             d="M -50,120 C 180,160 340,290 400,460 C 440,570 390,650 280,700 L -50,700 Z"
-            fill="url(#feat-left-silk)"
-            opacity="0.8"
+            fill="url(#wf-left-silk-1)"
+            opacity="0.7"
           />
           <path
             d="M -50,120 C 180,160 340,290 400,460 C 440,570 390,650 280,700"
             stroke="url(#feat-crest)"
             strokeWidth="4"
-            filter="drop-shadow(0 0 16px rgba(0,229,153,0.85))"
+            filter="drop-shadow(0 0 16px rgba(0,229,153,0.8))"
           />
         </svg>
       </div>

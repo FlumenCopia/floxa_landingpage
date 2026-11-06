@@ -98,16 +98,15 @@ export default function LocalNav() {
           mobileMenuOpen ? "max-h-[500px] opacity-100 py-4" : "max-h-0 opacity-0 py-0"
         }`}
       >
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col space-y-2.5">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col space-y-2">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={closeMenu}
-              className="text-sm font-medium text-slate-300 hover:text-[#00E599] py-1.5 transition-colors flex items-center justify-between"
+              className="text-sm font-medium text-slate-300 hover:text-[#00E599] py-1.5 transition-colors"
             >
-              <span>{link.label}</span>
-              <span className="text-[#00E599] text-xs">→</span>
+              {link.label}
             </a>
           ))}
 
@@ -117,10 +116,9 @@ export default function LocalNav() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="w-full inline-flex items-center justify-center gap-2 bg-[#00E599] hover:bg-[#05f0a2] text-[#03140C] text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_0_18px_rgba(0,229,153,0.35)] transition-all"
+              className="w-full inline-flex items-center justify-center bg-[#00E599] hover:bg-[#05f0a2] text-[#03140C] text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_0_18px_rgba(0,229,153,0.35)] transition-all"
             >
               <span>Try it free</span>
-              <span className="text-xs">→</span>
             </a>
           </div>
         </div>

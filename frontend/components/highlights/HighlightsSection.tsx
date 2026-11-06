@@ -182,8 +182,7 @@ export default function HighlightsSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           {/* Left: Heading & Intro */}
           <div className="lg:col-span-5 flex flex-col text-left">
-            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00B377]" />
+            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2">
               POWERFUL FEATURES —
             </div>
 
@@ -231,8 +230,7 @@ export default function HighlightsSection() {
         {/* 2. Interactive Discovery Screens Gallery */}
         <div className="pt-8 border-t border-[#E2ECE6]">
           <div className="mb-6 max-w-2xl">
-            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00B377]" />
+            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2">
               THE PROBLEM & THE SOLUTION
             </div>
 
