@@ -41,77 +41,77 @@ export default function FaqSection() {
   };
 
   return (
-        <section
-          id="faq"
-          className="pt-12 pb-16 sm:pt-16 sm:pb-20 md:pt-20 md:pb-24 bg-[#F8FAFB] text-[#0A130E] border-t border-[#E2ECE6] relative z-20 select-none"
-        >
-          <div className="max-w-[980px] mx-auto px-5 sm:px-8 relative z-20">
-            {/* Eyebrow in Floxa Emerald */}
-            <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2">
-              Common Inquiries
-            </div>
+    <section
+      id="faq"
+      className="pt-12 pb-12 sm:pt-16 sm:pb-16 md:pt-20 md:pb-20 bg-[#F8FAFB] text-[#0A130E] border-t border-[#E2ECE6] relative z-20"
+    >
+      <div className="max-w-[980px] mx-auto px-5 sm:px-8 relative z-20">
+        {/* Eyebrow in Floxa Emerald */}
+        <div className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#00B377] mb-2">
+          Common Inquiries
+        </div>
 
-            <h2 className="text-2xl sm:text-4xl md:text-[44px] font-bold tracking-tight text-[#0A130E] mb-8 sm:mb-10">
-              Questions? <span className="text-[#00B377]">Answers.</span>
-            </h2>
+        <h2 className="text-2xl sm:text-4xl md:text-[44px] font-bold tracking-tight text-[#0A130E] mb-8 sm:mb-10">
+          Questions? <span className="text-[#00B377]">Answers.</span>
+        </h2>
 
-              <div className="w-full divide-y divide-[#E2ECE6]">
-                {faqData.map((item, idx) => {
-                  const isOpen = openIndex === idx;
+        <div className="w-full divide-y divide-[#E2ECE6]">
+          {faqData.map((item, idx) => {
+            const isOpen = openIndex === idx;
 
-                  return (
-                      <div key={idx} className="relative z-10">
-                        <button
-                          type="button"
-                          onClick={() => toggle(idx)}
-                          className="w-full py-5 sm:py-6 flex items-center justify-between text-left group cursor-pointer focus:outline-none touch-manipulation transition-colors duration-150 active:opacity-70"
-                          aria-expanded={isOpen}
-                        >
-                            <span
-                              className={`text-base sm:text-lg md:text-[20px] font-semibold tracking-tight pr-4 sm:pr-8 leading-snug transition-colors duration-200 ${isOpen
-                                  ? "text-[#00B377]"
-                                  : "text-[#0A130E] group-hover:text-[#00B377]"
-                                }`}
-                            >
-                              {item.q}
-                            </span>
-                                  < div
+            return (
+              <div key={idx} className="relative z-10">
+                <button
+                  type="button"
+                  onClick={() => toggle(idx)}
+                  className="w-full py-5 sm:py-6 flex items-center justify-between text-left group cursor-pointer focus:outline-none touch-manipulation transition-colors duration-150 active:opacity-70"
+                  aria-expanded={isOpen}
+                >
+                  <span
+                    className={`text-base sm:text-lg md:text-[20px] font-semibold tracking-tight pr-4 sm:pr-8 leading-snug transition-colors duration-200 ${isOpen
+                      ? "text-[#00B377]"
+                      : "text-[#0A130E] group-hover:text-[#00B377]"
+                      }`}
+                  >
+                    {item.q}
+                  </span>
+                  < div
                     className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen
-                                  ? "bg-[#E6FBF2] text-[#00B377] rotate-180"
-                                  : "bg-slate-100 text-slate-400 group-hover:text-[#00B377] group-hover:bg-[#E6FBF2]"
-                                }`}
-                            >
-                            <svg
-                              className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-current"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              strokeWidth="2.4"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                          </div>
-                        </button>
+                      ? "bg-[#E6FBF2] text-[#00B377] rotate-180"
+                      : "bg-slate-100 text-slate-400 group-hover:text-[#00B377] group-hover:bg-[#E6FBF2]"
+                      }`}
+                  >
+                    <svg
+                      className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-current"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </div>
+                </button>
 
-                        {/* Animated Accordion Drawer using direct inline height styles */}
-                        <div
-                          className="overflow-hidden transition-all duration-300 ease-in-out"
-                          style={{
-                            maxHeight: isOpen ? "800px" : "0px",
-                            opacity: isOpen ? 1 : 0,
-                            paddingBottom: isOpen ? "1.5rem" : "0px",
-                          }}
-                        >
-                            <p className="text-[14px] sm:text-[16px] text-[#526058] leading-relaxed pr-2 sm:pr-10 select-text">
-                              {item.a}
-                            </p>
-                        </div>
-                      </div>
-                      );
-          })}
-                    </div>
-      </div>
-            </section>
+                {/* Animated Accordion Drawer using direct inline height styles */}
+                <div
+                  className="overflow-hidden transition-all duration-300 ease-in-out"
+                  style={{
+                    maxHeight: isOpen ? "800px" : "0px",
+                    opacity: isOpen ? 1 : 0,
+                    paddingBottom: isOpen ? "1.5rem" : "0px",
+                  }}
+                >
+                  <p className="text-[14px] sm:text-[16px] text-[#526058] leading-relaxed pr-2 sm:pr-10 select-text">
+                    {item.a}
+                  </p>
+                </div>
+              </div>
             );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 }
